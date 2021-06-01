@@ -1,0 +1,9 @@
+# Config Unity
+Logs/
+Library/
+Temp/
+obj/
+
+# Config Visual Studio
+.vs/
+.vsconfig
