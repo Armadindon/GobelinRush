@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Common\MathTools.cs" />
     <Compile Include="Assets\Scripts\Constants.cs" />
+    <Compile Include="Assets\Scripts\TerrainGeneration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Audio\SFX\XML\SFX_InGame.xml" />
