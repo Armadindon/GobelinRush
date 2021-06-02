@@ -550,7 +550,7 @@ MonoBehaviour:
   buildingParents: {fileID: 972888492}
   housePrefab: {fileID: 7338984802697793590, guid: d845aadca64f8f94ca26aee85f5cd59e,
     type: 3}
-  castlePrefab: {fileID: 7338984802697793590, guid: d845aadca64f8f94ca26aee85f5cd59e,
+  castlePrefab: {fileID: 7338984802697793590, guid: aa3955d7a0df8d544af88066ca7dc5e0,
     type: 3}
 --- !u!4 &1670773021
 Transform:

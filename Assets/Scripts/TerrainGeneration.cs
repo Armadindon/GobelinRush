@@ -48,6 +48,7 @@ public class TerrainGeneration : MonoBehaviour
         {
             for (int z = 0; z < zSize; z++)
             {
+                // On ajoute les blocs en fonction de ce qu'il y a dans la matrice
                 switch (matrix[x, z])
                 {
                     case TerrainType.PATH:
@@ -56,21 +57,24 @@ public class TerrainGeneration : MonoBehaviour
                     case TerrainType.SURROUNDING:
                         Instantiate(surroundingPrefab, new Vector3(x, .1f, z), Quaternion.identity, surroundingParent);
                         break;
+                    case TerrainType.CASTLE:
+                        Instantiate(pathPrefab, new Vector3(x, 0, z), Quaternion.identity, pathParent);
+                        Instantiate(castlePrefab, new Vector3(x, 1, z), Quaternion.identity, buildingParents);
+                        break;
+                    case TerrainType.HOUSE:
+                        Instantiate(pathPrefab, new Vector3(x, 0, z), Quaternion.identity, pathParent);
+                        Instantiate(housePrefab, new Vector3(x, 1, z), Quaternion.identity, buildingParents);
+                        break;
                 }
             }
         }
-
-        //On instantie la maison des ennemis
-        Instantiate(housePrefab, new Vector3(xSize / 2, 1, 0), Quaternion.identity, buildingParents);
-        //On instantie le chateau
-        Instantiate(castlePrefab, new Vector3(xSize / 2, 1, zSize - 1), Quaternion.identity, buildingParents);
     }
 
 
     private void InitMatrix()
     {
         matrix = new TerrainType[xSize, zSize];
-        //On initialise la matrice
+        //On initialise la matrice, on genère un chemin simple au centre
         for (int x = 0; x < xSize; x++)
         {
             for (int z = 0; z < zSize; z++)
@@ -85,6 +89,9 @@ public class TerrainGeneration : MonoBehaviour
                 }
             }
         }
+
+        matrix[xSize / 2, 0] = TerrainType.HOUSE;
+        matrix[xSize / 2, zSize-1] = TerrainType.HOUSE;
     }
 
 }
@@ -92,5 +99,7 @@ public class TerrainGeneration : MonoBehaviour
 public enum TerrainType
 {
     PATH,
-    SURROUNDING
+    SURROUNDING,
+    HOUSE,
+    CASTLE
 }
