@@ -7,3 +7,6 @@ obj/
 # Config Visual Studio
 .vs/
 .vsconfig
+
+#Config CSharp
+*.csproj
