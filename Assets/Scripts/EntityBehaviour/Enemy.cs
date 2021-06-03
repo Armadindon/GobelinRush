@@ -27,11 +27,22 @@ public class Enemy : MonoBehaviour
         m_rigidbody = gameObject.GetComponent<Rigidbody>();
         target = GameManager.Instance.FirstWaypoint;
         distToGround = gameObject.GetComponentInChildren<Collider>().bounds.extents.y;
+
     }
 
-    private bool IsGrounded() {
+    private bool IsGrounded()
+    {
         //On regarde si un raycast en dessous touche un collider, si oui, c'est que l'on est au sol
         return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+    }
+
+    private void Update()
+    {
+        // TODO : Trouver un moyen de redresser le personnage petit à petit
+        Quaternion q = transform.rotation;
+        q[0] = 0;
+        q[2] = 0;
+        transform.rotation = q;
     }
 
     private void FixedUpdate()
@@ -45,16 +56,15 @@ public class Enemy : MonoBehaviour
 
             //On calcule la différence d'angle
             float angleDiff = Vector3.Angle(transform.forward, targetDelta);
-            
+
             //Si l'angle la différence d'angle est en dessous un certain nombre, on fixe l'angle pour éviter que l'ennemi convulse
-            if(angleDiff < 10)
+            if (angleDiff < 10)
             {
                 transform.LookAt(target);
             }
 
             Vector3 cross = Vector3.Cross(transform.forward, targetDelta);
 
-            // apply torque along that axis according to the magnitude of the angle.
             m_rigidbody.AddTorque(cross * angleDiff * rotationSpeed);
         }
 
@@ -69,7 +79,17 @@ public class Enemy : MonoBehaviour
             m_rigidbody.AddForce(velocityChange, ForceMode.VelocityChange);
         }
 
-        
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name.Equals("CastleHitbox"))
+        {
+            Debug.Log("On est arrivé au chateau");
+            isAtTarget = true;
+            m_rigidbody.velocity = Vector3.zero;
+        }
     }
 
 
