@@ -29,12 +29,17 @@ public class Cannon_Turret : MonoBehaviour
 
     void Update()
     {
-
         //if there is enemy
         if (m_Enemies.Count > 0)
         {
-            //look at the first enemy who enter the range
-            transform.LookAt(m_Enemies[0].transform);
+            //get look position
+            Vector3 lookPos = m_Enemies[0].transform.position - transform.position;
+            //don't allow y moove
+            lookPos.y = 0;
+            Quaternion rotation = Quaternion.LookRotation(lookPos);
+            //rotate Cannon turret
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 100);
+
             //if can shoot
             if ( Time.time > m_CannonballNextShootTime)
             {
