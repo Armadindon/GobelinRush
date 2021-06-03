@@ -588,12 +588,6 @@ Transform:
   m_Father: {fileID: 1670773021}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &1639152919 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224619773890871106, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1872545305}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1656313785
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +617,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1639152919}
+  m_Father: {fileID: 1872545313}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
