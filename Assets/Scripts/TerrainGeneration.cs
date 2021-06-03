@@ -59,10 +59,11 @@ public class TerrainGeneration : MonoBehaviour
                         break;
                     case TerrainType.CASTLE:
                         Instantiate(pathPrefab, new Vector3(x, 0, z), Quaternion.identity, pathParent);
-                        Instantiate(castlePrefab, new Vector3(x, 1, z), Quaternion.identity, buildingParents);
+                        //On le rotate qu'il soit face à l'arrivée
+                        Instantiate(castlePrefab, new Vector3(x, 1, z), new Quaternion(0, 180, 0, 0), buildingParents);
                         break;
                     case TerrainType.HOUSE:
-                        Instantiate(pathPrefab, new Vector3(x, 0, z), Quaternion.identity, pathParent);
+                        Instantiate(pathPrefab, new Vector3(x, 0, z), Quaternion.identity , pathParent);
                         Instantiate(housePrefab, new Vector3(x, 1, z), Quaternion.identity, buildingParents);
                         break;
                 }
@@ -91,7 +92,7 @@ public class TerrainGeneration : MonoBehaviour
         }
 
         matrix[xSize / 2, 0] = TerrainType.HOUSE;
-        matrix[xSize / 2, zSize-1] = TerrainType.HOUSE;
+        matrix[xSize / 2, zSize-1] = TerrainType.CASTLE;
     }
 
 }
