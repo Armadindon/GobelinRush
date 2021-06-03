@@ -27,6 +27,7 @@
             EventManager.Instance.AddListener<ResumeButtonClickedEvent>(ResumeButtonClicked);
             EventManager.Instance.AddListener<EscapeButtonClickedEvent>(EscapeButtonClicked);
             EventManager.Instance.AddListener<QuitButtonClickedEvent>(QuitButtonClicked);
+            EventManager.Instance.AddListener<ParamettreButtonClickedEvent>(ParamettreButtonClicked);
         }
 
         public override void UnsubscribeEvents()
@@ -39,6 +40,7 @@
             EventManager.Instance.RemoveListener<ResumeButtonClickedEvent>(ResumeButtonClicked);
             EventManager.Instance.RemoveListener<EscapeButtonClickedEvent>(EscapeButtonClicked);
             EventManager.Instance.RemoveListener<QuitButtonClickedEvent>(QuitButtonClicked);
+            EventManager.Instance.RemoveListener<ParamettreButtonClickedEvent>(ParamettreButtonClicked);
 
         }
         #endregion
@@ -84,6 +86,11 @@
         private void QuitButtonClicked(QuitButtonClickedEvent e)
         {
             Application.Quit();
+        }
+
+        private void ParamettreButtonClicked(ParamettreButtonClickedEvent e)
+        {
+            Debug.Log("Paramettre has been clicked\n TODO: Parametre Menu");
         }
         #endregion
 

@@ -98,6 +98,12 @@ namespace STUDENT_NAME
 			EventManager.Instance.Raise(new QuitButtonClickedEvent());
 		}
 
+		public void ParamettreButtonHasBeenClicked()
+		{
+			// TODO : A implémenter
+
+			EventManager.Instance.Raise(new ParamettreButtonClickedEvent());
+		}
 		#endregion
 
 		#region Callbacks to GameManager events
