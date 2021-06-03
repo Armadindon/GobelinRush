@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         m_rigidbody = gameObject.GetComponent<Rigidbody>();
-        target = GameManager.Instance.castleTarget;
+        target = GameManager.Instance.FirstWaypoint;
         distToGround = gameObject.GetComponentInChildren<Collider>().bounds.extents.y;
     }
 
@@ -59,9 +59,6 @@ public class Enemy : MonoBehaviour
         }
 
         //On Applique une plus grande gravité lorsqu'il est en l'air
-        if (IsGrounded()) Debug.Log("On est au sol");
-        else Debug.Log("On est en l'air");
-
         if (!IsGrounded()) m_rigidbody.AddForce(Vector3.down * gravity * m_rigidbody.mass);
 
         if (!isAtTarget)
@@ -73,5 +70,11 @@ public class Enemy : MonoBehaviour
         }
 
         
+    }
+
+
+    public void setTarget(Transform target)
+    {
+        this.target = target;
     }
 }

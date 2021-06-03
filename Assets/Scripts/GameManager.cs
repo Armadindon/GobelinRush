@@ -17,7 +17,12 @@
         #endregion
 
         #region Castle Management
-        public Transform castleTarget { get; set; }
+        //Servira à checker la vie du chateau
+        public GameObject castleTarget { get; set; }
+        #endregion
+
+        #region Waypoint Management
+        public Transform FirstWaypoint { get; set; }
         #endregion
 
         #region Events' subscription
