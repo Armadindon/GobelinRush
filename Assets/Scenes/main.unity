@@ -628,7 +628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -146.7, y: -136.4}
+  m_AnchoredPosition: {x: -399.2, y: -160.7}
   m_SizeDelta: {x: -807, y: -394}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1656313787
@@ -662,7 +662,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'PERRIN Baptiste
 
@@ -868,8 +868,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 955461319}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: QuitButtonHasBeenClicked
+        m_TargetAssemblyTypeName: STUDENT_NAME.MenuManager, Assembly-CSharp
+        m_MethodName: ParamettreButtonHasBeenClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
