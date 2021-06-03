@@ -7,7 +7,7 @@ public class Castle : MonoBehaviour
 {
     private void Awake()
     {
-        GameManager.Instance.castleTarget = transform;
+        GameManager.Instance.castleTarget = gameObject;
         Debug.Log("La position du castle a été enregistrée c: !");
     }
 }
