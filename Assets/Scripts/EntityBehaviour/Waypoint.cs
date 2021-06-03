@@ -18,7 +18,6 @@ public class Waypoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
         //TODO : Faire des tags pours les ennemis, ou mettre un layer
         //TODO : Mettre les waypoint dans un layer à part, pour éviter les collisions avec le sol
         if (other.gameObject.name.Contains("Enemy"))
