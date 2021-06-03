@@ -1,4 +1,4 @@
-﻿namespace STUDENT_NAME
+﻿namespace GoblinRush
 {
 	using UnityEngine;
 
