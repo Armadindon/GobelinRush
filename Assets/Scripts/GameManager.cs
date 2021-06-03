@@ -1,4 +1,4 @@
-﻿namespace STUDENT_NAME
+﻿namespace GoblinRush
 {
     using System.Collections;
     using UnityEngine;
@@ -14,6 +14,10 @@
         #region Game State
         private GameState m_GameState;
         public bool IsPlaying { get { return m_GameState == GameState.gamePlay; } }
+        #endregion
+
+        #region Castle Management
+        public Transform castleTarget { get; set; }
         #endregion
 
         #region Events' subscription

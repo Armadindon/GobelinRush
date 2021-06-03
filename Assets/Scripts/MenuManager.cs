@@ -1,5 +1,5 @@
 ﻿
-namespace STUDENT_NAME
+namespace GoblinRush
 {
 	using System;
 	using System.Collections;

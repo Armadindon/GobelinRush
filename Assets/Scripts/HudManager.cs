@@ -1,4 +1,4 @@
-﻿namespace STUDENT_NAME
+﻿namespace GoblinRush
 {
 	using System.Collections;
 	using System.Collections.Generic;
