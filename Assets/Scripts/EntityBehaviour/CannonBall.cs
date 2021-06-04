@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class CannonBall : MonoBehaviour
 {
-    public float m_CannonballSpeed { private get; set; }
-    public Transform m_target { private get; set; }
+    public float cannonballSpeed { private get; set; }
+    public Transform m_Target { private get; set; }
     public Cannon_Turret m_CannonTurret { private get; set; }
 
     void Update()
     {
-        if (m_target)
+        if (m_Target)
         {
-            transform.LookAt(m_target);
+            transform.LookAt(m_Target);
             //moove CannonBall to target
-            transform.position += transform.forward * Time.deltaTime * m_CannonballSpeed;
+            transform.position += transform.forward * Time.deltaTime * cannonballSpeed;
         }
     }
 
