@@ -71,12 +71,17 @@ public class Enemy : MonoBehaviour
         //On Applique une plus grande gravité lorsqu'il est en l'air
         if (!IsGrounded()) m_rigidbody.AddForce(Vector3.down * gravity * m_rigidbody.mass);
 
+        //n'est pas arrivé au château
         if (!isAtTarget)
         {
             // L'ennemi avance toujours devant lui
             Vector3 newVelocity = speed * transform.forward;
             Vector3 velocityChange = newVelocity - m_rigidbody.velocity;
             m_rigidbody.AddForce(velocityChange, ForceMode.VelocityChange);
+        } else
+        //est arrivé au château
+        {
+
         }
 
 

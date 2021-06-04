@@ -23,13 +23,14 @@ public class CannonBall : MonoBehaviour
         //if collision with enemy
         if (collision.gameObject.name.Contains("Enemy"))
         {
-            //get enemy 
+            // on récupère l'ennemi
             Enemy m_enemy = collision.gameObject.GetComponentInParent(typeof(Enemy)) as Enemy;
-            //remov enemy from the list enemy in range
-            m_CannonTurret.m_Enemies.Remove(m_enemy);
+            // on récupère son component.script Life
+            Life life = collision.gameObject.GetComponent<Life>();
+            // l'ennemi encaisse des dégâts
+            life.TakeDamage(m_CannonTurret.m_Damage);
 
-            //Destroy enemy and CannonBall
-            Destroy(collision.gameObject);
+            // retire le boulet de canon
             Destroy(this.gameObject);
         }
     }
