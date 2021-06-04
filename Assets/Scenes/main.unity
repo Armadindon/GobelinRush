@@ -1120,6 +1120,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1073259703689425663, guid: 06393047e35e61d48907f035c26a9a61,
+        type: 3}
+      propertyPath: timeBetweenWaves
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073259703689425663, guid: 06393047e35e61d48907f035c26a9a61,
+        type: 3}
+      propertyPath: m_waves.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073259703689425663, guid: 06393047e35e61d48907f035c26a9a61,
+        type: 3}
+      propertyPath: m_waves.Array.data[0].m_wave.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073259703689425663, guid: 06393047e35e61d48907f035c26a9a61,
+        type: 3}
+      propertyPath: m_waves.Array.data[1].m_wave.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4326726261343281837, guid: 06393047e35e61d48907f035c26a9a61,
         type: 3}
       propertyPath: m_Name
