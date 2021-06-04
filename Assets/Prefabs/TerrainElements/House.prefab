@@ -266,6 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaef47b7703179043956451e763cfab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawnPoint: {fileID: 736674374315437973}
-  enemyPrefab: {fileID: 4607456947165824349, guid: 04b1226363a7ffb47bd5d0fe266ccaa8,
+  m_enemySpawnPoint: {fileID: 736674374315437973}
+  m_enemyPrefab: {fileID: 4607456947165824349, guid: 04b1226363a7ffb47bd5d0fe266ccaa8,
     type: 3}

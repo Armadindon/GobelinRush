@@ -302,10 +302,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CannonballPrefab: {fileID: 8937687233154411839, guid: bda8f42ae1150c343912b0607f93bda4,
     type: 3}
-  m_RangeCannonball: 20
-  m_CannonballSpeed: 20
-  m_CannonballShootCallDownDuration: 1
+  rangeCannonball: 10
+  cannonballSpeed: 15
+  cannonballShootCallDownDuration: 1
   m_CannonballSpawn: {fileID: 6985572606928079379}
+  cannonballDamage: 5
 --- !u!135 &8018568152201700637
 SphereCollider:
   m_ObjectHideFlags: 0

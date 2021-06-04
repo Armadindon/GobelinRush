@@ -6,17 +6,24 @@ public class Cannon_Turret : MonoBehaviour
 {
     [Header("Cannonball settings")]
     [Tooltip("Cannonball prefab")]
-    [SerializeField] GameObject m_CannonballPrefab;
+    [SerializeField] private GameObject m_CannonballPrefab;
+
     [Tooltip("Cannonball range")]
-    [SerializeField] private float m_RangeCannonball;
+    [SerializeField] private float rangeCannonball;
+
     [Tooltip("Cannonball speed")]
-    [SerializeField] private float m_CannonballSpeed;
-    [Tooltip("Cannonball couldown")]
-    [SerializeField] private float m_CannonballShootCallDownDuration;
-    [Tooltip("Cannonball spwan")]
+    [SerializeField] private float cannonballSpeed;
+
+    [Tooltip("Cannonball cooldown")]
+    [SerializeField] private float cannonballShootCallDownDuration;
+
+    [Tooltip("Cannonball spawn")]
     [SerializeField] private Transform m_CannonballSpawn;
 
-    private float m_CannonballNextShootTime;
+    [Tooltip("Cannonball damage")]
+    [SerializeField] private int cannonballDamage;
+
+    private float cannonballNextShootTime;
 
     //List of enemy in range 
     public List<Enemy> m_Enemies { get; set; }
@@ -41,11 +48,11 @@ public class Cannon_Turret : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 100);
 
             //if can shoot
-            if ( Time.time > m_CannonballNextShootTime)
+            if ( Time.time > cannonballNextShootTime)
             {
                 ShootCannonball(m_Enemies[0].gameObject.transform);
                 //wait before shoot again
-                m_CannonballNextShootTime = Time.time + m_CannonballShootCallDownDuration;
+                cannonballNextShootTime = Time.time + cannonballShootCallDownDuration;
             }
         }
     }
@@ -75,9 +82,9 @@ public class Cannon_Turret : MonoBehaviour
         //get Cannonball
         CannonBall m_Cannonball = m_newCannonball.GetComponent<CannonBall>();
         //Setup the speed
-        m_Cannonball.m_CannonballSpeed = m_CannonballSpeed;
+        m_Cannonball.cannonballSpeed = cannonballSpeed;
         //setup the target enemy
-        m_Cannonball.m_target = target;
+        m_Cannonball.m_Target = target;
         m_Cannonball.m_CannonTurret = this;
     }
 }
