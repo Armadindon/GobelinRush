@@ -5,15 +5,15 @@ using UnityEngine;
 public class House : MonoBehaviour
 {
     [SerializeField]
-    private Transform enemySpawnPoint;
+    private Transform m_enemySpawnPoint;
     [SerializeField]
-    private GameObject enemyPrefab;
+    private GameObject m_enemyPrefab;
 
     private void Start()
     {
-        if (enemyPrefab)
+        if (m_enemyPrefab)
         {
-            Instantiate(enemyPrefab, enemySpawnPoint.position, Quaternion.identity);
+            Instantiate(m_enemyPrefab, m_enemySpawnPoint.position, Quaternion.identity);
         }
     }
 }

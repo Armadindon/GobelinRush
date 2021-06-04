@@ -16,21 +16,21 @@ public class TerrainGeneration : MonoBehaviour
 
     [Header("Block's Prefab")]
     [SerializeField]
-    private Transform pathParent;
+    private Transform m_pathParent;
     [SerializeField]
-    private GameObject pathPrefab;
+    private GameObject m_pathPrefab;
     [SerializeField]
-    private Transform surroundingParent;
+    private Transform m_surroundingParent;
     [SerializeField]
-    private GameObject surroundingPrefab;
+    private GameObject m_surroundingPrefab;
 
     [Header("Castle and Monster House")]
     [SerializeField]
-    private Transform buildingParents;
+    private Transform m_buildingParents;
     [SerializeField]
-    private GameObject housePrefab;
+    private GameObject m_housePrefab;
     [SerializeField]
-    private GameObject castlePrefab;
+    private GameObject m_castlePrefab;
 
 
     //Matrix representing the field
@@ -52,19 +52,19 @@ public class TerrainGeneration : MonoBehaviour
                 switch (matrix[x, z])
                 {
                     case TerrainType.PATH:
-                        Instantiate(pathPrefab, new Vector3(x, 0, z), Quaternion.identity, pathParent);
+                        Instantiate(m_pathPrefab, new Vector3(x, 0, z), Quaternion.identity, m_pathParent);
                         break;
                     case TerrainType.SURROUNDING:
-                        Instantiate(surroundingPrefab, new Vector3(x, .1f, z), Quaternion.identity, surroundingParent);
+                        Instantiate(m_surroundingPrefab, new Vector3(x, .1f, z), Quaternion.identity, m_surroundingParent);
                         break;
                     case TerrainType.CASTLE:
-                        Instantiate(pathPrefab, new Vector3(x, 0, z), Quaternion.identity, pathParent);
+                        Instantiate(m_pathPrefab, new Vector3(x, 0, z), Quaternion.identity, m_pathParent);
                         //On le rotate qu'il soit face à l'arrivée
-                        Instantiate(castlePrefab, new Vector3(x, 1, z), new Quaternion(0, 180, 0, 0), buildingParents);
+                        Instantiate(m_castlePrefab, new Vector3(x, 1, z), new Quaternion(0, 180, 0, 0), m_buildingParents);
                         break;
                     case TerrainType.HOUSE:
-                        Instantiate(pathPrefab, new Vector3(x, 0, z), Quaternion.identity , pathParent);
-                        Instantiate(housePrefab, new Vector3(x, 1, z), Quaternion.identity, buildingParents);
+                        Instantiate(m_pathPrefab, new Vector3(x, 0, z), Quaternion.identity , m_pathParent);
+                        Instantiate(m_housePrefab, new Vector3(x, 1, z), Quaternion.identity, m_buildingParents);
                         break;
                 }
             }

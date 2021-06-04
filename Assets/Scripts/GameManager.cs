@@ -18,7 +18,7 @@
 
         #region Castle Management
         //Servira à checker la vie du chateau
-        public GameObject castleTarget { get; set; }
+        public GameObject CastleTarget { get; set; }
         #endregion
 
         #region Waypoint Management
