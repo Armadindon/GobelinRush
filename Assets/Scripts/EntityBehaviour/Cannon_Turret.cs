@@ -120,6 +120,8 @@ public class Cannon_Turret : MonoBehaviour
         //setup the target enemy
         m_Cannonball.m_Target = target;
         m_Cannonball.m_CannonTurret = this;
+        //on attribue les dommages de la tourelle au boulet
+        m_Cannonball.attackDamage = cannonballDamage;
     }
 
     /// <summary>

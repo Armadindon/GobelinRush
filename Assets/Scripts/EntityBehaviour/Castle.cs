@@ -5,9 +5,19 @@ using GoblinRush;
 
 public class Castle : MonoBehaviour
 {
+    Health m_CastleHealth;
+
     private void Start()
     {
         GameManager.Instance.CastleTarget = gameObject;
-        Debug.Log("La position du castle a été enregistrée c: !");
+        m_CastleHealth = this.GetComponent<Health>();
+    }
+
+    private void Update()
+    {
+        if (m_CastleHealth.currentHealth <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
