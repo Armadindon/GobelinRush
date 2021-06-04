@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6558320916949709513}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0109079dd5f82184bbacdde4f6797448, type: 3}
+  m_Script: {fileID: 11500000, guid: f5cba063dbc9e1e4f84b6c8bcab43d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_turretPrefab: {fileID: 4607456947165824349, guid: 4dc1f2c502f18d046a1283f8c3349d09,
