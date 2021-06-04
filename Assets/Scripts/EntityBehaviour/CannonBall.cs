@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class CannonBall : MonoBehaviour
 {
     public float cannonballSpeed { private get; set; }
     public Transform m_Target { private get; set; }
     public Cannon_Turret m_CannonTurret { private get; set; }
 
+    public int attackDamage { get; set; }
+
     void Update()
     {
+        //si détection d'un ennemi
         if (m_Target)
         {
             transform.LookAt(m_Target);
-            //moove CannonBall to target
+            //move CannonBall to target
             transform.position += transform.forward * Time.deltaTime * cannonballSpeed;
         }
     }
@@ -26,12 +28,19 @@ public class CannonBall : MonoBehaviour
             // on récupère l'ennemi
             Enemy m_enemy = collision.gameObject.GetComponentInParent(typeof(Enemy)) as Enemy;
             // on récupère son component.script Life
-            Life life = collision.gameObject.GetComponent<Life>();
+            Health health = collision.gameObject.GetComponent<Health>();
             // l'ennemi encaisse des dégâts
-            life.TakeDamage(m_CannonTurret.m_Damage);
+            health.TakeDamage(attackDamage);
+
+            if (health.currentHealth <= 0)
+            {
+                Destroy(collision.gameObject);
+                m_CannonTurret.m_Enemies.Remove(enemy);
+            }
 
             // retire le boulet de canon
             Destroy(this.gameObject);
         }
     }
+
 }

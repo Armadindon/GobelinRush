@@ -22,7 +22,7 @@
 
 		void Update()
 		{
-			if (!GameManager.Instance.IsPlaying) return;
+			//if (!GameManager.Instance.IsPlaying) return;
 
 			// TO DO
 		}

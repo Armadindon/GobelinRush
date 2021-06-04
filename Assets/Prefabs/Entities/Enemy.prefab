@@ -237,8 +237,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4607456947165824349}
   serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 0
+  m_Mass: 75
+  m_Drag: 5
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -257,13 +257,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf46f8d1ad32e2641ac6896ee9c1c17e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 2
-  rotationSpeed: 0.2
-  gravity: 10
-  groundLayer:
+  m_Target: {fileID: 0}
+  speed: 2.5
+  rotationSpeed: 1
+  gravity: 25
+  m_GroundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
+  attackDamage: 50
+  attackCooldownDuration: 2
 --- !u!114 &8654728988337617674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8e0e1f5e963ba42b92aaadfbfa9779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Life: 10
+  health: 10
   side: 0
 --- !u!136 &7477656124368413884
 CapsuleCollider:
