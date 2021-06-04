@@ -35,7 +35,7 @@ public class CannonBall : MonoBehaviour
             if (health.currentHealth <= 0)
             {
                 Destroy(collision.gameObject);
-                m_CannonTurret.m_Enemies.Remove(enemy);
+                m_CannonTurret.m_Enemies.Remove(m_enemy);
             }
 
             // retire le boulet de canon
