@@ -5,26 +5,25 @@ using GoblinRush;
 public class Waypoint : MonoBehaviour
 {
     [SerializeField]
-    private Transform[] nextTarget;
+    private Transform[] m_nextTarget;
     [SerializeField]
     private bool isFirstWaypoint;
 
     private void SetCastleAsTarget()
     {
-
-        nextTarget = new Transform[] { GameManager.Instance.castleTarget.transform }; // Si la prochain cible n'est pas renseignée, on change de target
+        m_nextTarget = new Transform[] { GameManager.Instance.CastleTarget.transform }; // Si la prochain cible n'est pas renseignée, on change de target
     }
 
     private void Start()
     {
         if (isFirstWaypoint)
             GameManager.Instance.FirstWaypoint = transform;
-        if (nextTarget.Length == 0 && GameManager.Instance.castleTarget) SetCastleAsTarget();
+        if (m_nextTarget.Length == 0 && GameManager.Instance.CastleTarget) SetCastleAsTarget();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (nextTarget.Length == 0 && GameManager.Instance.castleTarget) SetCastleAsTarget();
+        if (m_nextTarget.Length == 0 && GameManager.Instance.CastleTarget) SetCastleAsTarget();
         //TODO : Faire des tags pours les ennemis, ou mettre un layer
         //TODO : Mettre les waypoint dans un layer à part, pour éviter les collisions avec le sol
         if (other.gameObject.name.Contains("Enemy"))
@@ -34,7 +33,7 @@ public class Waypoint : MonoBehaviour
             Enemy enemyScript = enemy.GetComponent<Enemy>();
             if (enemyScript)
             {
-                enemyScript.setTarget(nextTarget[Random.Range(0, nextTarget.Length)]);
+                enemyScript.setTarget(m_nextTarget[Random.Range(0, m_nextTarget.Length)]);
             }
         }
     }

@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     [Header("Enemy Movement")]
     [SerializeField]
-    private Transform target;
+    private Transform m_target;
     [SerializeField]
     private float speed;
     [SerializeField]
@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float gravity;
     [SerializeField]
-    private LayerMask groundLayer;
+    private LayerMask m_groundLayer;
 
     private Rigidbody m_rigidbody;
     private bool isAtTarget;
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         m_rigidbody = gameObject.GetComponent<Rigidbody>();
-        target = GameManager.Instance.FirstWaypoint;
+        m_target = GameManager.Instance.FirstWaypoint;
         distToGround = gameObject.GetComponentInChildren<Collider>().bounds.extents.y;
 
     }
@@ -50,9 +50,9 @@ public class Enemy : MonoBehaviour
         //On code le behaviour de l'enemy
 
         //On commence par régler la rotation
-        if (target)
+        if (m_target)
         {
-            Vector3 targetDelta = target.position - transform.position;
+            Vector3 targetDelta = m_target.position - transform.position;
 
             //On calcule la différence d'angle
             float angleDiff = Vector3.Angle(transform.forward, targetDelta);
@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
             //Si l'angle la différence d'angle est en dessous un certain nombre, on fixe l'angle pour éviter que l'ennemi convulse
             if (angleDiff < 10)
             {
-                transform.LookAt(target);
+                transform.LookAt(m_target);
             }
 
             Vector3 cross = Vector3.Cross(transform.forward, targetDelta);
@@ -95,6 +95,6 @@ public class Enemy : MonoBehaviour
 
     public void setTarget(Transform target)
     {
-        this.target = target;
+        this.m_target = target;
     }
 }

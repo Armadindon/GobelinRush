@@ -7,7 +7,7 @@ public class Castle : MonoBehaviour
 {
     private void Start()
     {
-        GameManager.Instance.castleTarget = gameObject;
+        GameManager.Instance.CastleTarget = gameObject;
         Debug.Log("La position du castle a été enregistrée c: !");
     }
 }
