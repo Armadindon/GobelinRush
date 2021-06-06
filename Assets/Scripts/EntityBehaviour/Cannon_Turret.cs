@@ -39,6 +39,8 @@ public class Cannon_Turret : MonoBehaviour
 
     private float cannonballNextShootTime;
 
+
+
     /// <summary>
     /// List of enemy in range of turret
     /// </summary>
@@ -48,6 +50,14 @@ public class Cannon_Turret : MonoBehaviour
     {
         //create list of enemy
         m_Enemies = new List<Enemy>();  
+        //setup zone range visibility
+        ChangeVisibilityRange(_zoneRangeVisibility);
+        //setup range cannonball
+        ChangeRangeTurret(_rangeCannonball);
+    }
+
+    private void OnValidate()
+    {
         //setup zone range visibility
         ChangeVisibilityRange(_zoneRangeVisibility);
         //setup range cannonball
@@ -141,4 +151,6 @@ public class Cannon_Turret : MonoBehaviour
         //if Zone range visible hide it 
         if(zoneRangeVisibility == true) ChangeVisibilityRange(false);
     }
+
+    
 }
