@@ -436,7 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4662720264763328}
   - component: {fileID: 114029691621530082}
-  - component: {fileID: 6359684611172393284}
+  - component: {fileID: 4693269218281866976}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -471,7 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyGameObjectOnLoad: 0
---- !u!114 &6359684611172393284
+--- !u!114 &4693269218281866976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -480,7 +480,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1680404950657250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5cba063dbc9e1e4f84b6c8bcab43d60, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b7581c78984815428066012953c2046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_turretPrefab: {fileID: 4607456947165824349, guid: 4dc1f2c502f18d046a1283f8c3349d09,

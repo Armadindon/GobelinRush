@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Cannon_Turret : MonoBehaviour
 {
-    [Header("Cannonball settings")]
+    [Header("Cannonball settings :")]
+
     [Tooltip("Cannonball prefab")]
     [SerializeField] private GameObject m_CannonballPrefab;
 
     [Tooltip("Cannonball range")]
-    [SerializeField] private float rangeCannonball;
+    [SerializeField] private float _rangeCannonball;
 
     [Tooltip("Cannonball speed")]
     [SerializeField] private float cannonballSpeed;
@@ -23,15 +24,34 @@ public class Cannon_Turret : MonoBehaviour
     [Tooltip("Cannonball damage")]
     [SerializeField] private int cannonballDamage;
 
+
+    [Header("Zone settings :")]
+
+    [Tooltip("Zone range")]
+    [SerializeField] private GameObject m_ZoneRangeSphere;
+
+    [Tooltip("Set visibility on create")]
+    [SerializeField] public bool _zoneRangeVisibility;
+
+    public bool zoneRangeVisibility { get; private set; }
+
+    public float rangeCannonball { get; private set; }
+
     private float cannonballNextShootTime;
 
-    //List of enemy in range 
+    /// <summary>
+    /// List of enemy in range of turret
+    /// </summary>
     public List<Enemy> m_Enemies { get; set; }
 
     void Awake()
     {
         //create list of enemy
-        m_Enemies = new List<Enemy>();
+        m_Enemies = new List<Enemy>();  
+        //setup zone range visibility
+        ChangeVisibilityRange(_zoneRangeVisibility);
+        //setup range cannonball
+        ChangeRangeTurret(_rangeCannonball);
     }
 
     void Update()
@@ -75,7 +95,11 @@ public class Cannon_Turret : MonoBehaviour
         if (m_enemy) m_Enemies.Remove(m_enemy);
     }
 
-    void ShootCannonball(Transform target)
+    /// <summary>
+    /// Shoot cannonball to target
+    /// </summary>
+    /// <param name="target"></param>
+    private void ShootCannonball(Transform target)
     {
         //Create cannonball
         GameObject m_newCannonball = Instantiate(m_CannonballPrefab, m_CannonballSpawn.position, Quaternion.identity);
@@ -86,5 +110,35 @@ public class Cannon_Turret : MonoBehaviour
         //setup the target enemy
         m_Cannonball.m_Target = target;
         m_Cannonball.m_CannonTurret = this;
+    }
+
+    /// <summary>
+    /// Change range turret
+    /// </summary>
+    /// <param name="newRange"></param>
+    public void ChangeRangeTurret(float newRange)
+    {
+        if (rangeCannonball == newRange) return;
+        Transform zoneRange = this.transform.Find("Zone_Range");
+        zoneRange.localScale = new Vector3(newRange, newRange, newRange);
+        rangeCannonball = newRange;
+    }
+
+    /// <summary>
+    /// Change visibility of zone range 
+    /// </summary>
+    /// <param name="newVisibility"></param>
+    public void ChangeVisibilityRange(bool newVisibility)
+    {
+        if (zoneRangeVisibility == newVisibility) return;
+        m_ZoneRangeSphere.GetComponent<Renderer>().enabled = newVisibility;
+        zoneRangeVisibility = newVisibility;
+    }
+
+
+    private void OnMouseExit()
+    {
+        //if Zone range visible hide it 
+        if(zoneRangeVisibility == true) ChangeVisibilityRange(false);
     }
 }
