@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 506960659176490835}
   - component: {fileID: 3505715437694290166}
   - component: {fileID: 1675966694504266812}
+  - component: {fileID: 5668341448034905303}
   m_Layer: 0
   m_Name: EA_Swamp_Grass_03e_PRE
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 883486884861337065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1302043, y: 1.1302043, z: 1.1302043}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,6 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -79,3 +81,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!205 &5668341448034905303
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883486884861337065}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.04358107, y: 0.39538988, z: 0.028360397}
+  m_Size: 0.830043
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.30777946
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 1675966694504266812}
+  - screenRelativeHeight: 0.20240302
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 1675966694504266812}
+  - screenRelativeHeight: 0.0021001832
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 1675966694504266812}
+  m_Enabled: 1
