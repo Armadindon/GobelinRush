@@ -9,14 +9,14 @@ public class Health : MonoBehaviour
     public enum Side { Enemy, Friendly }
 
     [Header("Life parameters")]
-    [SerializeField] private int health;
+    [SerializeField] public int health;
     [SerializeField] private Side side;
 
     [Header("HUD Healthbar")]
     [Tooltip("Healthbar Foreground")]
     [SerializeField] private Image m_HealthbarForeground;
-    //[Tooltip("Camera")]
-    //[SerializeField] private Camera m_CameraBase;
+
+    private Canvas m_Healthbar;
 
     public int currentHealth { get; set; }
 
@@ -26,11 +26,18 @@ public class Health : MonoBehaviour
     void Awake()
     {
         currentHealth = health;
+        //on récupère le canvas parent de l'image pour pouvoir le rendre visible/invisible
+        m_Healthbar = m_HealthbarForeground.GetComponentInParent<Canvas>();
+        m_Healthbar.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // TO DO:
+        m_Healthbar.gameObject.SetActive(currentHealth < health);
+        //prefab.SetEnabled(currentHealth == health);
+
         if (currentHealth > 0)
         {
             //on fait en sorte que le canvas pointe toujours à la caméra
