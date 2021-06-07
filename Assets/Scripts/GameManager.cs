@@ -11,6 +11,62 @@
 
     public class GameManager : Manager<GameManager>
     {
+        #region Turret managment SerializeField
+        [Header("Turret prebab")]
+        [Tooltip("Cannon Turret prefab")]
+        [SerializeField] private GameObject m_CannonTurretPrefab;
+
+        /// <summary>
+        /// Placement turret on click
+        /// Visiblity range on right click
+        /// </summary>
+        private void updateTurretBehaviour()
+        {
+            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            {
+                //create ray
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                //get all hit by ray
+                RaycastHit[] hits = Physics.RaycastAll(ray);
+
+                //on left click
+                if (Input.GetMouseButtonDown(0))
+                {
+                    //get first placement zone
+                    RaycastHit hitPlacementZone = hits.FirstOrDefault(hit => hit.transform.name == "Placement_Zone");
+
+                    if (hitPlacementZone.transform != null)
+                    {
+                        //récupère l'objet Turret_PLacement         
+                        GameObject m_TurretPlacement = hitPlacementZone.transform.parent.gameObject;
+                        //Create newTurret
+                        GameObject m_newTurretTurret = Instantiate(m_CannonTurretPrefab, m_TurretPlacement.transform.position, Quaternion.identity);
+                        //Destroy Turret placement zone
+                        Destroy(hitPlacementZone.transform.gameObject);
+                    }
+                }
+
+                //on right click
+                if (Input.GetMouseButtonDown(1))
+                {
+                    //get first turret hit 
+                    RaycastHit hitTurret = hits.FirstOrDefault(hit => hit.collider.name.Contains("Hitbox") && hit.transform.name.Contains("Turret"));
+
+                    if (hitTurret.transform != null)
+                    {
+                        //get game object
+                        GameObject m_CannonTurret = hitTurret.transform.gameObject;
+                        //cast game object
+                        Cannon_Turret cannonTurret = (Cannon_Turret)m_CannonTurret.GetComponent(typeof(Cannon_Turret));
+                        //show visibility range
+                        cannonTurret.ChangeVisibilityRange(true);
+                    }
+                }
+            }
+        }
+
+        #endregion
+
         #region Game State
         private GameState m_GameState;
         public bool IsPlaying { get { return m_GameState == GameState.gamePlay; } }
@@ -143,6 +199,11 @@
             if (SfxManager.Instance) SfxManager.Instance.PlaySfx2D(Constants.GAMEOVER_SFX);
         }
         #endregion
+
+        private void Update()
+        {
+            updateTurretBehaviour();
+        }
     }
 }
 
