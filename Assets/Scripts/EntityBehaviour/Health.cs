@@ -20,8 +20,6 @@ public class Health : MonoBehaviour
 
     public int currentHealth { get; set; }
 
-    //public event Action<float> OnHealthPctChanged = delegate { };
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,7 +32,6 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // TO DO:
         m_Healthbar.gameObject.SetActive(currentHealth < health);
         //prefab.SetEnabled(currentHealth == health);
 
@@ -48,12 +45,20 @@ public class Health : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Change le remplissage de la barre de vie de l'intité en fonction d'un pourcentage donné
+    /// </summary>
+    /// <param name="pct">Pourcentage du changement de vie</param>
     private void OnHealthPctChanged(float pct)
     {
         //on récupère l'image du foreground directement à partir du prefab
         m_HealthbarForeground.fillAmount = pct;
     }
 
+    /// <summary>
+    /// Lorsque les entités s'attaquent et/ou recoivent des dommages
+    /// </summary>
+    /// <param name="amountOfDamage">dommages perçus</param>
     public void TakeDamage(int amountOfDamage)
     {
         currentHealth -= amountOfDamage;
