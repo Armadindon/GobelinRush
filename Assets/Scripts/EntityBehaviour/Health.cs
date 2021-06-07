@@ -33,7 +33,6 @@ public class Health : MonoBehaviour
     void Update()
     {
         m_Healthbar.gameObject.SetActive(currentHealth < health);
-        //prefab.SetEnabled(currentHealth == health);
 
         if (currentHealth > 0)
         {
