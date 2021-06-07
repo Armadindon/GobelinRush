@@ -252,6 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   side: 1
+  m_HealthbarPrefab: {fileID: 1396486188838438726}
   m_HealthbarForeground: {fileID: 417879376381593189}
 --- !u!1 &7572292523609549506
 GameObject:
@@ -371,6 +372,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23d36af5d190c042bbdc5f33029a675, type: 3}
+--- !u!1 &1396486188838438726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2031068200123436206, guid: a23d36af5d190c042bbdc5f33029a675,
+    type: 3}
+  m_PrefabInstance: {fileID: 1102991643910818792}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2595487830022853134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3119758005296159206, guid: a23d36af5d190c042bbdc5f33029a675,
