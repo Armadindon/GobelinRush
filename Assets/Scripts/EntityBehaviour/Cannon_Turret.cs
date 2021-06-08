@@ -42,6 +42,8 @@ public class Cannon_Turret : MonoBehaviour
     [Header("Economy")]
     [SerializeField]
     private int moneyCost;
+    
+    public TurretHUD m_TurretHUD { get; private set; }
 
     public int getMoneyCost()
     {
@@ -61,6 +63,10 @@ public class Cannon_Turret : MonoBehaviour
         ChangeVisibilityRange(_zoneRangeVisibility);
         //setup range cannonball
         ChangeRangeTurret(_rangeCannonball);
+
+        //get turret HUD
+        m_TurretHUD = gameObject.GetComponentInChildren<TurretHUD>();
+        m_TurretHUD.m_CannonTurret = this;
     }
 
     private void OnValidate()
@@ -159,6 +165,8 @@ public class Cannon_Turret : MonoBehaviour
     {
         //if Zone range visible hide it 
         if(zoneRangeVisibility == true) ChangeVisibilityRange(false);
+        //if HUD turret visible hid it
+        if (m_TurretHUD.HUDVisibilty == true) m_TurretHUD.ChangeVisibility(false);
     }
 
     

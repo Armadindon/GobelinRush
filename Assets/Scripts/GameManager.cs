@@ -18,7 +18,7 @@
         public int currentMoney { get; set; }
         #endregion
 
-        #region Turret managment SerializeField
+        #region Turret managment
         [Header("Turret prebab")]
         [Tooltip("Cannon Turret prefab")]
         [SerializeField] private GameObject m_CannonTurretPrefab;
@@ -39,11 +39,11 @@
                 //on left click
                 if (Input.GetMouseButtonDown(0))
                 {
-                    //get first placement zone
-                    RaycastHit hitPlacementZone = hits.FirstOrDefault(hit => hit.transform.name == "Placement_Zone");
-
-                    if (hitPlacementZone.transform != null && m_CannonTurretPrefab.GetComponent<Cannon_Turret>().getMoneyCost() <= currentMoney)
+                    if (hits.Where(hit => hit.transform.name == "Placement_Zone").Count() > 0 && m_CannonTurretPrefab.GetComponent<Cannon_Turret>().getMoneyCost() <= currentMoney)
                     {
+                        //get first placement zone
+                        RaycastHit hitPlacementZone = hits.FirstOrDefault(hit => hit.transform.name == "Placement_Zone");
+
                         //récupère l'objet Turret_PLacement         
                         GameObject m_TurretPlacement = hitPlacementZone.transform.parent.gameObject;
                         //Create newTurret
@@ -52,6 +52,18 @@
                         Destroy(hitPlacementZone.transform.gameObject);
                         //Remove money from Turret
                         currentMoney -= m_newTurretTurret.GetComponent<Cannon_Turret>().getMoneyCost();
+                    }
+                    else if(hits.Where(hit => hit.collider.name.Contains("Hitbox") && hit.transform.name.Contains("Turret")).Count() > 0)
+                    {
+                        //get first turret hit 
+                        RaycastHit hitTurret = hits.FirstOrDefault(hit => hit.collider.name.Contains("Hitbox") && hit.transform.name.Contains("Turret"));
+
+                        //get game object
+                        GameObject m_CannonTurret = hitTurret.transform.gameObject;
+                        //cast game object
+                        Cannon_Turret cannonTurret = (Cannon_Turret)m_CannonTurret.GetComponent(typeof(Cannon_Turret));
+                        //show visibility range
+                        cannonTurret.m_TurretHUD.ChangeVisibility(true);
                     }
                 }
 
