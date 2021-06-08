@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GoblinRush;
 public class CannonBall : MonoBehaviour
 {
     public float cannonballSpeed { private get; set; }
@@ -34,6 +35,7 @@ public class CannonBall : MonoBehaviour
 
             if (health.currentHealth <= 0 && m_enemy != null)
             {
+                GameManager.Instance.currentMoney += m_enemy.getMoneyReward();
                 m_CannonTurret.m_Enemies.Remove(m_enemy);
                 Destroy(collision.gameObject);
             }

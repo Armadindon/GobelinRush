@@ -354,6 +354,7 @@ MonoBehaviour:
   cannonballDamage: 5
   m_ZoneRangeSphere: {fileID: 8123935952297405786}
   _zoneRangeVisibility: 0
+  moneyCost: 25
 --- !u!54 &8374419095005474970
 Rigidbody:
   m_ObjectHideFlags: 0
