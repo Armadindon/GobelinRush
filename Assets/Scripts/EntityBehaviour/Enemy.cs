@@ -33,6 +33,15 @@ public class Enemy : MonoBehaviour
     private Castle m_CastleTarget;
     private Health m_CastleHealth;
 
+    [Header("Economy")]
+    [SerializeField]
+    private int moneyReward;
+
+    public int getMoneyReward()
+    {
+        return moneyReward;
+    }
+
     private void Awake()
     {
         m_Rigidbody = gameObject.GetComponent<Rigidbody>();

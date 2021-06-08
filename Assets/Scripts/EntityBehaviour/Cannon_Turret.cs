@@ -39,7 +39,14 @@ public class Cannon_Turret : MonoBehaviour
 
     private float cannonballNextShootTime;
 
+    [Header("Economy")]
+    [SerializeField]
+    private int moneyCost;
 
+    public int getMoneyCost()
+    {
+        return moneyCost;
+    }
 
     /// <summary>
     /// List of enemy in range of turret

@@ -11,6 +11,13 @@
 
     public class GameManager : Manager<GameManager>
     {
+        #region Economy
+        [Header("Economy")]
+        [SerializeField] private int startMoney;
+
+        public int currentMoney { get; set; }
+        #endregion
+
         #region Turret managment SerializeField
         [Header("Turret prebab")]
         [Tooltip("Cannon Turret prefab")]
@@ -35,7 +42,7 @@
                     //get first placement zone
                     RaycastHit hitPlacementZone = hits.FirstOrDefault(hit => hit.transform.name == "Placement_Zone");
 
-                    if (hitPlacementZone.transform != null)
+                    if (hitPlacementZone.transform != null && m_CannonTurretPrefab.GetComponent<Cannon_Turret>().getMoneyCost() <= currentMoney)
                     {
                         //récupère l'objet Turret_PLacement         
                         GameObject m_TurretPlacement = hitPlacementZone.transform.parent.gameObject;
@@ -43,6 +50,8 @@
                         GameObject m_newTurretTurret = Instantiate(m_CannonTurretPrefab, m_TurretPlacement.transform.position, Quaternion.identity);
                         //Destroy Turret placement zone
                         Destroy(hitPlacementZone.transform.gameObject);
+                        //Remove money from Turret
+                        currentMoney -= m_newTurretTurret.GetComponent<Cannon_Turret>().getMoneyCost();
                     }
                 }
 
@@ -123,7 +132,7 @@
         //Game initialization
         void InitNewGame(bool raiseStatsEvent = true)
         {
-
+            currentMoney = startMoney;
         }
         #endregion
 

@@ -267,6 +267,7 @@ MonoBehaviour:
     m_Bits: 0
   attackDamage: 50
   attackCooldownDuration: 2
+  moneyReward: 10
 --- !u!114 &8654728988337617674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,7 +282,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   side: 0
-  m_HealthbarPrefab: {fileID: 8218406957771961742}
   m_HealthbarForeground: {fileID: 7250916672071218349}
 --- !u!136 &7477656124368413884
 CapsuleCollider:
@@ -376,12 +376,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23d36af5d190c042bbdc5f33029a675, type: 3}
---- !u!1 &8218406957771961742 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2031068200123436206, guid: a23d36af5d190c042bbdc5f33029a675,
-    type: 3}
-  m_PrefabInstance: {fileID: 7936020193156512032}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5001796257072570566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3119758005296159206, guid: a23d36af5d190c042bbdc5f33029a675,
