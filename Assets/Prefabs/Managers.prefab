@@ -473,6 +473,8 @@ MonoBehaviour:
   startMoney: 50
   m_CannonTurretPrefab: {fileID: 4607456947165824349, guid: 4dc1f2c502f18d046a1283f8c3349d09,
     type: 3}
+  m_TurretPlacementPrefab: {fileID: 6558320916949709513, guid: c895197d825ac9b43996611d4eeefcfd,
+    type: 3}
 --- !u!1 &1696920944652120
 GameObject:
   m_ObjectHideFlags: 0

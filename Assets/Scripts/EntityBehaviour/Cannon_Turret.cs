@@ -1,11 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Cannon_Turret : MonoBehaviour
 {
-    [Header("Cannonball settings :")]
+    public enum Levels
+    {
+        NONE, Level1, Level2, Level3
+    }
 
+    [Header("Cannonball settings :")]
     [Tooltip("Cannonball prefab")]
     [SerializeField] private GameObject m_CannonballPrefab;
 
@@ -16,22 +21,39 @@ public class Cannon_Turret : MonoBehaviour
     [SerializeField] private float cannonballSpeed;
 
     [Tooltip("Cannonball cooldown")]
-    [SerializeField] private float cannonballShootCallDownDuration;
+    [SerializeField] private float cannonballShootCooldown;
 
     [Tooltip("Cannonball spawn")]
     [SerializeField] private Transform m_CannonballSpawn;
 
     [Tooltip("Cannonball damage")]
-    [SerializeField] private int cannonballDamage;
+    [SerializeField] public double cannonballDamage;
 
 
     [Header("Zone settings :")]
-
     [Tooltip("Zone range")]
     [SerializeField] private GameObject m_ZoneRangeSphere;
 
     [Tooltip("Set visibility on create")]
-    [SerializeField] public bool _zoneRangeVisibility;
+    [SerializeField] private bool _zoneRangeVisibility;
+
+
+    [Header("Turret upgrade :")]
+    [Tooltip("HUD visibility when upgrade")]
+    [SerializeField] public bool HUDVisibilityOnUpgrade;
+
+    [Tooltip("Level turret")]
+    [SerializeField] private Levels _actualLevel;
+
+    [Tooltip("Damage turret by level")]
+    [SerializeField] public double damageLevelUpgrade;
+
+    [Tooltip("Scale turret by level")]
+    [SerializeField] public double scaleLevelUpgrade;
+
+    [Tooltip("Cooldown reduction upgrade")]
+    [SerializeField] public float cooldownReductionUpgrade;
+
 
     public bool zoneRangeVisibility { get; private set; }
 
@@ -49,6 +71,12 @@ public class Cannon_Turret : MonoBehaviour
     {
         return moneyCost;
     }
+    
+    public Levels actualLevel { get; private set; }
+
+    private Vector3 initScale;
+
+
 
     /// <summary>
     /// List of enemy in range of turret
@@ -67,6 +95,10 @@ public class Cannon_Turret : MonoBehaviour
         //get turret HUD
         m_TurretHUD = gameObject.GetComponentInChildren<TurretHUD>();
         m_TurretHUD.m_CannonTurret = this;
+
+        //setup level turret
+        initScale = transform.localScale;
+        if(initScale != Vector3.zero)  ChangeTurretLevel(_actualLevel);
     }
 
     private void OnValidate()
@@ -75,6 +107,8 @@ public class Cannon_Turret : MonoBehaviour
         ChangeVisibilityRange(_zoneRangeVisibility);
         //setup range cannonball
         ChangeRangeTurret(_rangeCannonball);
+        //setup level turret
+        ChangeTurretLevel(_actualLevel);
     }
 
     void Update()
@@ -82,6 +116,12 @@ public class Cannon_Turret : MonoBehaviour
         //if there is enemy
         if (m_Enemies.Count > 0)
         {
+            //delete null enemies
+            foreach (var enemy in m_Enemies)
+                if(enemy==null) m_Enemies.Remove(enemy);
+
+            if (m_Enemies.Count <= 0) return;
+                
             //get look position
             Vector3 lookPos = m_Enemies[0].transform.position - transform.position;
             //don't allow y moove
@@ -95,7 +135,7 @@ public class Cannon_Turret : MonoBehaviour
             {
                 ShootCannonball(m_Enemies[0].gameObject.transform);
                 //wait before shoot again
-                cannonballNextShootTime = Time.time + cannonballShootCallDownDuration;
+                cannonballNextShootTime = Time.time + cannonballShootCooldown - (cooldownReductionUpgrade * ((int)actualLevel - 1));
             }
         }
     }
@@ -134,7 +174,7 @@ public class Cannon_Turret : MonoBehaviour
         m_Cannonball.m_Target = target;
         m_Cannonball.m_CannonTurret = this;
         //on attribue les dommages de la tourelle au boulet
-        m_Cannonball.attackDamage = cannonballDamage;
+        m_Cannonball.attackDamage = cannonballDamage + damageLevelUpgrade * ((int)actualLevel-1);
     }
 
     /// <summary>
@@ -146,7 +186,7 @@ public class Cannon_Turret : MonoBehaviour
         if (rangeCannonball == newRange) return;
         Transform zoneRange = this.transform.Find("Zone_Range");
         zoneRange.localScale = new Vector3(newRange, newRange, newRange);
-        rangeCannonball = newRange;
+        _rangeCannonball = rangeCannonball = newRange;
     }
 
     /// <summary>
@@ -157,7 +197,7 @@ public class Cannon_Turret : MonoBehaviour
     {
         if (zoneRangeVisibility == newVisibility) return;
         m_ZoneRangeSphere.GetComponent<Renderer>().enabled = newVisibility;
-        zoneRangeVisibility = newVisibility;
+        _zoneRangeVisibility = zoneRangeVisibility = newVisibility;
     }
 
 
@@ -166,8 +206,28 @@ public class Cannon_Turret : MonoBehaviour
         //if Zone range visible hide it 
         if(zoneRangeVisibility == true) ChangeVisibilityRange(false);
         //if HUD turret visible hid it
-        if (m_TurretHUD.HUDVisibilty == true) m_TurretHUD.ChangeVisibility(false);
+        if (m_TurretHUD.HUDVisibilty == true) m_TurretHUD.ChangeHUDVisibility(false);
     }
 
+    public void ChangeTurretLevel(Levels newLevel)
+    {
+        if (actualLevel == newLevel) return;
+        if ((int)newLevel > Enum.GetNames(typeof(Levels)).Length) return;
+        
+        Vector3 newScale = new Vector3( (float)(initScale.x + scaleLevelUpgrade * ((int)newLevel - 1)), 
+                                        (float)(initScale.y + scaleLevelUpgrade * ((int)newLevel - 1)), 
+                                        (float)(initScale.z + scaleLevelUpgrade * ((int)newLevel - 1)));
+        if (newScale == Vector3.zero || newScale.magnitude < Vector3.zero.magnitude) return;
+        transform.localScale = newScale;
+        _actualLevel = actualLevel = newLevel;
+        if ((int)actualLevel+1 >= Enum.GetValues(typeof(Levels)).Length)
+            m_TurretHUD.ChangeUpgradeVisibility(false);
+    }
     
+    public void NextTurretLevel()
+    {
+        if ((int)actualLevel + 1 >= Enum.GetValues(typeof(Levels)).Length) return;
+        Levels newLevel = (Cannon_Turret.Levels)Enum.GetValues(actualLevel.GetType()).GetValue((int)actualLevel + 1);
+        ChangeTurretLevel(newLevel);
+    }
 }
