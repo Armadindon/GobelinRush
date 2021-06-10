@@ -321,12 +321,16 @@ MonoBehaviour:
     type: 3}
   _rangeCannonball: 10
   cannonballSpeed: 15
-  cannonballShootCallDownDuration: 1
+  cannonballShootCooldown: 1
   m_CannonballSpawn: {fileID: 6985572606928079379}
   cannonballDamage: 5
   m_ZoneRangeSphere: {fileID: 8123935952297405786}
   _zoneRangeVisibility: 0
-  moneyCost: 25
+  HUDVisibilityOnUpgrade: 1
+  _actualLevel: 1
+  damageLevelUpgrade: 2
+  scaleLevelUpgrade: 0.1
+  cooldownReductionUpgrade: 0.1
 --- !u!54 &8374419095005474970
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -505,10 +509,30 @@ PrefabInstance:
       propertyPath: _HUDVisibility
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4944806744841485375, guid: d396dffb8d39f6343b491ea3838fee7f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5237692944067193351, guid: d396dffb8d39f6343b491ea3838fee7f,
         type: 3}
       propertyPath: m_Name
       value: TurretHUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237692944067193351, guid: d396dffb8d39f6343b491ea3838fee7f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321979567884957198, guid: d396dffb8d39f6343b491ea3838fee7f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111293311662473772, guid: d396dffb8d39f6343b491ea3838fee7f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d396dffb8d39f6343b491ea3838fee7f, type: 3}

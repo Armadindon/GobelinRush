@@ -140,8 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 807a9489169eba04598a68b5e2003ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CanvasTurretHUD: {fileID: 639208192869277411}
-  _upgradeVisibility: 1
+  m_CanvasTurretHUD: {fileID: 7111293311662473772}
+  _HUDVisibility: 0
+  m_UpgradeArrow: {fileID: 5321979567884957198}
+  _upgradeArrowVisibility: 1
 --- !u!1 &5321979567884957198
 GameObject:
   m_ObjectHideFlags: 0

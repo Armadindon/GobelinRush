@@ -5,30 +5,49 @@ using UnityEngine;
 public class TurretHUD : MonoBehaviour
 {
     [Header("Turret HUD")]
-    [SerializeField]
-    private bool _HUDVisibility;
-
-    private Canvas m_CanvasTurretHUD;
+    [SerializeField] private GameObject m_CanvasTurretHUD;
+    [SerializeField] private bool _HUDVisibility;
     public bool HUDVisibilty { get; private set; }
 
-    public Cannon_Turret m_CannonTurret { private get; set; }
+    [SerializeField] private GameObject m_UpgradeArrow;
+    [SerializeField] private bool _upgradeArrowVisibility;
+    public bool upgradeArrowVisibility { get; private set; }
 
+    public Cannon_Turret m_CannonTurret { private get; set; }
+    
     void Awake()
     {
-        //get canvas
-        m_CanvasTurretHUD = gameObject.GetComponentInChildren<Canvas>();
         //set visibility
-        ChangeVisibility(_HUDVisibility);
+        ChangeHUDVisibility(_HUDVisibility);
+        ChangeUpgradeVisibility(_upgradeArrowVisibility);
+    }
+   
+    private void OnValidate()
+    {
+        if (!Application.isPlaying) return;
+        //set visibility
+        ChangeHUDVisibility(_HUDVisibility);
+        ChangeUpgradeVisibility(_upgradeArrowVisibility);
     }
 
     /// <summary>
     /// Change HUD turret visibility
     /// </summary>
     /// <param name="newVisibility"></param>
-    public void ChangeVisibility(bool newVisibility)
+    public void ChangeHUDVisibility(bool newVisibility)
     {
         m_CanvasTurretHUD.gameObject.SetActive(newVisibility);
-        HUDVisibilty = newVisibility;
+        _HUDVisibility = HUDVisibilty = newVisibility;
+    }
+
+    /// <summary>
+    /// Change UpgradeArrow visibility
+    /// </summary>
+    /// <param name="newVisibility"></param>
+    public void ChangeUpgradeVisibility(bool newVisibility)
+    {
+        m_UpgradeArrow.SetActive(newVisibility);
+        _upgradeArrowVisibility = upgradeArrowVisibility = newVisibility;
     }
 
     void Update()

@@ -8,7 +8,7 @@ public class CannonBall : MonoBehaviour
     public Transform m_Target { private get; set; }
     public Cannon_Turret m_CannonTurret { private get; set; }
 
-    public int attackDamage { get; set; }
+    public double attackDamage { get; set; }
 
     void Update()
     {
@@ -19,6 +19,7 @@ public class CannonBall : MonoBehaviour
             //move CannonBall to target
             transform.position += transform.forward * Time.deltaTime * cannonballSpeed;
         }
+        else Destroy(this.gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -31,7 +32,7 @@ public class CannonBall : MonoBehaviour
             // on récupère son component.script Life
             Health health = collision.gameObject.GetComponent<Health>();
             // l'ennemi encaisse des dégâts
-            health.TakeDamage(attackDamage);
+            health.TakeDamage((int)attackDamage);
 
             if (health.currentHealth <= 0 && m_enemy != null)
             {

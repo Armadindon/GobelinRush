@@ -6,6 +6,7 @@
     using System.Collections.Generic;
     using SDD.Events;
     using System.Linq;
+    using System;
 
     public enum GameState { gameMenu, gamePlay, gameNextLevel, gamePause, gameOver, gameVictory }
 
@@ -22,6 +23,9 @@
         [Header("Turret prebab")]
         [Tooltip("Cannon Turret prefab")]
         [SerializeField] private GameObject m_CannonTurretPrefab;
+
+        [Tooltip("Turret placement")]
+        [SerializeField] private GameObject m_TurretPlacementPrefab;
 
         /// <summary>
         /// Placement turret on click
@@ -53,7 +57,7 @@
                         //Remove money from Turret
                         currentMoney -= m_newTurretTurret.GetComponent<Cannon_Turret>().getMoneyCost();
                     }
-                    else if(hits.Where(hit => hit.collider.name.Contains("Hitbox") && hit.transform.name.Contains("Turret")).Count() > 0)
+                    else if (hits.Where(hit => hit.collider.name.Contains("Hitbox") && hit.transform.name.Contains("Turret")).Count() > 0)
                     {
                         //get first turret hit 
                         RaycastHit hitTurret = hits.FirstOrDefault(hit => hit.collider.name.Contains("Hitbox") && hit.transform.name.Contains("Turret"));
@@ -63,8 +67,26 @@
                         //cast game object
                         Cannon_Turret cannonTurret = (Cannon_Turret)m_CannonTurret.GetComponent(typeof(Cannon_Turret));
                         //show visibility range
-                        cannonTurret.m_TurretHUD.ChangeVisibility(true);
+                        cannonTurret.m_TurretHUD.ChangeHUDVisibility(true);
                     }
+                    else if (hits.Where(hit => hit.collider.name == "RedCross" ).Count() > 0)
+                    {
+                        //get first placement zone
+                        RaycastHit redCorss = hits.FirstOrDefault(hit => hit.collider.name == "RedCross");
+                        GameObject m_CannonTurret = redCorss.transform.gameObject;
+                        Instantiate(m_TurretPlacementPrefab, m_CannonTurret.transform.position, Quaternion.identity);
+                        Destroy(m_CannonTurret);
+                    }
+                    else if (hits.Where(hit => hit.collider.name == "UpgradeArrow").Count() > 0)
+                    {
+                        //get first placement zone
+                        RaycastHit upgradeArrow = hits.FirstOrDefault(hit => hit.collider.name == "UpgradeArrow");
+                        GameObject m_CannonTurret = upgradeArrow.transform.gameObject;
+                        Cannon_Turret cannonTurret = (Cannon_Turret)m_CannonTurret.GetComponent(typeof(Cannon_Turret));
+                        cannonTurret.m_TurretHUD.ChangeHUDVisibility(cannonTurret.HUDVisibilityOnUpgrade);
+                        cannonTurret.NextTurretLevel();
+                    }
+
                 }
 
                 //on right click
