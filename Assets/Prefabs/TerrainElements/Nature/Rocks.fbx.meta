@@ -1,39 +1,19 @@
 fileFormatVersion: 2
-guid: 4fa59c84bccacc245a46916ed83329ae
+guid: b028c90d3d17c7849a589391cd891c6c
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: EA03_Village_OutBuilding_Cubby_01d_LOD0
-    100004: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    100006: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    100008: EA03_Village_OutBuilding_Cubby_01d_LOD3
-    400000: //RootNode
-    400002: EA03_Village_OutBuilding_Cubby_01d_LOD0
-    400004: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    400006: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    400008: EA03_Village_OutBuilding_Cubby_01d_LOD3
-    2100000: EA02_LPNP-Slavika_Colorsheet_v1.png.001
-    2300000: EA03_Village_OutBuilding_Cubby_01d_LOD0
-    2300002: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    2300004: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    2300006: EA03_Village_OutBuilding_Cubby_01d_LOD3
-    3300000: EA03_Village_OutBuilding_Cubby_01d_LOD0
-    3300002: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    3300004: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    3300006: EA03_Village_OutBuilding_Cubby_01d_LOD3
-    4300000: EA03_Village_OutBuilding_Cubby_01d_LOD3
-    4300002: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    4300004: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    4300006: EA03_Village_OutBuilding_Cubby_01d_LOD0
-    20500000: //RootNode
-    2186277476908879412: ImportLogs
-  externalObjects: {}
+  serializedVersion: 26
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color Pallet
+    second: {fileID: 2100000, guid: b725cacc7387b1f4e991c4bdfcd832c8, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
-    materialSearch: 1
-    materialLocation: 1
+    materialSearch: 2
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -58,42 +38,45 @@ ModelImporter:
     clipAnimations: []
     isReadable: 1
   meshes:
-    lODScreenPercentages:
-    - 0.25
-    - 0.125
-    - 0.0625
-    - 0.01
+    lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -103,6 +86,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

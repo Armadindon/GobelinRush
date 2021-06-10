@@ -1,33 +1,32 @@
 fileFormatVersion: 2
-guid: 4fa59c84bccacc245a46916ed83329ae
+guid: 7e3464691be8900418a72b728b9cfe8e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: EA03_Village_OutBuilding_Cubby_01d_LOD0
-    100004: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    100006: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    100008: EA03_Village_OutBuilding_Cubby_01d_LOD3
+    100002: EA03_Village_OutBuilding_Convenience_01a_LOD0
+    100004: EA03_Village_OutBuilding_Convenience_01a_LOD1
+    100006: EA03_Village_OutBuilding_Convenience_01a_LOD2
+    100008: EA03_Village_OutBuilding_Convenience_01a_LOD3
     400000: //RootNode
-    400002: EA03_Village_OutBuilding_Cubby_01d_LOD0
-    400004: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    400006: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    400008: EA03_Village_OutBuilding_Cubby_01d_LOD3
+    400002: EA03_Village_OutBuilding_Convenience_01a_LOD0
+    400004: EA03_Village_OutBuilding_Convenience_01a_LOD1
+    400006: EA03_Village_OutBuilding_Convenience_01a_LOD2
+    400008: EA03_Village_OutBuilding_Convenience_01a_LOD3
     2100000: EA02_LPNP-Slavika_Colorsheet_v1.png.001
-    2300000: EA03_Village_OutBuilding_Cubby_01d_LOD0
-    2300002: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    2300004: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    2300006: EA03_Village_OutBuilding_Cubby_01d_LOD3
-    3300000: EA03_Village_OutBuilding_Cubby_01d_LOD0
-    3300002: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    3300004: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    3300006: EA03_Village_OutBuilding_Cubby_01d_LOD3
-    4300000: EA03_Village_OutBuilding_Cubby_01d_LOD3
-    4300002: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    4300004: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    4300006: EA03_Village_OutBuilding_Cubby_01d_LOD0
+    2300000: EA03_Village_OutBuilding_Convenience_01a_LOD0
+    2300002: EA03_Village_OutBuilding_Convenience_01a_LOD1
+    2300004: EA03_Village_OutBuilding_Convenience_01a_LOD2
+    2300006: EA03_Village_OutBuilding_Convenience_01a_LOD3
+    3300000: EA03_Village_OutBuilding_Convenience_01a_LOD0
+    3300002: EA03_Village_OutBuilding_Convenience_01a_LOD1
+    3300004: EA03_Village_OutBuilding_Convenience_01a_LOD2
+    3300006: EA03_Village_OutBuilding_Convenience_01a_LOD3
+    4300000: EA03_Village_OutBuilding_Convenience_01a_LOD3
+    4300002: EA03_Village_OutBuilding_Convenience_01a_LOD2
+    4300004: EA03_Village_OutBuilding_Convenience_01a_LOD1
+    4300006: EA03_Village_OutBuilding_Convenience_01a_LOD0
     20500000: //RootNode
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
