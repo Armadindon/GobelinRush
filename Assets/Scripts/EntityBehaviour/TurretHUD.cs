@@ -13,7 +13,7 @@ public class TurretHUD : MonoBehaviour
     [SerializeField] private bool _upgradeArrowVisibility;
     public bool upgradeArrowVisibility { get; private set; }
 
-    public Cannon_Turret m_CannonTurret { private get; set; }
+    public Turret m_Turret { private get; set; }
     
     void Awake()
     {

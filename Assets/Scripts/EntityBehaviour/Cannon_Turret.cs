@@ -94,7 +94,7 @@ public class Cannon_Turret : MonoBehaviour
 
         //get turret HUD
         m_TurretHUD = gameObject.GetComponentInChildren<TurretHUD>();
-        m_TurretHUD.m_CannonTurret = this;
+        //m_TurretHUD.m_CannonTurret = this;
 
         //setup level turret
         initScale = transform.localScale;
