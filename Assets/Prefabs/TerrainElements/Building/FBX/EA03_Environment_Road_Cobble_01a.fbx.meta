@@ -1,31 +1,27 @@
 fileFormatVersion: 2
-guid: 4fa59c84bccacc245a46916ed83329ae
+guid: 784b4593ae6c56942a99223a33dcc169
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: EA03_Village_OutBuilding_Cubby_01d_LOD0
-    100004: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    100006: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    100008: EA03_Village_OutBuilding_Cubby_01d_LOD3
+    100002: EA03_Environment_Road_Cobble_01a_LOD0
+    100004: EA03_Environment_Road_Cobble_01a_LOD1
+    100006: EA03_Environment_Road_Cobble_01a_LOD2
     400000: //RootNode
-    400002: EA03_Village_OutBuilding_Cubby_01d_LOD0
-    400004: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    400006: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    400008: EA03_Village_OutBuilding_Cubby_01d_LOD3
-    2100000: EA02_LPNP-Slavika_Colorsheet_v1.png.001
-    2300000: EA03_Village_OutBuilding_Cubby_01d_LOD0
-    2300002: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    2300004: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    2300006: EA03_Village_OutBuilding_Cubby_01d_LOD3
-    3300000: EA03_Village_OutBuilding_Cubby_01d_LOD0
-    3300002: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    3300004: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    3300006: EA03_Village_OutBuilding_Cubby_01d_LOD3
-    4300000: EA03_Village_OutBuilding_Cubby_01d_LOD3
-    4300002: EA03_Village_OutBuilding_Cubby_01d_LOD2
-    4300004: EA03_Village_OutBuilding_Cubby_01d_LOD1
-    4300006: EA03_Village_OutBuilding_Cubby_01d_LOD0
+    400002: EA03_Environment_Road_Cobble_01a_LOD0
+    400004: EA03_Environment_Road_Cobble_01a_LOD1
+    400006: EA03_Environment_Road_Cobble_01a_LOD2
+    2100000: LPNP_Field_Colorsheet
+    2100002: EA02_LPNP-Slavika_Colorsheet_v1.png.001
+    2300000: EA03_Environment_Road_Cobble_01a_LOD0
+    2300002: EA03_Environment_Road_Cobble_01a_LOD1
+    2300004: EA03_Environment_Road_Cobble_01a_LOD2
+    3300000: EA03_Environment_Road_Cobble_01a_LOD0
+    3300002: EA03_Environment_Road_Cobble_01a_LOD1
+    3300004: EA03_Environment_Road_Cobble_01a_LOD2
+    4300000: EA03_Environment_Road_Cobble_01a_LOD2
+    4300002: EA03_Environment_Road_Cobble_01a_LOD1
+    4300004: EA03_Environment_Road_Cobble_01a_LOD0
     20500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
@@ -61,11 +57,11 @@ ModelImporter:
     lODScreenPercentages:
     - 0.25
     - 0.125
-    - 0.0625
     - 0.01
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -90,6 +86,9 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

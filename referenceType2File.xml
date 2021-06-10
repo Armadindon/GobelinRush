@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTypeDate xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeDate>
+    <guid>842f43ac94b4b4f72ac0898650ddcc44</guid>
+    <fileName>Assets/Cleaner/Editor/AssetCollector.cs</fileName>
+    <timeStamp>2015-12-09T19:51:26+01:00</timeStamp>
+    <typeFullName>
+      <string>AssetClean.AssetCollector</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>805140a4856714e288ea84985d3023df</guid>
+    <fileName>Assets/Cleaner/Editor/AssetReferenceCollection.cs</fileName>
+    <timeStamp>2015-12-09T19:51:26+01:00</timeStamp>
+    <typeFullName>
+      <string>AssetReferenceCollection</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>202c278a17939b24c8b79c0ee1f94d8f</guid>
+    <fileName>Assets/Cleaner/Editor/ClassReferenceCollection.cs</fileName>
+    <timeStamp>2015-12-09T19:51:26+01:00</timeStamp>
+    <typeFullName>
+      <string>AssetClean.ClassReferenceCollection</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>0d05386265df34bac8d0b6df44aa494c</guid>
+    <fileName>Assets/Cleaner/Editor/CollectionData.cs</fileName>
+    <timeStamp>2015-12-09T19:51:26+01:00</timeStamp>
+    <typeFullName>
+      <string>CollectionData</string>
+      <string>TypeDate</string>
+      <string>IReferenceCollection</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>74eec3bfba0594259ac2843353c082a3</guid>
+    <fileName>Assets/Cleaner/Editor/FindUnusedAssetsWindow.cs</fileName>
+    <timeStamp>2015-12-09T19:51:26+01:00</timeStamp>
+    <typeFullName>
+      <string>AssetClean.FindUnusedAssetsWindow</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>2c4f01a79a77a45a9a84004cc2b78098</guid>
+    <fileName>Assets/Cleaner/Editor/ShaderReferenceCollection.cs</fileName>
+    <timeStamp>2015-12-09T19:51:26+01:00</timeStamp>
+    <typeFullName>
+      <string>AssetClean.ShaderReferenceCollection</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>afc34466994795247baccde9d533d704</guid>
+    <fileName>Assets/Scripts/AllEvents.cs</fileName>
+    <timeStamp>2021-06-03T18:21:11.1124477+02:00</timeStamp>
+    <typeFullName>
+      <string>GameMenuEvent</string>
+      <string>GamePlayEvent</string>
+      <string>GamePauseEvent</string>
+      <string>GameResumeEvent</string>
+      <string>GameOverEvent</string>
+      <string>GameVictoryEvent</string>
+      <string>GameStatisticsChangedEvent</string>
+      <string>EscapeButtonClickedEvent</string>
+      <string>PlayButtonClickedEvent</string>
+      <string>ResumeButtonClickedEvent</string>
+      <string>MainMenuButtonClickedEvent</string>
+      <string>QuitButtonClickedEvent</string>
+      <string>ParamettreButtonClickedEvent</string>
+      <string>ScoreItemEvent</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>114bf7c7bdbd3c74b9e1b6815004a49c</guid>
+    <fileName>Assets/Scripts/CameraController.cs</fileName>
+    <timeStamp>2021-06-10T10:04:56.9591665+02:00</timeStamp>
+    <typeFullName>
+      <string>GoblinRush.CameraController</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>3c13ab814b1d4d640a2ac59971913440</guid>
+    <fileName>Assets/Scripts/Constants.cs</fileName>
+    <timeStamp>2021-06-01T13:48:09.3420442+02:00</timeStamp>
+    <typeFullName>
+      <string>Constants</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>32b782cb1d913b54ebf16df381d68102</guid>
+    <fileName>Assets/Scripts/GameManager.cs</fileName>
+    <timeStamp>2021-06-10T10:04:56.9631662+02:00</timeStamp>
+    <typeFullName>
+      <string>GoblinRush.GameState</string>
+      <string>GoblinRush.GameManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>6ea6fd308a5a4c542951d22b314eed18</guid>
+    <fileName>Assets/Scripts/HudManager.cs</fileName>
+    <timeStamp>2021-06-05T08:41:53.1431346+02:00</timeStamp>
+    <typeFullName>
+      <string>GoblinRush.HudManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>5d7ca549c593e47498a6696895393db0</guid>
+    <fileName>Assets/Scripts/LevelManager.cs</fileName>
+    <timeStamp>2021-06-05T08:41:53.1441344+02:00</timeStamp>
+    <typeFullName>
+      <string>GoblinRush.LevelManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>96143cf0a2092c449abf9893a9a83b69</guid>
+    <fileName>Assets/Scripts/MenuManager.cs</fileName>
+    <timeStamp>2021-06-05T08:41:53.1441344+02:00</timeStamp>
+    <typeFullName>
+      <string>GoblinRush.MenuManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>a0182bb9fa6526b4782af748bb110e56</guid>
+    <fileName>Assets/Scripts/TerrainGeneration.cs</fileName>
+    <timeStamp>2021-06-05T08:41:53.1451359+02:00</timeStamp>
+    <typeFullName>
+      <string>TerrainGeneration</string>
+      <string>TerrainType</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>82f1a322ebe42f64d9feb4474ef482a3</guid>
+    <fileName>Assets/Scripts/Wave.cs</fileName>
+    <timeStamp>2021-06-07T21:52:13.7931205+02:00</timeStamp>
+    <typeFullName>
+      <string>Wave</string>
+      <string>EnemyType</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>d2b4ade1f35aa104ea16a7da19248df5</guid>
+    <fileName>Assets/Scripts/Common/CustomTimer.cs</fileName>
+    <timeStamp>2021-06-01T13:48:09.3350431+02:00</timeStamp>
+    <typeFullName>
+      <string>CustomTimer</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>3121d566bf840db4aa8c22b8e7918163</guid>
+    <fileName>Assets/Scripts/Common/FlagsManager.cs</fileName>
+    <timeStamp>2021-06-01T13:48:09.336042+02:00</timeStamp>
+    <typeFullName>
+      <string>FlagsManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>ff96f17823d46ee43b6445a72c92540e</guid>
+    <fileName>Assets/Scripts/Common/Manager.cs</fileName>
+    <timeStamp>2021-06-01T13:48:09.336042+02:00</timeStamp>
+    <typeFullName>
+      <string>Manager`1</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>3b015ddc82eec8f4b93fbd1b39e09505</guid>
+    <fileName>Assets/Scripts/Common/MathTools.cs</fileName>
+    <timeStamp>2021-06-01T13:48:09.3370421+02:00</timeStamp>
+    <typeFullName>
+      <string>Tools.MathTools.ExtensionVector3</string>
+      <string>Tools.MathTools.CoordSystem</string>
+      <string>Tools.MathTools.CoordSystem+Cylindrical</string>
+      <string>Tools.MathTools.CoordSystem+Spherical</string>
+      <string>Tools.MathTools.CoordSystem+CylindricalShifted</string>
+      <string>Tools.MathTools.Funch</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>4fdfdc9c0beff1f4e991691b589cecd8</guid>
+    <fileName>Assets/Scripts/Common/MusicLoopsManager.cs</fileName>
+    <timeStamp>2021-06-01T13:48:09.3380419+02:00</timeStamp>
+    <typeFullName>
+      <string>MusicLoopsManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>1012ad8573493f64faa1d5568883e859</guid>
+    <fileName>Assets/Scripts/Common/PlaySoundOnClick.cs</fileName>
+    <timeStamp>2021-06-01T13:48:09.3380419+02:00</timeStamp>
+    <typeFullName>
+      <string>PlaySoundOnClick</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>dc322b5b21cc9e94a8fb2486933498d8</guid>
+    <fileName>Assets/Scripts/Common/SfxManager.cs</fileName>
+    <timeStamp>2021-06-01T13:48:09.3390414+02:00</timeStamp>
+    <typeFullName>
+      <string>MyAudioClip</string>
+      <string>SfxManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>e4efe83a9b84bb04683eefdafa7d0507</guid>
+    <fileName>Assets/Scripts/Common/SimpleGameStateObserver.cs</fileName>
+    <timeStamp>2021-06-01T13:48:09.3400468+02:00</timeStamp>
+    <typeFullName>
+      <string>SimpleGameStateObserver</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>7fa9928b7ba1955498a86716994bdaf1</guid>
+    <fileName>Assets/Scripts/Common/Singleton.cs</fileName>
+    <timeStamp>2021-06-01T13:48:09.3410447+02:00</timeStamp>
+    <typeFullName>
+      <string>Singleton`1</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>2864cf69f06013e4892f470129746c2c</guid>
+    <fileName>Assets/Scripts/Common/SingletonGameStateObserver.cs</fileName>
+    <timeStamp>2021-06-01T13:48:09.3420442+02:00</timeStamp>
+    <typeFullName>
+      <string>SingletonGameStateObserver`1</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>bb352bb2efc066444af521d9b07d759d</guid>
+    <fileName>Assets/Scripts/EntityBehaviour/CannonBall.cs</fileName>
+    <timeStamp>2021-06-10T10:04:56.960167+02:00</timeStamp>
+    <typeFullName>
+      <string>CannonBall</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>a6ec88b30355f744181b68508357cc36</guid>
+    <fileName>Assets/Scripts/EntityBehaviour/Cannon_Turret.cs</fileName>
+    <timeStamp>2021-06-10T10:04:56.9611664+02:00</timeStamp>
+    <typeFullName>
+      <string>Cannon_Turret</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>3a820e9d37b3762409d98f56d4e3a94c</guid>
+    <fileName>Assets/Scripts/EntityBehaviour/Castle.cs</fileName>
+    <timeStamp>2021-06-10T10:04:56.9611664+02:00</timeStamp>
+    <typeFullName>
+      <string>Castle</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>cf46f8d1ad32e2641ac6896ee9c1c17e</guid>
+    <fileName>Assets/Scripts/EntityBehaviour/Enemy.cs</fileName>
+    <timeStamp>2021-06-10T10:04:56.9621663+02:00</timeStamp>
+    <typeFullName>
+      <string>Enemy</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>9a8e0e1f5e963ba42b92aaadfbfa9779</guid>
+    <fileName>Assets/Scripts/EntityBehaviour/Health.cs</fileName>
+    <timeStamp>2021-06-10T10:04:56.9621663+02:00</timeStamp>
+    <typeFullName>
+      <string>Health</string>
+      <string>Health+Side</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>aaef47b7703179043956451e763cfab5</guid>
+    <fileName>Assets/Scripts/EntityBehaviour/House.cs</fileName>
+    <timeStamp>2021-06-07T21:52:13.7911199+02:00</timeStamp>
+    <typeFullName>
+      <string>House</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>5789743b88ed9cf468db5b6f9423b5a2</guid>
+    <fileName>Assets/Scripts/EntityBehaviour/Waypoint.cs</fileName>
+    <timeStamp>2021-06-05T08:41:53.1421338+02:00</timeStamp>
+    <typeFullName>
+      <string>Waypoint</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>4e1f67312a3df1a4fab227706679da5c</guid>
+    <fileName>Assets/Scripts/EventManager/Event.cs</fileName>
+    <timeStamp>2021-06-01T13:48:09.3440452+02:00</timeStamp>
+    <typeFullName>
+      <string>SDD.Events.Event</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>a7dc7a56758751640921cc650900689e</guid>
+    <fileName>Assets/Scripts/EventManager/EventManager.cs</fileName>
+    <timeStamp>2021-06-01T13:48:09.3440452+02:00</timeStamp>
+    <typeFullName>
+      <string>SDD.Events.EventManager</string>
+      <string>SDD.Events.EventManager+EventDelegate`1</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>063100f18d08369458b63405b47a3716</guid>
+    <fileName>Assets/Scripts/EventManager/IEventHandler.cs</fileName>
+    <timeStamp>2021-06-01T13:48:09.345045+02:00</timeStamp>
+    <typeFullName>
+      <string>SDD.Events.IEventHandler</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+</ArrayOfTypeDate>
