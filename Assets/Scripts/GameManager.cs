@@ -21,8 +21,8 @@
 
         #region Turret managment
         [Header("Turret prebab")]
-        [Tooltip("Cannon Turret prefab")]
-        [SerializeField] private GameObject m_CannonTurretPrefab;
+        [Tooltip("Crossbow Turret prefab")]
+        [SerializeField] private GameObject m_CrossbowTurretPrefab;
 
         [Tooltip("Turret placement")]
         [SerializeField] private GameObject m_TurretPlacementPrefab;
@@ -43,7 +43,7 @@
                 //on left click
                 if (Input.GetMouseButtonDown(0))
                 {
-                    if (hits.Where(hit => hit.transform.name == "Placement_Zone").Count() > 0 && m_CannonTurretPrefab.GetComponent<Cannon_Turret>().getMoneyCost() <= currentMoney)
+                    if (hits.Where(hit => hit.transform.name == "Placement_Zone").Count() > 0 && m_CrossbowTurretPrefab.GetComponent<Turret>().getTurretMoneyCost() <= currentMoney)
                     {
                         //get first placement zone
                         RaycastHit hitPlacementZone = hits.FirstOrDefault(hit => hit.transform.name == "Placement_Zone");
@@ -51,11 +51,11 @@
                         //récupère l'objet Turret_PLacement         
                         GameObject m_TurretPlacement = hitPlacementZone.transform.parent.gameObject;
                         //Create newTurret
-                        GameObject m_newTurretTurret = Instantiate(m_CannonTurretPrefab, m_TurretPlacement.transform.position, Quaternion.identity);
+                        GameObject m_newTurret = Instantiate(m_CrossbowTurretPrefab, m_TurretPlacement.transform.position, Quaternion.identity);
                         //Destroy Turret placement zone
                         Destroy(hitPlacementZone.transform.gameObject);
                         //Remove money from Turret
-                        currentMoney -= m_newTurretTurret.GetComponent<Cannon_Turret>().getMoneyCost();
+                        currentMoney -= m_newTurret.GetComponent<Turret>().getTurretMoneyCost();
                     }
                     else if (hits.Where(hit => hit.collider.name.Contains("Hitbox") && hit.transform.name.Contains("Turret")).Count() > 0)
                     {
@@ -63,28 +63,28 @@
                         RaycastHit hitTurret = hits.FirstOrDefault(hit => hit.collider.name.Contains("Hitbox") && hit.transform.name.Contains("Turret"));
 
                         //get game object
-                        GameObject m_CannonTurret = hitTurret.transform.gameObject;
+                        GameObject m_Turret = hitTurret.transform.gameObject;
                         //cast game object
-                        Cannon_Turret cannonTurret = (Cannon_Turret)m_CannonTurret.GetComponent(typeof(Cannon_Turret));
+                        Turret turret = (Turret)m_Turret.GetComponent(typeof(Turret));
                         //show visibility range
-                        cannonTurret.m_TurretHUD.ChangeHUDVisibility(true);
+                        turret.m_TurretHUD.ChangeHUDVisibility(true);
                     }
                     else if (hits.Where(hit => hit.collider.name == "RedCross" ).Count() > 0)
                     {
                         //get first placement zone
                         RaycastHit redCorss = hits.FirstOrDefault(hit => hit.collider.name == "RedCross");
-                        GameObject m_CannonTurret = redCorss.transform.gameObject;
-                        Instantiate(m_TurretPlacementPrefab, m_CannonTurret.transform.position, Quaternion.identity);
-                        Destroy(m_CannonTurret);
+                        GameObject m_Turret = redCorss.transform.gameObject;
+                        Instantiate(m_TurretPlacementPrefab, m_Turret.transform.position, Quaternion.identity);
+                        Destroy(m_Turret);
                     }
                     else if (hits.Where(hit => hit.collider.name == "UpgradeArrow").Count() > 0)
                     {
                         //get first placement zone
                         RaycastHit upgradeArrow = hits.FirstOrDefault(hit => hit.collider.name == "UpgradeArrow");
-                        GameObject m_CannonTurret = upgradeArrow.transform.gameObject;
-                        Cannon_Turret cannonTurret = (Cannon_Turret)m_CannonTurret.GetComponent(typeof(Cannon_Turret));
-                        cannonTurret.m_TurretHUD.ChangeHUDVisibility(cannonTurret.HUDVisibilityOnUpgrade);
-                        cannonTurret.NextTurretLevel();
+                        GameObject m_Turret = upgradeArrow.transform.gameObject;
+                        Turret turret = (Turret)m_Turret.GetComponent(typeof(Turret));
+                        turret.m_TurretHUD.ChangeHUDVisibility(turret.HUDVisibilityOnUpgrade);
+                        turret.NextTurretLevel();
                     }
 
                 }
@@ -98,11 +98,11 @@
                     if (hitTurret.transform != null)
                     {
                         //get game object
-                        GameObject m_CannonTurret = hitTurret.transform.gameObject;
+                        GameObject m_Turret = hitTurret.transform.gameObject;
                         //cast game object
-                        Cannon_Turret cannonTurret = (Cannon_Turret)m_CannonTurret.GetComponent(typeof(Cannon_Turret));
+                        Turret turret = (Turret)m_Turret.GetComponent(typeof(Turret));
                         //show visibility range
-                        cannonTurret.ChangeVisibilityRange(true);
+                        turret.ChangeVisibilityRange(true);
                     }
                 }
             }
