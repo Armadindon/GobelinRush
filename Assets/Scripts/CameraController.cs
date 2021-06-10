@@ -39,13 +39,13 @@
 			//if (!GameManager.Instance.IsPlaying) return;
 
 			if (Input.GetKey(KeyCode.RightArrow))
-				transform.RotateAround(m_Target.transform.position, Vector3.down, 50 * Time.deltaTime);
+				transform.RotateAround(m_Target.transform.position, Vector3.down, speed * Time.deltaTime);
 			if (Input.GetKey(KeyCode.LeftArrow))
-				transform.RotateAround(m_Target.transform.position, Vector3.up, 50 * Time.deltaTime);
+				transform.RotateAround(m_Target.transform.position, Vector3.up, speed * Time.deltaTime);
 			if (Input.GetKey(KeyCode.UpArrow) && mainCamera.fieldOfView >= minZoom)
-				mainCamera.fieldOfView -= 0.5f;
+				mainCamera.fieldOfView -= 5/speed;
 			if (Input.GetKey(KeyCode.DownArrow) && mainCamera.fieldOfView <= maxZoom)
-				mainCamera.fieldOfView += 0.5f;
+				mainCamera.fieldOfView += 5/speed;
 		}
 
 		protected override void GameMenu(GameMenuEvent e)
