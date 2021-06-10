@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
         m_Rigidbody = gameObject.GetComponent<Rigidbody>();
         m_Target = GameManager.Instance.FirstWaypoint;
         distToGround = gameObject.GetComponentInChildren<Collider>().bounds.extents.y;
+        transform.LookAt(m_Target);
     }
 
     private bool IsGrounded()

@@ -38,7 +38,6 @@ public class House : MonoBehaviour
         //Si on a dépassé le délai, et que il reste des waves
         if(isWaveFinished && Time.time > nextWave && m_waves.Length != currentWave)
         {
-            Debug.Log("On lance la Wave");
             isWaveFinished = false;
         }
 
@@ -46,7 +45,6 @@ public class House : MonoBehaviour
         //On fait deux if pour que aux même update on puisse instancier le premier ennemis
         if (m_waves.Length != currentWave && !isWaveFinished && Time.time > nextEnemy && !m_waves[currentWave].isFinished())
         {
-            Debug.Log("On lance un ennemi");
             m_InstanciatedEnemies.Add(
                 Instantiate(
                     m_prefabByEnemy[(int)m_waves[currentWave].getNextEnemy()], 
@@ -59,7 +57,6 @@ public class House : MonoBehaviour
         //Si la wave est finie et on a tué tous les mobs
         if (m_waves.Length != currentWave && m_waves[currentWave].isFinished() && m_InstanciatedEnemies.Count == 0)
         {
-            Debug.Log("On a fini la wave");
             isWaveFinished = true;
             nextWave = Time.time + timeBetweenWaves;
             currentWave++;
