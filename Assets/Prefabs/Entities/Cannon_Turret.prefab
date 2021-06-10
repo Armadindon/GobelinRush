@@ -331,6 +331,7 @@ MonoBehaviour:
   damageLevelUpgrade: 2
   scaleLevelUpgrade: 0.1
   cooldownReductionUpgrade: 0.1
+  moneyCost: 25
 --- !u!54 &8374419095005474970
 Rigidbody:
   m_ObjectHideFlags: 0
