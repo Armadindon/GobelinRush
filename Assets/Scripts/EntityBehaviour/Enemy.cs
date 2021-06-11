@@ -37,6 +37,11 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private int moneyReward;
 
+
+    [Header("Animation")]
+    [SerializeField]
+    private Animator m_animator;
+
     public int getMoneyReward()
     {
         return moneyReward;
@@ -63,7 +68,8 @@ public class Enemy : MonoBehaviour
         q[0] = 0;
         q[2] = 0;
         transform.rotation = q;
-
+        if (isAtTarget)
+            m_animator.SetBool("Attack", true);
         //si le temps écoulé est toujours supérieur au cooldown et que l'ennemi a atteint la cible
         if (Time.time > attackCooldown && isAtTarget)
         {
