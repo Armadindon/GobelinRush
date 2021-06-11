@@ -2,6 +2,7 @@
 {
     using System.Collections;
     using UnityEngine;
+    using System;
     using UnityEngine.UI;
     using System.Collections.Generic;
     using SDD.Events;
@@ -203,11 +204,12 @@
         #region Callbacks to Events issued by MenuManager
         private void MainMenuButtonClicked(MainMenuButtonClickedEvent e)
         {
-            Menu();
+            StartCoroutine(executeAfterDelay(1.0f, () => Menu()));
+            LevelManager.Instance.LoadMainMenu();
         }
         private void PlayButtonClicked(PlayButtonClickedEvent e)
         {
-            StartCoroutine(playAfterTransition(1.0f));
+            StartCoroutine(executeAfterDelay(1.0f, () => Play()));
             LevelManager.Instance.LoadNextLevel();
         }
 
@@ -295,32 +297,47 @@
         {
             if (LevelManager.Instance.haveNextLevel())
             {
-                StartCoroutine(playAfterTransition(1.5f));
+                StartCoroutine(executeAfterDelay(1.5f, () => Play()));
+                LevelManager.Instance.LoadNextLevel();
             }
             else
             {
-                StartCoroutine(overAfterTransition(1.5f));
+                StartCoroutine(executeAfterDelay(1.5f, () => Over()));
+                LevelManager.Instance.LoadMainMenu();
             }
-            LevelManager.Instance.LoadNextLevel();
         }
 
-        private IEnumerator playAfterTransition(float duration)
+        private IEnumerator executeAfterDelay(float duration, Action toExecute)
         {
             yield return new WaitForSeconds(duration);
-            Play();
-        }
-
-        private IEnumerator overAfterTransition(float duration)
-        {
-            yield return new WaitForSeconds(duration);
-            Over();
+            toExecute();
         }
         #endregion
 
         private void Update()
         {
+            if (!IsPlaying) return;
             updateTurretBehaviour();
-            if (m_house && m_house.finished() && m_GameState != GameState.gameNextLevel) GameNextLevel();
+
+            //On vérifie si on a gagne
+            if(m_house && m_house.finished())
+            {
+                if (LevelManager.Instance.haveNextLevel())
+                {
+                    GameNextLevel();
+                }
+                else
+                {
+                    Win();
+                }
+            }
+
+            //On verifie si on a perdu
+            if (!CastleTarget)
+            {
+                Over();
+            }
+
         }
     }
 }

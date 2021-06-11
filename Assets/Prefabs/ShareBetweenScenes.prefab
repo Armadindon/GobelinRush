@@ -297,6 +297,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4351757024955841694, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4766813818707661413}
+    - target: {fileID: 4351757024955841694, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenuButtonHasBeenClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351757024955841694, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GoblinRush.MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4849029896764679990, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -409,6 +424,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4878056413648212128}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4986674662770717222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 470182344862655110, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 4878056413648212128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4878056414536185983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -448,6 +469,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 114078314171263514, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
+        type: 3}
+      propertyPath: m_PanelWin
+      value: 
+      objectReference: {fileID: 4986674662770717222}
     - target: {fileID: 114078314171263514, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
         type: 3}
       propertyPath: m_PanelGameOver
