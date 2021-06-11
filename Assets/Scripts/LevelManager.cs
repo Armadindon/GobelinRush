@@ -76,5 +76,11 @@ namespace GoblinRush
         {
 			return currentLevel + 1 < levels.Length;
 		}
-    }
+
+		public void LoadMainMenu()
+        {
+			StartCoroutine(m_sceneLoader.LoadLevel(mainMenu));
+			currentLevel = -1;
+		}
+	}
 }
