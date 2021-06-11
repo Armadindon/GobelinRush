@@ -71,7 +71,6 @@
                     }
                     else if (hits.Where(hit => hit.collider.name == "RedCross" ).Count() > 0)
                     {
-                        //get first placement zone
                         RaycastHit redCorss = hits.FirstOrDefault(hit => hit.collider.name == "RedCross");
                         GameObject m_Turret = redCorss.transform.gameObject;
                         Instantiate(m_TurretPlacementPrefab, m_Turret.transform.position, Quaternion.identity);
@@ -79,7 +78,6 @@
                     }
                     else if (hits.Where(hit => hit.collider.name == "UpgradeArrow").Count() > 0)
                     {
-                        //get first placement zone
                         RaycastHit upgradeArrow = hits.FirstOrDefault(hit => hit.collider.name == "UpgradeArrow");
                         GameObject m_Turret = upgradeArrow.transform.gameObject;
                         Turret turret = (Turret)m_Turret.GetComponent(typeof(Turret));
