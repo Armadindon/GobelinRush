@@ -109,8 +109,36 @@
         #endregion
 
         #region Game State
+        [Header("Game State Management")]
+        [SerializeField]
         private GameState m_GameState;
         public bool IsPlaying { get { return m_GameState == GameState.gamePlay; } }
+
+        private void HandleByGameState()
+        {
+            switch (m_GameState)
+            {
+                case GameState.gameMenu:
+                    Menu();
+                    break;
+                case GameState.gamePlay:
+                    Play();
+                    break;
+                case GameState.gameNextLevel:
+                    break;
+                case GameState.gamePause:
+                    Pause();
+                    break;
+                case GameState.gameOver:
+                    Over();
+                    break;
+                case GameState.gameVictory:
+                    Win();
+                    break;
+                default:
+                    break;
+            }
+        }
         #endregion
 
         #region Castle Management
@@ -154,8 +182,7 @@
         #region Manager implementation
         protected override IEnumerator InitCoroutine()
         {
-            Menu();
-            InitNewGame(); // essentiellement pour que les statistiques du jeu soient mise à jour en HUD
+            HandleByGameState();
             yield break;
         }
         #endregion
@@ -176,6 +203,7 @@
 
         private void PlayButtonClicked(PlayButtonClickedEvent e)
         {
+            LevelManager.Instance.LoadNextLevel();
             Play();
         }
 
@@ -208,7 +236,7 @@
             EventManager.Instance.Raise(new GameMenuEvent());
         }
 
-        private void Play()
+        private void Play(bool raiseEvent = true)
         {
             InitNewGame();
             m_GameState = GameState.gamePlay;
@@ -238,6 +266,12 @@
             m_GameState = GameState.gameOver;
             EventManager.Instance.Raise(new GameOverEvent());
             if (SfxManager.Instance) SfxManager.Instance.PlaySfx2D(Constants.GAMEOVER_SFX);
+        }
+
+        private void Win()
+        {
+            m_GameState = GameState.gameVictory;
+            EventManager.Instance.Raise(new GameVictoryEvent());
         }
         #endregion
 
