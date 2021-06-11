@@ -61,7 +61,20 @@ namespace GoblinRush
 
 		public void LoadNextLevel()
         {
-			StartCoroutine(m_sceneLoader.LoadLevel(levels[++currentLevel]));
-        }
+			Debug.Log(currentLevel);
+			if(currentLevel + 1 >= levels.Length)
+            {
+				StartCoroutine(m_sceneLoader.LoadLevel(endScreen));
+			}
+			else
+            {
+				StartCoroutine(m_sceneLoader.LoadLevel(levels[++currentLevel]));
+			}
+		}
+
+		public bool haveNextLevel()
+        {
+			return currentLevel + 1 < levels.Length;
+		}
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using GoblinRush;
 
 
 public class House : MonoBehaviour
@@ -24,10 +25,11 @@ public class House : MonoBehaviour
     private float nextEnemy;
     private float nextWave;
 
-    private void Awake()
+    private void Start()
     {
         //On set up la première wave
         nextWave = Time.time + timeBetweenWaves;
+        GameManager.Instance.m_house = this;
     }
 
     private void Update()
@@ -61,6 +63,11 @@ public class House : MonoBehaviour
             nextWave = Time.time + timeBetweenWaves;
             currentWave++;
         }
+    }
+
+    public bool finished()
+    {
+        return currentWave == m_waves.Length;
     }
 
 }

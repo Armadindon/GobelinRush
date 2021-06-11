@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -130,6 +130,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4766861265778532765, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: m_GameState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767053815309325599, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: currentLevel
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4878056413853013012, guid: 3411a247e4e86d748a43af5c7b27baa8,
         type: 3}
       propertyPath: m_RootOrder
@@ -417,6 +427,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SwampLvl
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987438329063281798, guid: fb3b5e18c5ee09e49af91449f7ba5c8b,
+        type: 3}
+      propertyPath: m_waves.Array.data[0].m_wave.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb3b5e18c5ee09e49af91449f7ba5c8b, type: 3}

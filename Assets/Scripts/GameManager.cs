@@ -19,6 +19,10 @@
         public int currentMoney { get; set; }
         #endregion
 
+        #region House Management
+        public House m_house { get; set; }
+        #endregion
+
         #region Turret managment
         [Header("Turret prebab")]
         [Tooltip("Crossbow Turret prefab")]
@@ -162,6 +166,7 @@
             EventManager.Instance.AddListener<EscapeButtonClickedEvent>(EscapeButtonClicked);
             EventManager.Instance.AddListener<QuitButtonClickedEvent>(QuitButtonClicked);
             EventManager.Instance.AddListener<ParamettreButtonClickedEvent>(ParamettreButtonClicked);
+            EventManager.Instance.AddListener<NextLevelButtonClickedEvent>(NextLevelButtonClicked);
         }
 
         public override void UnsubscribeEvents()
@@ -175,7 +180,7 @@
             EventManager.Instance.RemoveListener<EscapeButtonClickedEvent>(EscapeButtonClicked);
             EventManager.Instance.RemoveListener<QuitButtonClickedEvent>(QuitButtonClicked);
             EventManager.Instance.RemoveListener<ParamettreButtonClickedEvent>(ParamettreButtonClicked);
-
+            EventManager.Instance.RemoveListener<NextLevelButtonClickedEvent>(NextLevelButtonClicked);
         }
         #endregion
 
@@ -189,7 +194,7 @@
 
         #region Game flow & Gameplay
         //Game initialization
-        void InitNewGame(bool raiseStatsEvent = true)
+        void InitNewGame()
         {
             currentMoney = startMoney;
         }
@@ -200,11 +205,10 @@
         {
             Menu();
         }
-
         private void PlayButtonClicked(PlayButtonClickedEvent e)
         {
+            StartCoroutine(playAfterTransition(1.0f));
             LevelManager.Instance.LoadNextLevel();
-            Play();
         }
 
         private void ResumeButtonClicked(ResumeButtonClickedEvent e)
@@ -226,6 +230,13 @@
         {
             Debug.Log("Paramettre has been clicked\n TODO: Parametre Menu");
         }
+
+        private void NextLevelButtonClicked(NextLevelButtonClickedEvent e)
+        {
+            if (m_GameState == GameState.gameNextLevel) LoadNextLevel();
+        }
+
+
         #endregion
 
         #region GameState methods
@@ -236,7 +247,7 @@
             EventManager.Instance.Raise(new GameMenuEvent());
         }
 
-        private void Play(bool raiseEvent = true)
+        private void Play()
         {
             InitNewGame();
             m_GameState = GameState.gamePlay;
@@ -273,11 +284,43 @@
             m_GameState = GameState.gameVictory;
             EventManager.Instance.Raise(new GameVictoryEvent());
         }
+
+        private void GameNextLevel()
+        {
+            m_GameState = GameState.gameNextLevel;
+            EventManager.Instance.Raise(new GameNextLevelEvent());
+        }
+
+        private void LoadNextLevel()
+        {
+            if (LevelManager.Instance.haveNextLevel())
+            {
+                StartCoroutine(playAfterTransition(1.5f));
+            }
+            else
+            {
+                StartCoroutine(overAfterTransition(1.5f));
+            }
+            LevelManager.Instance.LoadNextLevel();
+        }
+
+        private IEnumerator playAfterTransition(float duration)
+        {
+            yield return new WaitForSeconds(duration);
+            Play();
+        }
+
+        private IEnumerator overAfterTransition(float duration)
+        {
+            yield return new WaitForSeconds(duration);
+            Over();
+        }
         #endregion
 
         private void Update()
         {
             updateTurretBehaviour();
+            if (m_house && m_house.finished() && m_GameState != GameState.gameNextLevel) GameNextLevel();
         }
     }
 }
