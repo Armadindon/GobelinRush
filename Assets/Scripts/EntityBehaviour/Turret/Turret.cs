@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using GoblinRush;
 
 public class Turret : MonoBehaviour
 {
@@ -57,14 +58,26 @@ public class Turret : MonoBehaviour
     [SerializeField] private int turretMoneyCost;
     #endregion
 
+    /// <summary>
+    /// Range visibility
+    /// </summary>
     public bool zoneRangeVisibility { get; private set; }
 
+    /// <summary>
+    /// Range current turret
+    /// </summary>
     public float rangeTurret { get; private set; }
 
     private float projectileNextShootTime;
 
+    /// <summary>
+    /// Link Turret HUD
+    /// </summary>
     public TurretHUD m_TurretHUD { get; private set; }
 
+    /// <summary>
+    /// Level of current turret
+    /// </summary>
     public Levels actualLevel { get; private set; }
 
     /// <summary>
@@ -96,6 +109,7 @@ public class Turret : MonoBehaviour
 
     void Update()
     {
+        //delete all null enemy
         foreach (var enemy in m_Enemies.ToList())
             if (enemy == null) m_Enemies.Remove(enemy);
 
@@ -155,6 +169,7 @@ public class Turret : MonoBehaviour
     /// <param name="target"></param>
     private void ShootProjectile(Transform target)
     {
+        //shoot mulyiple projectile
         foreach (Transform m_ProjectileSpawn in m_ProjectileSpawns)
         {
             //Create projectile
@@ -195,18 +210,31 @@ public class Turret : MonoBehaviour
         zoneRangeVisibility = newVisibility;
     }
 
+    /// <summary>
+    /// Change turret level
+    /// </summary>
+    /// <param name="newLevel"></param>
     public void ChangeTurretLevel(Levels newLevel)
     {
         if (actualLevel == newLevel) return;
         if ((int)newLevel >= Enum.GetNames(typeof(Levels)).Length) return;
-        
-        GameObject m_newTurret = Instantiate(m_TurretPrefab[(int)actualLevel+1], gameObject.transform.position, Quaternion.identity);
+        GameObject m_newTurretPrefab = m_TurretPrefab[(int)actualLevel + 1];
+        //if can't buy it
+        if (GameManager.Instance.currentMoney < m_newTurretPrefab.GetComponent<Turret>().getTurretMoneyCost()) return;
+        //money cost
+        GameManager.Instance.currentMoney -= m_newTurretPrefab.GetComponent<Turret>().getTurretMoneyCost();
+        //create new turret level
+        GameObject m_newTurret = Instantiate(m_newTurretPrefab, gameObject.transform.position, Quaternion.identity);
+        //Destroy old level turret
         Destroy(gameObject);
         actualLevel = newLevel;
         if ((int)actualLevel + 1 >= Enum.GetValues(typeof(Levels)).Length)
-            m_TurretHUD.ChangeUpgradeVisibility(false);
+            m_TurretHUD.ChangeUpgradeVisibility(false);   
     }
 
+    /// <summary>
+    /// Next level of turret
+    /// </summary>
     public void NextTurretLevel()
     {
         if ((int)actualLevel + 1 >= Enum.GetValues(typeof(Levels)).Length) return;
@@ -214,11 +242,12 @@ public class Turret : MonoBehaviour
         ChangeTurretLevel(newLevel);
     }
 
-
+    /// <summary>
+    /// Get money cost turret
+    /// </summary>
+    /// <returns></returns>
     public int getTurretMoneyCost()
     {
         return turretMoneyCost;
     }
-
-
 }
