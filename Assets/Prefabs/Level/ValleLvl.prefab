@@ -12538,6 +12538,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 736674374315437973, guid: d845aadca64f8f94ca26aee85f5cd59e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 736674374315437973, guid: d845aadca64f8f94ca26aee85f5cd59e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 736674374315437973, guid: d845aadca64f8f94ca26aee85f5cd59e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.23
+      objectReference: {fileID: 0}
     - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
         type: 3}
       propertyPath: timeBetweenWaves

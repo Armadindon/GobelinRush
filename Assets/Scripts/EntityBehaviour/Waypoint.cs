@@ -26,11 +26,11 @@ public class Waypoint : MonoBehaviour
         if (m_nextTarget.Length == 0 && GameManager.Instance.CastleTarget) SetCastleAsTarget();
         //TODO : Faire des tags pours les ennemis, ou mettre un layer
         //TODO : Mettre les waypoint dans un layer à part, pour éviter les collisions avec le sol
-        if (other.gameObject.name.Contains("Enemy"))
+        if (other.gameObject.name.Contains("Collider"))
         {
             Debug.Log("On change de direction !");
             GameObject enemy = other.gameObject;
-            Enemy enemyScript = enemy.GetComponent<Enemy>();
+            Enemy enemyScript = enemy.GetComponentInParent<Enemy>();
             if (enemyScript)
             {
                 enemyScript.setTarget(m_nextTarget[Random.Range(0, m_nextTarget.Length)]);
