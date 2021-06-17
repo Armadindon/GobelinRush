@@ -59,16 +59,15 @@ namespace GoblinRush
         {
         }
 
-		public void LoadNextLevel()
+		public void LoadNextLevel(Action executeAfterSceneChange = null)
         {
-			Debug.Log(currentLevel);
 			if(currentLevel + 1 >= levels.Length)
             {
-				StartCoroutine(m_sceneLoader.LoadLevel(endScreen));
+				StartCoroutine(m_sceneLoader.LoadLevel(endScreen, executeAfterSceneChange));
 			}
 			else
             {
-				StartCoroutine(m_sceneLoader.LoadLevel(levels[++currentLevel]));
+				StartCoroutine(m_sceneLoader.LoadLevel(levels[++currentLevel], executeAfterSceneChange));
 			}
 		}
 
@@ -77,9 +76,9 @@ namespace GoblinRush
 			return currentLevel + 1 < levels.Length;
 		}
 
-		public void LoadMainMenu()
+		public void LoadMainMenu(Action executeAfterSceneChange = null)
         {
-			StartCoroutine(m_sceneLoader.LoadLevel(mainMenu));
+			StartCoroutine(m_sceneLoader.LoadLevel(mainMenu, executeAfterSceneChange));
 			currentLevel = -1;
 		}
 	}
