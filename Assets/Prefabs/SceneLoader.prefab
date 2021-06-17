@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3109556943595463562}
   - component: {fileID: 3109556943595463561}
   - component: {fileID: 3109556943595463556}
+  - component: {fileID: 1203711969}
   m_Layer: 0
   m_Name: CircleTransition
   m_TagString: Untagged
@@ -120,6 +121,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1203711969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3109556943595463567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e43435ec9d3951e489d8685f45d49c32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3109556944290172084
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animator: {fileID: 3109556943595463556}
-  animationDuration: 1
+  m_animationState: {fileID: 1203711969}
 --- !u!1 &3109556944605405908
 GameObject:
   m_ObjectHideFlags: 0

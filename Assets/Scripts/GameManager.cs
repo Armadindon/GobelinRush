@@ -204,13 +204,11 @@
         #region Callbacks to Events issued by MenuManager
         private void MainMenuButtonClicked(MainMenuButtonClickedEvent e)
         {
-            StartCoroutine(executeAfterDelay(1.0f, () => Menu()));
-            LevelManager.Instance.LoadMainMenu();
+            LevelManager.Instance.LoadMainMenu(() => Menu());
         }
         private void PlayButtonClicked(PlayButtonClickedEvent e)
         {
-            StartCoroutine(executeAfterDelay(1.0f, () => Play()));
-            LevelManager.Instance.LoadNextLevel();
+            LevelManager.Instance.LoadNextLevel(() => Play());
         }
 
         private void ResumeButtonClicked(ResumeButtonClickedEvent e)
@@ -295,22 +293,7 @@
 
         private void LoadNextLevel()
         {
-            if (LevelManager.Instance.haveNextLevel())
-            {
-                StartCoroutine(executeAfterDelay(1.5f, () => Play()));
-                LevelManager.Instance.LoadNextLevel();
-            }
-            else
-            {
-                StartCoroutine(executeAfterDelay(1.5f, () => Over()));
-                LevelManager.Instance.LoadMainMenu();
-            }
-        }
-
-        private IEnumerator executeAfterDelay(float duration, Action toExecute)
-        {
-            yield return new WaitForSeconds(duration);
-            toExecute();
+            LevelManager.Instance.LoadNextLevel(() => Play());
         }
         #endregion
 
