@@ -15,7 +15,7 @@ public class House : MonoBehaviour
     [SerializeField]
     private float timeBetweenEnemy;
     [SerializeField]
-    private Wave[] m_waves;
+    private Wave[] m_Waves;
 
     private List<GameObject> m_InstanciatedEnemies = new List<GameObject>();
 
@@ -29,7 +29,7 @@ public class House : MonoBehaviour
     {
         //On set up la première wave
         nextWave = Time.time + timeBetweenWaves;
-        GameManager.Instance.m_house = this;
+        GameManager.Instance.m_House = this;
     }
 
     private void Update()
@@ -39,18 +39,18 @@ public class House : MonoBehaviour
         m_InstanciatedEnemies = m_InstanciatedEnemies.Where(enemy => enemy != null).ToList();
 
         //Si on a dépassé le délai, et que il reste des waves
-        if(isWaveFinished && Time.time > nextWave && m_waves.Length != currentWave)
+        if(isWaveFinished && Time.time > nextWave && m_Waves.Length != currentWave)
         {
             isWaveFinished = false;
         }
 
 
         //On fait deux if pour que aux même update on puisse instancier le premier ennemis
-        if (m_waves.Length != currentWave && !isWaveFinished && Time.time > nextEnemy && !m_waves[currentWave].isFinished())
+        if (m_Waves.Length != currentWave && !isWaveFinished && Time.time > nextEnemy && !m_Waves[currentWave].isFinished())
         {
             m_InstanciatedEnemies.Add(
                 Instantiate(
-                    m_prefabByEnemy[(int)m_waves[currentWave].getNextEnemy()], 
+                    m_prefabByEnemy[(int)m_Waves[currentWave].getNextEnemy()], 
                     m_enemySpawnPoint.position, Quaternion.identity)
                 );
             nextEnemy = Time.time + timeBetweenEnemy;
@@ -58,7 +58,7 @@ public class House : MonoBehaviour
 
 
         //Si la wave est finie et on a tué tous les mobs
-        if (m_waves.Length != currentWave && m_waves[currentWave].isFinished() && m_InstanciatedEnemies.Count == 0)
+        if (m_Waves.Length != currentWave && m_Waves[currentWave].isFinished() && m_InstanciatedEnemies.Count == 0)
         {
             isWaveFinished = true;
             nextWave = Time.time + timeBetweenWaves;
@@ -68,7 +68,7 @@ public class House : MonoBehaviour
 
     public bool finished()
     {
-        return currentWave == m_waves.Length;
+        return currentWave == m_Waves.Length;
     }
 
 }

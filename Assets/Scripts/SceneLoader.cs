@@ -9,21 +9,21 @@ public class SceneLoader : MonoBehaviour
 {
     [Header("Animation")]
     [SerializeField]
-    private Animator m_animator;
+    private Animator m_Animator;
 
     [SerializeField]
-    private NotifyAnimationEnd m_animationState;
+    private NotifyAnimationEnd m_AnimationState;
 
     private void Start()
     {
-        LevelManager.Instance.m_sceneLoader = this;
+        LevelManager.Instance.m_SceneLoader = this;
     }
 
     public IEnumerator LoadLevel(int level, Action toExecute = null)
     {
-        m_animator.SetTrigger("Start");
+        m_Animator.SetTrigger("Start");
 
-        while(!m_animationState.AnimationEnded) yield return null; //On attend que l'animation finisse
+        while(!m_AnimationState.AnimationEnded) yield return null; //On attend que l'animation finisse
 
         SceneManager.LoadScene(level);
         if (toExecute != null) toExecute();

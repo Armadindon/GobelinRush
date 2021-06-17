@@ -45,8 +45,8 @@ public class Enemy : MonoBehaviour
     
     //Gestion de la pause
     private bool paused = false;
-    private Vector3 savedVelocity;
-    private Vector3 savedAngularVelocity;
+    private Vector3 m_SavedVelocity;
+    private Vector3 m_SavedAngularVelocity;
 
 
     public int getMoneyReward()
@@ -166,16 +166,16 @@ public class Enemy : MonoBehaviour
 
     void OnPauseGame()
     {
-        savedVelocity = m_Rigidbody.velocity;
-        savedAngularVelocity = m_Rigidbody.angularVelocity;
+        m_SavedVelocity = m_Rigidbody.velocity;
+        m_SavedAngularVelocity = m_Rigidbody.angularVelocity;
         m_Rigidbody.isKinematic = true;
     }
 
     void OnResumeGame()
     {
         m_Rigidbody.isKinematic = false;
-        m_Rigidbody.AddForce(savedVelocity, ForceMode.VelocityChange);
-        m_Rigidbody.AddTorque(savedAngularVelocity, ForceMode.VelocityChange);
+        m_Rigidbody.AddForce(m_SavedVelocity, ForceMode.VelocityChange);
+        m_Rigidbody.AddTorque(m_SavedAngularVelocity, ForceMode.VelocityChange);
     }
 
 }

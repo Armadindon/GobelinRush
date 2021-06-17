@@ -229,6 +229,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 0}
+  speed: 0
+  minZoom: 0
+  maxZoom: 0
 --- !u!850595691 &1401998991
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -456,10 +459,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 855540057, guid: 201bfc39c5f0b9041aa2db0a86e5d921, type: 3}
-      propertyPath: animationDuration
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3109556944290172084, guid: 201bfc39c5f0b9041aa2db0a86e5d921,
         type: 3}
       propertyPath: m_Name
