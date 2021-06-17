@@ -34,6 +34,7 @@ public class House : MonoBehaviour
 
     private void Update()
     {
+        if (!GameManager.Instance.IsPlaying) return;
         //On vérifie que les gameobjects des ennemis sont toujours là (sinon c'est qu'ils sont dead)
         m_InstanciatedEnemies = m_InstanciatedEnemies.Where(enemy => enemy != null).ToList();
 

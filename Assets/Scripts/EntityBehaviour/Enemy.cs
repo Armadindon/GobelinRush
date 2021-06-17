@@ -42,6 +42,13 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private Animator m_animator;
 
+    
+    //Gestion de la pause
+    private bool paused = false;
+    private Vector3 savedVelocity;
+    private Vector3 savedAngularVelocity;
+
+
     public int getMoneyReward()
     {
         return moneyReward;
@@ -63,6 +70,21 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (!GameManager.Instance.IsPlaying)
+        {
+            if (!paused)
+            {
+                paused = true;
+                OnPauseGame();
+            }
+            return;
+        }
+        else if (paused)
+        {
+            paused = false;
+            OnResumeGame();
+        }
+
         // TODO : Trouver un moyen de redresser le personnage petit à petit
         Quaternion q = transform.rotation;
         q[0] = 0;
@@ -82,6 +104,8 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (paused) return;
+
         //On code le behaviour de l'enemy
 
         //On commence par régler la rotation
@@ -135,9 +159,23 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
     public void setTarget(Transform target)
     {
         this.m_Target = target;
     }
+
+    void OnPauseGame()
+    {
+        savedVelocity = m_Rigidbody.velocity;
+        savedAngularVelocity = m_Rigidbody.angularVelocity;
+        m_Rigidbody.isKinematic = true;
+    }
+
+    void OnResumeGame()
+    {
+        m_Rigidbody.isKinematic = false;
+        m_Rigidbody.AddForce(savedVelocity, ForceMode.VelocityChange);
+        m_Rigidbody.AddTorque(savedAngularVelocity, ForceMode.VelocityChange);
+    }
+
 }
