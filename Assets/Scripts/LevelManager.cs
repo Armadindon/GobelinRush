@@ -19,7 +19,7 @@ namespace GoblinRush
         #endregion
 
         #region Scene Management
-		public SceneLoader m_sceneLoader { get; set; }
+		public SceneLoader m_SceneLoader { get; set; }
 
 		[Header("Scene Management")]
 		[SerializeField]
@@ -63,22 +63,22 @@ namespace GoblinRush
         {
 			if(currentLevel + 1 >= levels.Length)
             {
-				StartCoroutine(m_sceneLoader.LoadLevel(endScreen, executeAfterSceneChange));
+				StartCoroutine(m_SceneLoader.LoadLevel(endScreen, executeAfterSceneChange));
 			}
 			else
             {
-				StartCoroutine(m_sceneLoader.LoadLevel(levels[++currentLevel], executeAfterSceneChange));
+				StartCoroutine(m_SceneLoader.LoadLevel(levels[++currentLevel], executeAfterSceneChange));
 			}
 		}
 
-		public bool haveNextLevel()
+		public bool HaveNextLevel()
         {
 			return currentLevel + 1 < levels.Length;
 		}
 
 		public void LoadMainMenu(Action executeAfterSceneChange = null)
         {
-			StartCoroutine(m_sceneLoader.LoadLevel(mainMenu, executeAfterSceneChange));
+			StartCoroutine(m_SceneLoader.LoadLevel(mainMenu, executeAfterSceneChange));
 			currentLevel = -1;
 		}
 	}

@@ -12560,8 +12560,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
         type: 3}
+      propertyPath: m_Waves.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
+        type: 3}
       propertyPath: m_waves.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
+        type: 3}
+      propertyPath: m_Waves.Array.data[0].m_wave.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
         type: 3}

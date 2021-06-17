@@ -21,7 +21,7 @@
         #endregion
 
         #region House Management
-        public House m_house { get; set; }
+        public House m_House { get; set; }
         #endregion
 
         #region Turret managment
@@ -303,9 +303,9 @@
             updateTurretBehaviour();
 
             //On vérifie si on a gagne
-            if(m_house && m_house.finished())
+            if(m_House && m_House.finished())
             {
-                if (LevelManager.Instance.haveNextLevel())
+                if (LevelManager.Instance.HaveNextLevel())
                 {
                     GameNextLevel();
                 }
