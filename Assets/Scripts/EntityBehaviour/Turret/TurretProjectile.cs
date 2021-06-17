@@ -13,6 +13,8 @@ public class TurretProjectile : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.Instance.IsPlaying) return;
+
         //si détection d'un ennemi
         if (m_Target)
         {

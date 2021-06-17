@@ -109,6 +109,8 @@ public class Turret : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.Instance.IsPlaying) return;
+
         //delete all null enemy
         foreach (var enemy in m_Enemies.ToList())
             if (enemy == null) m_Enemies.Remove(enemy);
