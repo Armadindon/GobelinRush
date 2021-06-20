@@ -42,9 +42,9 @@
 				transform.RotateAround(m_Target.transform.position, Vector3.up, speed * Time.deltaTime);
 			//zoom/dezoom
 			if (Input.GetKey(KeyCode.UpArrow) && m_mainCamera.fieldOfView >= minZoom)
-				m_mainCamera.fieldOfView -= 5/speed;
+				m_mainCamera.fieldOfView -= speed * 0.01f;
 			if (Input.GetKey(KeyCode.DownArrow) && m_mainCamera.fieldOfView <= maxZoom)
-				m_mainCamera.fieldOfView += 5/speed;
+				m_mainCamera.fieldOfView += speed * 0.01f;
 		}
 
 		protected override void GameMenu(GameMenuEvent e)
