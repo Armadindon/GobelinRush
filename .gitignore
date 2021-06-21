@@ -10,3 +10,4 @@ obj/
 
 #Config CSharp
 *.csproj
+ProjectSettings/Packages/com.unity.probuilder/Settings.json
