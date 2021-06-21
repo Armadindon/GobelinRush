@@ -16,7 +16,7 @@
         [Header("Economy")]
         [SerializeField] private int startMoney;
 
-        public int currentMoney { get; set; }
+        public int currentMoney { get; set; } = -1;
         #endregion
 
         #region House Management
@@ -224,7 +224,7 @@
         //Game initialization
         void InitNewGame()
         {
-            currentMoney = startMoney;
+            if(currentMoney == -1) currentMoney = startMoney;
         }
         #endregion
 
