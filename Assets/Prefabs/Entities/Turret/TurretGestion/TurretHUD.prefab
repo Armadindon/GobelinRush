@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4944806744841485375}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 5576610389570067985}
   m_RootOrder: 1
@@ -142,8 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CanvasTurretHUD: {fileID: 7111293311662473772}
   _HUDVisibility: 0
-  m_UpgradeArrow: {fileID: 5321979567884957198}
-  _upgradeArrowVisibility: 1
+  m_UpgradeArrow: {fileID: 5070501729440833462}
 --- !u!1 &5321979567884957198
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +170,7 @@ Transform:
   m_GameObject: {fileID: 5321979567884957198}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 2.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 5576610389570067985}
   m_RootOrder: 0

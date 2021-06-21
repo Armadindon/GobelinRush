@@ -1,3 +1,4 @@
+using GoblinRush;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +10,7 @@ public class TurretHUD : MonoBehaviour
     [SerializeField] private bool _HUDVisibility;
     public bool HUDVisibilty { get; private set; }
 
-    [SerializeField] private GameObject m_UpgradeArrow;
-    [SerializeField] private bool _upgradeArrowVisibility;
-    public bool upgradeArrowVisibility { get; private set; }
+    [SerializeField] private SpriteRenderer m_UpgradeArrow;
 
     public Turret m_Turret { private get; set; }
     
@@ -19,7 +18,6 @@ public class TurretHUD : MonoBehaviour
     {
         //set visibility
         ChangeHUDVisibility(_HUDVisibility);
-        ChangeUpgradeVisibility(_upgradeArrowVisibility);
     }
    
     private void OnValidate()
@@ -27,7 +25,6 @@ public class TurretHUD : MonoBehaviour
         if (!Application.isPlaying) return;
         //set visibility
         ChangeHUDVisibility(_HUDVisibility);
-        ChangeUpgradeVisibility(_upgradeArrowVisibility);
     }
 
     /// <summary>
@@ -40,19 +37,19 @@ public class TurretHUD : MonoBehaviour
         _HUDVisibility = HUDVisibilty = newVisibility;
     }
 
-    /// <summary>
-    /// Change UpgradeArrow visibility
-    /// </summary>
-    /// <param name="newVisibility"></param>
-    public void ChangeUpgradeVisibility(bool newVisibility)
-    {
-        m_UpgradeArrow.SetActive(newVisibility);
-        _upgradeArrowVisibility = upgradeArrowVisibility = newVisibility;
-    }
-
     void Update()
     {
         //if HUD turret visible look at camera
         if (HUDVisibilty) m_CanvasTurretHUD.transform.LookAt(Camera.main.transform.position, Vector3.up);
+
+        if (GameManager.Instance.currentMoney < m_Turret.getTurretMoneyCost())
+            m_UpgradeArrow.color = new Color(0, 0, 0);
+        else
+            m_UpgradeArrow.color = new Color(255, 255, 255);
+    }
+
+    public void DeleteUpgrade()
+    {
+        Destroy(m_UpgradeArrow.gameObject);
     }
 }

@@ -231,7 +231,7 @@ public class Turret : MonoBehaviour
         Destroy(gameObject);
         actualLevel = newLevel;
         if ((int)actualLevel + 1 >= Enum.GetValues(typeof(Levels)).Length)
-            m_TurretHUD.ChangeUpgradeVisibility(false);   
+            m_TurretHUD.DeleteUpgrade();   
     }
 
     /// <summary>
