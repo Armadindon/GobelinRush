@@ -332,6 +332,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyGameObjectOnLoad: 0
+  levels: 
+  mainMenu: 0
+  endScreen: 0
+  currentLevel: 0
 --- !u!1 &1483211568883150
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +479,7 @@ MonoBehaviour:
     type: 3}
   m_TurretPlacementPrefab: {fileID: 6558320916949709513, guid: c895197d825ac9b43996611d4eeefcfd,
     type: 3}
+  m_GameState: 0
 --- !u!1 &1696920944652120
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,6 +527,8 @@ MonoBehaviour:
   m_PanelMainMenu: {fileID: 0}
   m_PanelInGameMenu: {fileID: 0}
   m_PanelGameOver: {fileID: 0}
+  m_PanelWin: {fileID: 0}
+  m_PanelBetweenLevels: {fileID: 0}
 --- !u!1 &1708910193215040
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,6 +690,51 @@ Transform:
   - {fileID: 4627149022347582}
   - {fileID: 4947221284882222}
   - {fileID: 4306328927789822}
+  - {fileID: 1671436279960746713}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8029513236185881491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1671436279960746713}
+  - component: {fileID: 8667954190044936816}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1671436279960746713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029513236185881491}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4179950001461168}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8667954190044936816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029513236185881491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8127133ad8f83440b73ed7c971643ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DoNotDestroyGameObjectOnLoad: 0

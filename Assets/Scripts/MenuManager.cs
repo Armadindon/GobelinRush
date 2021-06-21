@@ -118,6 +118,11 @@ namespace GoblinRush
 		{
 			EventManager.Instance.Raise(new BackToMenuButtonClickedEvent());
 		}
+
+		public void SaveButtonHasBeenClicked()
+		{
+			EventManager.Instance.Raise(new SaveButtonClickedEvent());
+		}
 		#endregion
 
 		#region Callbacks to GameManager events

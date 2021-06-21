@@ -170,6 +170,7 @@
             EventManager.Instance.AddListener<QuitButtonClickedEvent>(QuitButtonClicked);
             EventManager.Instance.AddListener<ParamettreButtonClickedEvent>(ParamettreButtonClicked);
             EventManager.Instance.AddListener<NextLevelButtonClickedEvent>(NextLevelButtonClicked);
+            EventManager.Instance.AddListener<SaveButtonClickedEvent>(SaveButtonClicked);
         }
 
         public override void UnsubscribeEvents()
@@ -238,7 +239,12 @@
             if (m_GameState == GameState.gameNextLevel) LoadNextLevel();
         }
 
+        private void SaveButtonClicked(SaveButtonClickedEvent e)
+        {
+            DateTime dt = DateTime.Now;
 
+            SaveManager.Instance.SaveLevel("Save_" + dt.ToString("yyyy_dd_MM_HH_mm_ss"));
+        }
         #endregion
 
         #region GameState methods

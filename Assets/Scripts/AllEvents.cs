@@ -59,6 +59,9 @@ public class NextLevelButtonClickedEvent : SDD.Events.Event
 
 public class BackToMenuButtonClickedEvent : SDD.Events.Event
 { }
+
+public class SaveButtonClickedEvent : SDD.Events.Event
+{ }
 #endregion
 
 #region Score Event
