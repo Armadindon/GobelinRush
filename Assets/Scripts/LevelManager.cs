@@ -33,6 +33,11 @@ namespace GoblinRush
 
 		[SerializeField]
 		private int currentLevel;
+
+		public int CurrentLevel { 
+			get { return currentLevel; }
+			set { currentLevel = value; }
+		}
 		#endregion
 
 		public override void SubscribeEvents()
@@ -69,6 +74,12 @@ namespace GoblinRush
             {
 				StartCoroutine(m_SceneLoader.LoadLevel(levels[++currentLevel], executeAfterSceneChange));
 			}
+		}
+
+		public void LoadLevel(int level, Action executeAfterSceneChange = null)
+        {
+			currentLevel = level;
+			StartCoroutine(m_SceneLoader.LoadLevel(levels[currentLevel], executeAfterSceneChange));
 		}
 
 		public bool HaveNextLevel()
