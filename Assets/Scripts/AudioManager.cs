@@ -59,6 +59,36 @@ public class AudioManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Va mettre en pause le son avec le nom exact
+    /// </summary>
+    /// <param name="name"></param>
+    public void Pause(string name)
+    {
+        //on va mettre en pause le son en fonction du nom donné
+        Sound snd = Array.Find(sounds, sound => sound.name == name);
+
+        //si le son ne correspond pas, on ne le met pas en pause
+        if (snd == null) return;
+
+        snd.m_Source.Pause();
+    }   
+
+    /// <summary>
+    /// Va stopper le son avec le nom exact
+    /// </summary>
+    /// <param name="name"></param>
+    public void Stop(string name)
+    {
+        //on va stopper le son en fonction du nom donné
+        Sound snd = Array.Find(sounds, sound => sound.name == name);
+
+        //si le son ne correspond pas, on ne le stoppe pas
+        if (snd == null) return;
+
+        snd.m_Source.Stop();
+    }
+
+    /// <summary>
     /// Va changer le pitch du son demandé en fonction du booléen d'entrée
     /// </summary>
     /// <param name="name"></param>
