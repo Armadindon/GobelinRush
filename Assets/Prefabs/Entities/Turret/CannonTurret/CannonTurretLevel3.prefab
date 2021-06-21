@@ -127,7 +127,7 @@ MonoBehaviour:
   m_ProjectilePrefab: {fileID: 7020122567642651044, guid: fe1f8598d6735604fb89db79179f5ef3,
     type: 3}
   _rangeTurret: 40
-  projectileSpeed: 14
+  projectileSpeed: 30
   projectileShootCooldown: 1.9
   m_ProjectileSpawns:
   - {fileID: 6985572606928079379}

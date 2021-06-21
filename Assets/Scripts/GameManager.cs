@@ -29,8 +29,8 @@
         [Tooltip("Crossbow Turret prefab")]
         [SerializeField] private GameObject m_CrossbowTurretPrefab;
 
-        [Tooltip("Turret placement")]
-        [SerializeField] private GameObject m_TurretPlacementPrefab;
+        [Tooltip("Turret placement manager")]
+        [SerializeField] private GameObject m_TurretPlacementManager;
 
         /// <summary>
         /// Placement turret on click
@@ -48,17 +48,43 @@
                 //on left click
                 if (Input.GetMouseButtonDown(0))
                 {
-                    if (hits.Where(hit => hit.transform.name == "Placement_Zone").Count() > 0 && m_CrossbowTurretPrefab.GetComponent<Turret>().getTurretMoneyCost() <= currentMoney)
+                    if (hits.Where(hit => hit.transform.name == "PlacementZone").Count() > 0)
                     {
+                        
                         //get first placement zone
-                        RaycastHit hitPlacementZone = hits.FirstOrDefault(hit => hit.transform.name == "Placement_Zone");
+                        RaycastHit hitPlacementZone = hits.FirstOrDefault(hit => hit.transform.name == "PlacementZone");
 
                         //récupère l'objet Turret_PLacement         
-                        GameObject m_TurretPlacement = hitPlacementZone.transform.parent.gameObject;
+                        GameObject m_TurretPlacementManagment = hitPlacementZone.transform.parent.gameObject;
+                        //get turret placement hud
+                        TurretPlacementHUD turretPlacementHUD = (TurretPlacementHUD)m_TurretPlacementManagment.GetComponentInChildren(typeof(TurretPlacementHUD));
+                        //show HUD
+                        turretPlacementHUD.ChangeHUDVisibility(true);
+                        /*
                         //Create newTurret
                         GameObject m_newTurret = Instantiate(m_CrossbowTurretPrefab, m_TurretPlacement.transform.position, Quaternion.identity);
                         //Destroy Turret placement zone
                         Destroy(hitPlacementZone.transform.gameObject);
+                        //Remove money from Turret
+                        currentMoney -= m_newTurret.GetComponent<Turret>().getTurretMoneyCost();
+                        */
+                    }
+                    else if (hits.Where(hit => hit.collider.name == "Arrow" || hit.collider.name == "Explosion").Count() > 0)
+                    {
+                        RaycastHit explosionChoice = hits.FirstOrDefault(hit => hit.transform.name == "Arrow" || hit.transform.name == "Explosion");
+                        GameObject hitObject = explosionChoice.transform.gameObject;
+                        SpriteRenderer hitSprite = (SpriteRenderer)hitObject.GetComponent(typeof(SpriteRenderer));
+                        //récupère l'objet Turret_PLacement         
+                        TurretPlacementHUD m_TurretPlacementHUD = (TurretPlacementHUD)hitObject.GetComponentInParent(typeof(TurretPlacementHUD));
+                        //récupère la tourelle correspondante
+                        GameObject m_TurretPrefab = m_TurretPlacementHUD.getCorrespTurret(hitSprite);
+                        if (!m_TurretPrefab) return;
+                        //si pas assez d'argent
+                        if (m_TurretPrefab.GetComponent<Turret>().getTurretMoneyCost() > currentMoney) return;
+                        //Create newTurret
+                        GameObject m_newTurret = Instantiate(m_TurretPrefab, m_TurretPlacementHUD.transform.position, Quaternion.identity);
+                        //Destroy Turret placement manager
+                        Destroy(m_TurretPlacementHUD.gameObject);
                         //Remove money from Turret
                         currentMoney -= m_newTurret.GetComponent<Turret>().getTurretMoneyCost();
                     }
@@ -78,7 +104,7 @@
                     {
                         RaycastHit redCorss = hits.FirstOrDefault(hit => hit.collider.name == "RedCross");
                         GameObject m_Turret = redCorss.transform.gameObject;
-                        Instantiate(m_TurretPlacementPrefab, m_Turret.transform.position, Quaternion.identity);
+                        Instantiate(m_TurretPlacementManager, m_Turret.transform.position, Quaternion.identity);
                         Destroy(m_Turret);
                     }
                     else if (hits.Where(hit => hit.collider.name == "UpgradeArrow").Count() > 0)
