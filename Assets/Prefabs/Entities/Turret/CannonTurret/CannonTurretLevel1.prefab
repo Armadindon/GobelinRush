@@ -127,7 +127,7 @@ MonoBehaviour:
   m_ProjectilePrefab: {fileID: 7020122567642651044, guid: fe1f8598d6735604fb89db79179f5ef3,
     type: 3}
   _rangeTurret: 35
-  projectileSpeed: 14
+  projectileSpeed: 30
   projectileShootCooldown: 2
   m_ProjectileSpawns:
   - {fileID: 6985572606928079379}
@@ -459,7 +459,7 @@ PrefabInstance:
     - target: {fileID: 7111293311662473772, guid: d396dffb8d39f6343b491ea3838fee7f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d396dffb8d39f6343b491ea3838fee7f, type: 3}

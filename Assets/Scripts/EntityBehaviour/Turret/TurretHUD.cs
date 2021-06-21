@@ -55,5 +55,4 @@ public class TurretHUD : MonoBehaviour
         //if HUD turret visible look at camera
         if (HUDVisibilty) m_CanvasTurretHUD.transform.LookAt(Camera.main.transform.position, Vector3.up);
     }
-
 }
