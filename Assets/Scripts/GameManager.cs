@@ -29,6 +29,8 @@
         [Tooltip("Crossbow Turret prefab")]
         [SerializeField] private GameObject m_CrossbowTurretPrefab;
 
+        public GameObject M_CrossbowTurretPrefab { get; private set; }
+
         [Tooltip("Turret placement")]
         [SerializeField] private GameObject m_TurretPlacementPrefab;
 

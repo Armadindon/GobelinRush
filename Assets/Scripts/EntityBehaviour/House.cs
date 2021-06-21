@@ -19,7 +19,7 @@ public class House : MonoBehaviour
 
     private List<GameObject> m_InstanciatedEnemies = new List<GameObject>();
 
-    private int currentWave = 0;
+    public int CurrentWave { get; set; }
     private bool isWaveFinished = true;
 
     private float nextEnemy;
@@ -39,18 +39,18 @@ public class House : MonoBehaviour
         m_InstanciatedEnemies = m_InstanciatedEnemies.Where(enemy => enemy != null).ToList();
 
         //Si on a dépassé le délai, et que il reste des waves
-        if(isWaveFinished && Time.time > nextWave && m_Waves.Length != currentWave)
+        if(isWaveFinished && Time.time > nextWave && m_Waves.Length != CurrentWave)
         {
             isWaveFinished = false;
         }
 
 
         //On fait deux if pour que aux même update on puisse instancier le premier ennemis
-        if (m_Waves.Length != currentWave && !isWaveFinished && Time.time > nextEnemy && !m_Waves[currentWave].isFinished())
+        if (m_Waves.Length != CurrentWave && !isWaveFinished && Time.time > nextEnemy && !m_Waves[CurrentWave].isFinished())
         {
             m_InstanciatedEnemies.Add(
                 Instantiate(
-                    m_prefabByEnemy[(int)m_Waves[currentWave].getNextEnemy()], 
+                    m_prefabByEnemy[(int)m_Waves[CurrentWave].getNextEnemy()], 
                     m_enemySpawnPoint.position, Quaternion.identity)
                 );
             nextEnemy = Time.time + timeBetweenEnemy;
@@ -58,17 +58,17 @@ public class House : MonoBehaviour
 
 
         //Si la wave est finie et on a tué tous les mobs
-        if (m_Waves.Length != currentWave && m_Waves[currentWave].isFinished() && m_InstanciatedEnemies.Count == 0)
+        if (m_Waves.Length != CurrentWave && m_Waves[CurrentWave].isFinished() && m_InstanciatedEnemies.Count == 0)
         {
             isWaveFinished = true;
             nextWave = Time.time + timeBetweenWaves;
-            currentWave++;
+            CurrentWave++;
         }
     }
 
     public bool finished()
     {
-        return currentWave == m_Waves.Length;
+        return CurrentWave == m_Waves.Length;
     }
 
 }
