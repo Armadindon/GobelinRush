@@ -12,6 +12,12 @@ public class Health : MonoBehaviour
     [SerializeField] public int health;
     [SerializeField] private Side side;
 
+    [Header("Particle :")]
+    [Tooltip("Hit Particle")]
+    [SerializeField] private GameObject m_HitParticlePrefab;
+    [Tooltip("Death Particle")]
+    [SerializeField] private GameObject m_DeathParticlePrefab;
+
     [Header("HUD Healthbar")]
     [Tooltip("Healthbar Foreground")]
     [SerializeField] private Image m_HealthbarForeground;
@@ -19,6 +25,7 @@ public class Health : MonoBehaviour
     private Canvas m_Healthbar;
 
     public int currentHealth { get; set; }
+
 
     // Start is called before the first frame update
     void Awake()
@@ -42,6 +49,9 @@ public class Health : MonoBehaviour
             float currentHealthPct = (float)currentHealth / (float)health;
             OnHealthPctChanged(currentHealthPct);
         }
+        if (currentHealth <= 0) {
+            GameObject m_newDeathParticle = Instantiate(m_DeathParticlePrefab, transform.position, Quaternion.identity);
+        }
     }
 
     /// <summary>
@@ -61,5 +71,11 @@ public class Health : MonoBehaviour
     public void TakeDamage(int amountOfDamage)
     {
         currentHealth -= amountOfDamage;
+    }
+    public void TakeDamage(int amountOfDamage, Vector3 HitPoint)
+    {
+        GameObject m_newHitParticle = Instantiate(m_HitParticlePrefab, HitPoint, Quaternion.identity);
+        Destroy(m_newHitParticle, 1);
+        TakeDamage(amountOfDamage);
     }
 }

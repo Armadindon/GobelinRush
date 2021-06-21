@@ -35,8 +35,8 @@ public class TurretProjectile : MonoBehaviour
             // on récupère son component.script Life
             Health health = collision.gameObject.GetComponent<Health>();
             // l'ennemi encaisse des dégâts
-            health.TakeDamage((int)attackDamage);
-
+            health.TakeDamage((int)attackDamage,collision.contacts[0].point);
+            
             if (health.currentHealth <= 0 && m_enemy != null)
             {
                 GameManager.Instance.currentMoney += m_enemy.getMoneyReward();

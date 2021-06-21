@@ -165,6 +165,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   side: 0
+  m_HitParticlePrefab: {fileID: 1850033487435682, guid: 2c4b2397ab17cce4bae0e99c1004869d,
+    type: 3}
+  m_DeathParticlePrefab: {fileID: 1551494778287644, guid: 63206a6b58e89d74483b27ded7f2e41c,
+    type: 3}
   m_HealthbarForeground: {fileID: 7250916672071218349}
 --- !u!95 &1463188606484256839
 Animator:
