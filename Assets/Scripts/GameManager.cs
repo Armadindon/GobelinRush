@@ -104,6 +104,8 @@
                     {
                         RaycastHit redCorss = hits.FirstOrDefault(hit => hit.collider.name == "RedCross");
                         GameObject m_Turret = redCorss.transform.gameObject;
+                        Turret turret = (Turret)m_Turret.GetComponent(typeof(Turret));
+                        currentMoney +=  (int)(turret.getTurretMoneyCost() / 1.5);
                         Instantiate(m_TurretPlacementManager, m_Turret.transform.position, Quaternion.identity);
                         Destroy(m_Turret);
                     }
