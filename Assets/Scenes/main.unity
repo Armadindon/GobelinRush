@@ -593,5 +593,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShareBetweenScenes
       objectReference: {fileID: 0}
+    - target: {fileID: 6234481598241353231, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00004089148
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237538623094083864, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237538623094083864, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3411a247e4e86d748a43af5c7b27baa8, type: 3}

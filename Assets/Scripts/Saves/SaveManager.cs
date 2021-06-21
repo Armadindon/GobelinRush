@@ -4,12 +4,14 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using GoblinRush;
 using System.IO;
+using System.Collections.Generic;
 
 class SaveManager : Singleton<SaveManager>
 {
 
     public void SaveLevel(string SaveName)
     {
+        ensureDirectoryExist();
         //On construit l'objet de sauvegarde
         SaveData data = new SaveData();
         data.CurrentLevel = LevelManager.Instance.CurrentLevel;
@@ -37,8 +39,9 @@ class SaveManager : Singleton<SaveManager>
         fileStream.Close();
     }
 
-    public void LoadSave(String name)
+    public SaveData LoadSave(String name)
     {
+        ensureDirectoryExist();
         String path = Application.persistentDataPath + "/saves/" + name + ".gblr";
         if (File.Exists(path))
         {
@@ -47,14 +50,9 @@ class SaveManager : Singleton<SaveManager>
             FileStream fs = new FileStream(path, FileMode.Open);
             SaveData save = binaryFormatter.Deserialize(fs) as SaveData;
             fs.Close();
-
-            // On applique la sauvegarde
-            LevelManager.Instance.LoadLevel(save.CurrentLevel, () =>
-            {
-                
-            }
-            );
+            return save;
         }
+        return null;
     }
 
     public IEnumerable setDataAfterDelay(SaveData save)
@@ -82,6 +80,25 @@ class SaveManager : Singleton<SaveManager>
         }
 
         GameManager.Instance.CastleTarget.GetComponent<Health>().currentHealth = save.Remaining_health;
+    }
+
+    public List<SaveData> AvailableLevels()
+    {
+        List<SaveData> saves = new List<SaveData>();
+        String[] files = Directory.GetFiles(Application.persistentDataPath + "/saves/", "*gblr");
+        foreach(string file in files)
+        {
+            saves.Add(LoadSave(file));
+        }
+        return saves;
+    }
+
+    private void ensureDirectoryExist()
+    {
+        if(!Directory.Exists(Application.persistentDataPath + "/saves/"))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath + "/saves/");
+        }
     }
 
 }
