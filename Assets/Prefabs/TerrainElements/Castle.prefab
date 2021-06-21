@@ -61,6 +61,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   side: 1
+  m_HitParticlePrefab: {fileID: 0}
+  m_DeathParticlePrefab: {fileID: 0}
   m_HealthbarForeground: {fileID: 417879376381593189}
 --- !u!1 &7572292523609549506
 GameObject:
@@ -87,8 +89,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7572292523609549506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.010369629, y: 0, z: 0.49989092}
+  m_LocalScale: {x: 1, y: 1, z: 0.32912084}
   m_Children: []
   m_Father: {fileID: 231614080566783070}
   m_RootOrder: 0
