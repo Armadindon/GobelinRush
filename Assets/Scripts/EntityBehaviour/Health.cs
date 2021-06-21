@@ -79,8 +79,8 @@ public class Health : MonoBehaviour
     /// <param name="HitPoint">Point de percussion</param>
     public void TakeDamage(int amountOfDamage, Vector3 HitPoint)
     {
-        GameObject m_newHitParticle = Instantiate(m_HitParticlePrefab, HitPoint, Quaternion.identity);
-        Destroy(m_newHitParticle, 1);
+        GameObject m_NewHitParticle = Instantiate(m_HitParticlePrefab, HitPoint, Quaternion.identity);
+        Destroy(m_NewHitParticle, 1); //Le 1 permet de Delay la suppresion de la particule pour l'annimation
         TakeDamage(amountOfDamage);
     }
 
@@ -89,7 +89,7 @@ public class Health : MonoBehaviour
     /// </summary>
     public void DeathAnimation()
     {
-        GameObject m_newHitParticle = Instantiate(m_DeathParticlePrefab, transform.position, Quaternion.identity);
-        Destroy(m_newHitParticle, 1);
+        GameObject m_NewHitParticle = Instantiate(m_DeathParticlePrefab, transform.position, Quaternion.identity);
+        Destroy(m_NewHitParticle, 1);
     }
 }
