@@ -284,7 +284,7 @@
             EventManager.Instance.Raise(new GameMenuEvent());
         }
 
-        private void Play()
+        public void Play()
         {
             InitNewGame();
             m_GameState = GameState.gamePlay;
