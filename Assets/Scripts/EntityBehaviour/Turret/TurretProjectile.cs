@@ -35,8 +35,7 @@ public class TurretProjectile : MonoBehaviour
             // on récupère son component.script Life
             Health health = collision.gameObject.GetComponent<Health>();
             // l'ennemi encaisse des dégâts
-            health.TakeDamage((int)attackDamage,collision.contacts[0].point);
-            
+            health.TakeDamage((int)attackDamage,collision.contacts[0].point); //Permet d'avoir la particule de hit qui spawn a l'emplacement du hit
             if (health.currentHealth <= 0 && m_enemy != null)
             {
                 health.DeathAnimation();
