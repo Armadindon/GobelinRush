@@ -42,12 +42,11 @@ class SaveManager : Singleton<SaveManager>
     public SaveData LoadSave(String name)
     {
         ensureDirectoryExist();
-        String path = Application.persistentDataPath + "/saves/" + name + ".gblr";
-        if (File.Exists(path))
+        if (File.Exists(name))
         {
             // On récupère la sauvegarde
             BinaryFormatter binaryFormatter = new BinaryFormatter();
-            FileStream fs = new FileStream(path, FileMode.Open);
+            FileStream fs = new FileStream(name, FileMode.Open);
             SaveData save = binaryFormatter.Deserialize(fs) as SaveData;
             fs.Close();
             return save;
@@ -82,13 +81,16 @@ class SaveManager : Singleton<SaveManager>
         GameManager.Instance.CastleTarget.GetComponent<Health>().currentHealth = save.Remaining_health;
     }
 
-    public List<SaveData> AvailableLevels()
+    public List<SaveData> AvailableSaves()
     {
         List<SaveData> saves = new List<SaveData>();
         String[] files = Directory.GetFiles(Application.persistentDataPath + "/saves/", "*gblr");
         foreach(string file in files)
         {
-            saves.Add(LoadSave(file));
+            Debug.Log(file);
+            SaveData data = LoadSave(file);
+            data.FileName = Path.GetFileNameWithoutExtension(file);
+            saves.Add(data);
         }
         return saves;
     }

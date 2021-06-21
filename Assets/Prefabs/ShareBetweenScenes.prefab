@@ -312,6 +312,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GoblinRush.MenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4212611340342767082, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212611340342767082, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212611340342767082, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4351757024955841694, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -371,6 +386,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7456165845327158213, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7456165845327158213, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7456165845327158213, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188262914278296966, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4766813818707661413}
+    - target: {fileID: 8188262914278296966, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenuLoadSaveButtonHasBeenClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188262914278296966, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GoblinRush.MenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114985856664380818, guid: 2d4cc07e22d85374b8d15cd15f4e18e1, type: 3}
@@ -445,6 +490,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4878056413648212128}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8146453256838565838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3655887594903740270, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 4878056413648212128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4878056414536185983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -504,6 +555,11 @@ PrefabInstance:
       propertyPath: m_PanelInGameMenu
       value: 
       objectReference: {fileID: 4877847948616727118}
+    - target: {fileID: 114078314171263514, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
+        type: 3}
+      propertyPath: m_MainMenuLoadSave
+      value: 
+      objectReference: {fileID: 8146453256838565838}
     - target: {fileID: 114078314171263514, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
         type: 3}
       propertyPath: m_PanelBetweenLevels

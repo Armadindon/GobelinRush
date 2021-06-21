@@ -19,6 +19,7 @@ namespace GoblinRush
 		[SerializeField] GameObject m_PanelGameOver;
 		[SerializeField] GameObject m_PanelWin;
 		[SerializeField] GameObject m_PanelBetweenLevels;
+		[SerializeField] GameObject m_MainMenuLoadSave;
 
 
 		List<GameObject> m_AllPanels;
@@ -68,6 +69,7 @@ namespace GoblinRush
 			m_AllPanels.Add(m_PanelGameOver);
 			m_AllPanels.Add(m_PanelWin);
 			m_AllPanels.Add(m_PanelBetweenLevels);
+			m_AllPanels.Add(m_MainMenuLoadSave);
 		}
 
 		void OpenPanel(GameObject panel)
@@ -123,6 +125,11 @@ namespace GoblinRush
 		{
 			EventManager.Instance.Raise(new SaveButtonClickedEvent());
 		}
+
+		public void MainMenuLoadSaveButtonHasBeenClicked()
+		{
+			EventManager.Instance.Raise(new MainMenuLoadSaveButtonClicked());
+		}
 		#endregion
 
 		#region Callbacks to GameManager events
@@ -161,7 +168,12 @@ namespace GoblinRush
         {
 			OpenPanel(m_PanelWin);
 		}
-		#endregion
-	}
+
+        protected override void MainMenuLoadSave(MainMenuLoadSave e)
+        {
+			OpenPanel(m_MainMenuLoadSave);
+        }
+        #endregion
+    }
 
 }

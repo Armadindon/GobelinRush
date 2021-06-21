@@ -50,21 +50,12 @@ namespace GoblinRush
 			base.UnsubscribeEvents();
 		}
 
-		protected override void GamePlay(GamePlayEvent e)
-		{
-
-		}
-
-		protected override void GameMenu(GameMenuEvent e)
-		{
-			Debug.Log("On est dans le menu !");
-		}
-
-        protected override void GameVictory(GameVictoryEvent e)
+        protected override void LoadSaveEvent(LoadSaveEvent e)
         {
+			Debug.Log("Demande de chargement du niveau " + e.Save.CurrentLevel);
         }
 
-		public void LoadNextLevel(Action executeAfterSceneChange = null)
+        public void LoadNextLevel(Action executeAfterSceneChange = null)
         {
 			if(currentLevel + 1 >= levels.Length)
             {
