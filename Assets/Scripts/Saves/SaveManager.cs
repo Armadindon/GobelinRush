@@ -18,13 +18,16 @@ class SaveManager : Singleton<SaveManager>
         data.CurrentWave = GameManager.Instance.m_House.GetComponent<House>().CurrentWave;
 
         Turret[] turrets = FindObjectsOfType<Turret>();
+        List<SaveTurret> turretsToSave = new List<SaveTurret>();
         foreach (Turret t in turrets)
         {
             SaveTurret ts = new SaveTurret();
             ts.Level = t.actualLevel;
             Vector3 pos = t.gameObject.transform.position;
             ts.Position = new float[3] { pos.x, pos.y, pos.z };
+            turretsToSave.Add(ts);
         }
+        data.m_Turrets = turretsToSave.ToArray();
 
         data.Remaining_health = GameManager.Instance.CastleTarget.GetComponent<Health>().currentHealth;
 
@@ -54,7 +57,7 @@ class SaveManager : Singleton<SaveManager>
         return null;
     }
 
-    public IEnumerable setDataAfterDelay(SaveData save)
+    public IEnumerator setDataAfterDelay(SaveData save)
     {
         yield return new WaitForFixedUpdate(); // Permet d'être sûr que la scene a bien load
 
@@ -62,7 +65,7 @@ class SaveManager : Singleton<SaveManager>
         
         foreach(SaveTurret t in save.m_Turrets)
         {
-            Vector3 pos = new Vector3(t.Position[0], t.Position[1], t.Position[3]);
+            Vector3 pos = new Vector3(t.Position[0], t.Position[1], t.Position[2]);
             RaycastHit[] hits = Physics.SphereCastAll(pos, 1f, Vector3.forward);
             foreach(RaycastHit hit in hits)
             {
@@ -79,6 +82,7 @@ class SaveManager : Singleton<SaveManager>
         }
 
         GameManager.Instance.CastleTarget.GetComponent<Health>().currentHealth = save.Remaining_health;
+        GameManager.Instance.Play();
     }
 
     public List<SaveData> AvailableSaves()

@@ -52,7 +52,7 @@ namespace GoblinRush
 
         protected override void LoadSaveEvent(LoadSaveEvent e)
         {
-			Debug.Log("Demande de chargement du niveau " + e.Save.CurrentLevel);
+			LoadLevel(e.Save.CurrentLevel, () => StartCoroutine(SaveManager.Instance.setDataAfterDelay(e.Save)));
         }
 
         public void LoadNextLevel(Action executeAfterSceneChange = null)

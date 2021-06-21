@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class LoadSaveMainMenuScroller : MonoBehaviour
 {
-    private float y_position = 300f;
+    private float y_position;
 
     [Header("UI Elements")]
     [SerializeField] private RectTransform m_content;
     [SerializeField] private GameObject m_LevelButtonPrefab;
 
-    void Start()
+    void OnEnable()
     {
+        //On reset la size et on retrouve
+        foreach (Transform child in m_content)
+        {
+            Destroy(child.gameObject);
+        }
+
+        m_content.sizeDelta = new Vector2(0, 150);
+        y_position = 150f;
 
         List<SaveData> saves = SaveManager.Instance.AvailableSaves();
 
@@ -23,7 +31,8 @@ public class LoadSaveMainMenuScroller : MonoBehaviour
             SaveButton sb = g.GetComponent<SaveButton>();
             sb.m_Save = save;
 
-            y_position += 300f;
+            y_position += 350;
+            m_content.sizeDelta += new Vector2(0, 350);
         }
     }
 }
