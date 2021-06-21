@@ -1,9 +1,13 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 
 [System.Serializable]
 public class SaveData
 {
+    // File Management
+    public string FileName { get; set; }
+
     // Scene Management
     public int CurrentLevel { get; set; }
 

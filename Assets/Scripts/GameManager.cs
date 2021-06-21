@@ -171,6 +171,7 @@
             EventManager.Instance.AddListener<ParamettreButtonClickedEvent>(ParamettreButtonClicked);
             EventManager.Instance.AddListener<NextLevelButtonClickedEvent>(NextLevelButtonClicked);
             EventManager.Instance.AddListener<SaveButtonClickedEvent>(SaveButtonClicked);
+            EventManager.Instance.AddListener<MainMenuLoadSaveButtonClicked>(MainMenuLoadSave);
         }
 
         public override void UnsubscribeEvents()
@@ -185,6 +186,8 @@
             EventManager.Instance.RemoveListener<QuitButtonClickedEvent>(QuitButtonClicked);
             EventManager.Instance.RemoveListener<ParamettreButtonClickedEvent>(ParamettreButtonClicked);
             EventManager.Instance.RemoveListener<NextLevelButtonClickedEvent>(NextLevelButtonClicked);
+            EventManager.Instance.RemoveListener<SaveButtonClickedEvent>(SaveButtonClicked);
+            EventManager.Instance.RemoveListener<MainMenuLoadSaveButtonClicked>(MainMenuLoadSave);
         }
         #endregion
 
@@ -245,6 +248,11 @@
 
             SaveManager.Instance.SaveLevel("Save_" + dt.ToString("yyyy_dd_MM_HH_mm_ss"));
         }
+
+        private void MainMenuLoadSave(MainMenuLoadSaveButtonClicked e)
+        {
+            EventManager.Instance.Raise(new MainMenuLoadSave());
+        }
         #endregion
 
         #region GameState methods
@@ -303,6 +311,7 @@
         {
             LevelManager.Instance.LoadNextLevel(() => Play());
         }
+
         #endregion
 
         private void Update()
