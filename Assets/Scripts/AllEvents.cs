@@ -26,6 +26,11 @@ public class GameNextLevelEvent : SDD.Events.Event
 {
 }
 
+public class MainMenuLoadSave : SDD.Events.Event
+{
+}
+
+
 public class GameStatisticsChangedEvent : SDD.Events.Event
 {
 	public float eBestScore { get; set; }
@@ -62,6 +67,16 @@ public class BackToMenuButtonClickedEvent : SDD.Events.Event
 
 public class SaveButtonClickedEvent : SDD.Events.Event
 { }
+
+public class MainMenuLoadSaveButtonClicked : SDD.Events.Event
+{ }
+
+public class LoadSaveEvent : SDD.Events.Event
+{
+	public SaveData Save { get; set; }
+
+	public LoadSaveEvent(SaveData s) => Save = s;
+}
 #endregion
 
 #region Score Event

@@ -16,6 +16,8 @@ public abstract class SingletonGameStateObserver<T> :  Singleton<T>,IEventHandle
 		EventManager.Instance.AddListener<GameVictoryEvent>(GameVictory);
 		EventManager.Instance.AddListener<GameStatisticsChangedEvent>(GameStatisticsChanged);
 		EventManager.Instance.AddListener<GameNextLevelEvent>(GameNextLevel);
+		EventManager.Instance.AddListener<MainMenuLoadSave>(MainMenuLoadSave);
+		EventManager.Instance.AddListener<LoadSaveEvent>(LoadSaveEvent);
 	}
 
 	public virtual void UnsubscribeEvents()
@@ -28,6 +30,8 @@ public abstract class SingletonGameStateObserver<T> :  Singleton<T>,IEventHandle
 		EventManager.Instance.RemoveListener<GameVictoryEvent>(GameVictory);
 		EventManager.Instance.RemoveListener<GameStatisticsChangedEvent>(GameStatisticsChanged);
 		EventManager.Instance.RemoveListener<GameNextLevelEvent>(GameNextLevel);
+		EventManager.Instance.RemoveListener<MainMenuLoadSave>(MainMenuLoadSave);
+		EventManager.Instance.RemoveListener<LoadSaveEvent>(LoadSaveEvent);
 	}
 
 	protected override void Awake()
@@ -70,6 +74,14 @@ public abstract class SingletonGameStateObserver<T> :  Singleton<T>,IEventHandle
 	}
 
 	protected virtual void GameNextLevel(GameNextLevelEvent e) 
+	{
+	}
+
+	protected virtual void MainMenuLoadSave(MainMenuLoadSave e)
+	{
+	}
+
+	protected virtual void LoadSaveEvent(LoadSaveEvent e)
 	{
 	}
 
