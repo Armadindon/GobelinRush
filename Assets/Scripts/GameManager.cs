@@ -29,7 +29,10 @@
         [Tooltip("Crossbow Turret prefab")]
         [SerializeField] private GameObject m_CrossbowTurretPrefab;
 
-        public GameObject M_CrossbowTurretPrefab { get; private set; }
+        public GameObject M_CrossbowTurretPrefab { 
+            get { return m_CrossbowTurretPrefab; }
+            private set { }
+        }
 
         [Tooltip("Turret placement")]
         [SerializeField] private GameObject m_TurretPlacementPrefab;
@@ -263,7 +266,7 @@
             EventManager.Instance.Raise(new GameMenuEvent());
         }
 
-        private void Play()
+        public void Play()
         {
             InitNewGame();
             m_GameState = GameState.gamePlay;

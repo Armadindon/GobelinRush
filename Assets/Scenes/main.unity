@@ -533,6 +533,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1871780951430034131, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871780951430034131, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2651433955197274981, guid: 3411a247e4e86d748a43af5c7b27baa8,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -613,6 +623,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShareBetweenScenes
       objectReference: {fileID: 0}
+    - target: {fileID: 5177074368785823905, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: m_SoundName
+      value: Button
+      objectReference: {fileID: 0}
     - target: {fileID: 6234481598241353231, guid: 3411a247e4e86d748a43af5c7b27baa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -627,6 +642,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359457379419734416, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: m_SoundName
+      value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 8774249880542051658, guid: 3411a247e4e86d748a43af5c7b27baa8,
         type: 3}
