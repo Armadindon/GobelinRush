@@ -32,6 +32,9 @@ public class House : MonoBehaviour
         //On set up la première wave
         nextWave = Time.time + timeBetweenWaves;
         GameManager.Instance.m_House = this;
+
+        //son d'intro de vague
+        FindObjectOfType<AudioManager>().Play("Wave Intro");
     }
 
     private void Update()
@@ -66,6 +69,12 @@ public class House : MonoBehaviour
             isWaveFinished = true;
             nextWave = Time.time + timeBetweenWaves;
             CurrentWave++;
+
+            if (!finished())
+            {
+                //son d'intro de vague
+                FindObjectOfType<AudioManager>().Play("Wave Intro");
+            }
         }
     }
 

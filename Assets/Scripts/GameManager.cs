@@ -309,6 +309,9 @@
 
             if (MusicLoopsManager.Instance) MusicLoopsManager.Instance.PlayMusic(Constants.GAMEPLAY_MUSIC);
             EventManager.Instance.Raise(new GamePlayEvent());
+
+            //son du thème
+            FindObjectOfType<AudioManager>().Play("Theme");
         }
 
         private void Pause()
@@ -317,6 +320,9 @@
 
             m_GameState = GameState.gamePause;
             EventManager.Instance.Raise(new GamePauseEvent());
+
+            //pause du thème
+            FindObjectOfType<AudioManager>().Pause("Theme");
         }
 
         private void Resume()
@@ -325,6 +331,9 @@
 
             m_GameState = GameState.gamePlay;
             EventManager.Instance.Raise(new GameResumeEvent());
+
+            //son du thème
+            FindObjectOfType<AudioManager>().Play("Theme");
         }
 
         private void Over()
@@ -336,6 +345,9 @@
 
         private void Win()
         {
+            //son de victoire
+            FindObjectOfType<AudioManager>().Play("Victory");
+
             m_GameState = GameState.gameVictory;
             EventManager.Instance.Raise(new GameVictoryEvent());
         }
