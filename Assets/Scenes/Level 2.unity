@@ -208,6 +208,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3411a247e4e86d748a43af5c7b27baa8, type: 3}
+--- !u!4 &269032212 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4880934231317589967, guid: 3411a247e4e86d748a43af5c7b27baa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 269032211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &839238421
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +541,110 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 201bfc39c5f0b9041aa2db0a86e5d921, type: 3}
+--- !u!1 &1138628672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1138628673}
+  - component: {fileID: 1138628674}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1138628673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138628672}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 269032212}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1138628674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138628672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e692d69b769b748a346ed8cf152a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Sword Clash 1
+    m_Clip: {fileID: 8300000, guid: 8f9878cd35e9eb345b0746e4876b0008, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.5
+    pitch: 1.5
+    loop: 0
+  - name: Sword Clash 2
+    m_Clip: {fileID: 8300000, guid: c425768f203deac47961d1e8f5fc1b21, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.5
+    pitch: 1.5
+    loop: 0
+  - name: Sword Clash 3
+    m_Clip: {fileID: 8300000, guid: 07cf181d2fccb57439ee1cafc08550d4, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.5
+    pitch: 1.5
+    loop: 0
+  - name: Enemy Death
+    m_Clip: {fileID: 8300000, guid: 49bd08647409792409ed95b0eab6d8ec, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.25
+    pitch: 1.5
+    loop: 0
+  - name: Enemy Spawn
+    m_Clip: {fileID: 8300000, guid: e82d815e36b4c42408dc27109e5cc4aa, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.1
+    pitch: 1.5
+    loop: 0
+  - name: Cannon Shoot
+    m_Clip: {fileID: 8300000, guid: e48ad5c425ef0f6478a83a6bfe0dcff0, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.5
+    pitch: 1.5
+    loop: 0
+  - name: Ballist  Shoot
+    m_Clip: {fileID: 8300000, guid: 68762c0f7adaf0648ae521711b254d71, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.5
+    pitch: 1.5
+    loop: 0
+  - name: Victory
+    m_Clip: {fileID: 8300000, guid: 9d5863e97750c9a4ba7c86a1b718d05e, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.5
+    pitch: 1.5
+    loop: 0
+  - name: Theme
+    m_Clip: {fileID: 8300000, guid: b483f566aff00544da06ee710f173231, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.5
+    pitch: 1.5
+    loop: 1
+  - name: Wave Intro
+    m_Clip: {fileID: 8300000, guid: b6ad5bc9925481c429abb5f12a42bf28, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.5
+    pitch: 1.5
+    loop: 0
 --- !u!1001 &2137446477
 PrefabInstance:
   m_ObjectHideFlags: 0

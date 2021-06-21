@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using GoblinRush;
+using System.Text.RegularExpressions;
 
 public class Turret : MonoBehaviour
 {
@@ -180,6 +181,13 @@ public class Turret : MonoBehaviour
         //shoot mulyiple projectile
         foreach (Transform m_ProjectileSpawn in m_ProjectileSpawns)
         {
+            
+            //on choisit le son en fonction du type de tourelle
+            string sound = ( m_ProjectilePrefab.gameObject.name == "Arrow" ? "Ballist Shoot" : "Cannon Shoot");
+            //son d'attaque
+            Debug.Log(sound);
+            FindObjectOfType<AudioManager>().Play(sound);
+
             //Create projectile
             GameObject m_newProjectile = Instantiate(m_ProjectilePrefab, m_ProjectileSpawn.position, Quaternion.identity);
             //get projectile

@@ -59,6 +59,9 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        //son du spawn
+        FindObjectOfType<AudioManager>().Play("Enemy Spawn");
+
         m_Rigidbody = gameObject.GetComponent<Rigidbody>();
         m_Target = GameManager.Instance.FirstWaypoint;
         distToGround = gameObject.GetComponentInChildren<Collider>().bounds.extents.y;
@@ -98,11 +101,31 @@ public class Enemy : MonoBehaviour
         //si le temps écoulé est toujours supérieur au cooldown et que l'ennemi a atteint la cible
         if (Time.time > attackCooldown && isAtTarget)
         {
+            //son d'attaque
+            FindObjectOfType<AudioManager>().Play(RandomAttackSound());
+
             //on retire de la vie en fonction des dégâts infligés
             m_CastleHealth.TakeDamage(attackDamage);
             //on réduit le cooldown
             attackCooldown = Time.time + attackCooldownDuration;
         }
+    }
+
+    /// <summary>
+    /// Retourne un choix de son aléatoire pour le son d'attaque de l'ennemi
+    /// </summary>
+    private string RandomAttackSound()
+    {
+        string rtn = "";
+        int choix = new System.Random().Next(0, 1);
+
+        switch(choix)
+        {
+            case 0: rtn = "Sword Clash 1"; break;
+            case 1: rtn = "Sword Clash 2"; break;
+        }
+
+        return rtn;
     }
 
     private void FixedUpdate()
@@ -148,7 +171,6 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.name.Equals("CastleHitbox"))
         {
-            Debug.Log("On a atteint le château");
             //atteint le château
             isAtTarget = true;
             //on récupère l'instance du château
@@ -157,8 +179,6 @@ public class Enemy : MonoBehaviour
             m_CastleHealth = m_CastleTarget.gameObject.GetComponent<Health>();
             //on met la vélocité à 0
             m_Rigidbody.velocity = Vector3.zero;
-
-            Debug.Log(m_CastleHealth.currentHealth);
         }
     }
 
