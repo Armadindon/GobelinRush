@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &602079638137813161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 50116147911472023}
+  m_Layer: 0
+  m_Name: ProjectileSpawn2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &50116147911472023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602079638137813161}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.8, y: 4.16, z: 1.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1193383369768571633}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &5274827928506755939
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6985572606928079379}
   m_Layer: 0
-  m_Name: ProjectileSpawn
+  m_Name: ProjectileSpawn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +68,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002709752397002771}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.16, z: 1.77}
+  m_LocalPosition: {x: 0.8, y: 4.16, z: 1.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1193383369768571633}
@@ -73,7 +103,7 @@ Transform:
   m_Children:
   - {fileID: 8964234445437636413}
   m_Father: {fileID: 1193383369768571633}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4607456947165824349
 GameObject:
@@ -107,6 +137,7 @@ Transform:
   - {fileID: 206402290057641182}
   - {fileID: 8608234237416204675}
   - {fileID: 6985572606928079379}
+  - {fileID: 50116147911472023}
   - {fileID: 2283693445527092107}
   - {fileID: 1051104226689088706}
   m_Father: {fileID: 0}
@@ -131,13 +162,14 @@ MonoBehaviour:
   projectileShootCooldown: 1.9
   m_ProjectileSpawns:
   - {fileID: 6985572606928079379}
+  - {fileID: 50116147911472023}
   projectileDamage: 16
   HUDVisibilityOnUpgrade: 0
   _actualLevel: 1
   m_TurretPrefab:
   - {fileID: 4607456947165824349, guid: b8ae29ee162f7484d981b5404394221b, type: 3}
   - {fileID: 4607456947165824349}
-  - {fileID: 0}
+  - {fileID: 4607456947165824349, guid: 5f06e00a745aab646beb655a7c7a7177, type: 3}
   m_ZoneRangeSphere: {fileID: 8123935952297405786}
   turretMoneyCost: 150
 --- !u!54 &6635199664453945500
@@ -364,7 +396,7 @@ PrefabInstance:
     - target: {fileID: 38768717992301531, guid: d396dffb8d39f6343b491ea3838fee7f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 38768717992301531, guid: d396dffb8d39f6343b491ea3838fee7f,
         type: 3}

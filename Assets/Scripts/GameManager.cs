@@ -7,7 +7,6 @@
     using System.Collections.Generic;
     using SDD.Events;
     using System.Linq;
-    using System;
 
     public enum GameState { gameMenu, gamePlay, gameNextLevel, gamePause, gameOver, gameVictory }
 
@@ -25,10 +24,6 @@
         #endregion
 
         #region Turret managment
-        [Header("Turret prebab")]
-        [Tooltip("Crossbow Turret prefab")]
-        [SerializeField] private GameObject m_CrossbowTurretPrefab;
-
         [Tooltip("Turret placement manager")]
         [SerializeField] private GameObject m_TurretPlacementManager;
 

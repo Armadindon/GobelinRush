@@ -24,7 +24,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6985572606928079379}
   m_Layer: 0
-  m_Name: ProjectileSpawn
+  m_Name: ProjectileSpawn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_TurretPrefab:
   - {fileID: 4607456947165824349}
   - {fileID: 4607456947165824349, guid: 22b3115a089d0f74c82e4b88855d06d8, type: 3}
-  - {fileID: 0}
+  - {fileID: 4607456947165824349, guid: 5f06e00a745aab646beb655a7c7a7177, type: 3}
   m_ZoneRangeSphere: {fileID: 8123935952297405786}
   turretMoneyCost: 50
 --- !u!54 &6635199664453945500
