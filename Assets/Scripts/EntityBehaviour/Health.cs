@@ -72,10 +72,24 @@ public class Health : MonoBehaviour
     {
         currentHealth -= amountOfDamage;
     }
+    /// <summary>
+    /// Lorsque les entités s'attaquent et/ou recoivent des dommages. Une particule apparait au point d'impact
+    /// </summary>
+    /// <param name="amountOfDamage">dommages perçus</param>
+    /// <param name="HitPoint">Point de percussion</param>
     public void TakeDamage(int amountOfDamage, Vector3 HitPoint)
     {
         GameObject m_newHitParticle = Instantiate(m_HitParticlePrefab, HitPoint, Quaternion.identity);
         Destroy(m_newHitParticle, 1);
         TakeDamage(amountOfDamage);
+    }
+
+    /// <summary>
+    /// Annimation de mort des entité
+    /// </summary>
+    public void DeathAnimation()
+    {
+        GameObject m_newHitParticle = Instantiate(m_DeathParticlePrefab, transform.position, Quaternion.identity);
+        Destroy(m_newHitParticle, 1);
     }
 }
