@@ -20,5 +20,6 @@ public class SaveData
     // House Management
     public int Remaining_health { get; set; }
 
-
+    // Economy Management
+    public int currentMoney { get; set; }
 }

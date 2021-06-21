@@ -30,6 +30,7 @@ class SaveManager : Singleton<SaveManager>
         data.m_Turrets = turretsToSave.ToArray();
 
         data.Remaining_health = GameManager.Instance.CastleTarget.GetComponent<Health>().currentHealth;
+        data.currentMoney = GameManager.Instance.currentMoney;
 
         //On serialize l'objet
         BinaryFormatter binaryFormatter = new BinaryFormatter();
@@ -82,6 +83,8 @@ class SaveManager : Singleton<SaveManager>
         }
 
         GameManager.Instance.CastleTarget.GetComponent<Health>().currentHealth = save.Remaining_health;
+        GameManager.Instance.currentMoney = save.currentMoney;
+
         GameManager.Instance.Play();
     }
 
