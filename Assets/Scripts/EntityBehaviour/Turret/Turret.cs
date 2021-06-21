@@ -222,15 +222,15 @@ public class Turret : MonoBehaviour
     /// Change turret level
     /// </summary>
     /// <param name="newLevel"></param>
-    public void ChangeTurretLevel(Levels newLevel)
+    public void ChangeTurretLevel(Levels newLevel, bool force = false)
     {
         if (actualLevel == newLevel) return;
         if ((int)newLevel >= Enum.GetNames(typeof(Levels)).Length) return;
         GameObject m_newTurretPrefab = m_TurretPrefab[(int)actualLevel + 1];
         //if can't buy it
-        if (GameManager.Instance.currentMoney < m_newTurretPrefab.GetComponent<Turret>().getTurretMoneyCost()) return;
+        if (GameManager.Instance.currentMoney < m_newTurretPrefab.GetComponent<Turret>().getTurretMoneyCost() && !force) return;
         //money cost
-        GameManager.Instance.currentMoney -= m_newTurretPrefab.GetComponent<Turret>().getTurretMoneyCost();
+        if(!force) GameManager.Instance.currentMoney -= m_newTurretPrefab.GetComponent<Turret>().getTurretMoneyCost();
         //create new turret level
         GameObject m_newTurret = Instantiate(m_newTurretPrefab, gameObject.transform.position, Quaternion.identity);
         //Destroy old level turret
