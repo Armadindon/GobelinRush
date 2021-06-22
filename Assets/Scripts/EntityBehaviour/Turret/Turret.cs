@@ -185,7 +185,6 @@ public class Turret : MonoBehaviour
             //on choisit le son en fonction du type de tourelle
             string sound = ( m_ProjectilePrefab.gameObject.name == "Arrow" ? "Ballist Shoot" : "Cannon Shoot");
             //son d'attaque
-            Debug.Log(sound);
             FindObjectOfType<AudioManager>().Play(sound);
 
             //Create projectile
@@ -241,6 +240,10 @@ public class Turret : MonoBehaviour
         if(!force) GameManager.Instance.currentMoney -= m_newTurretPrefab.GetComponent<Turret>().getTurretMoneyCost();
         //create new turret level
         GameObject m_newTurret = Instantiate(m_newTurretPrefab, gameObject.transform.position, Quaternion.identity);
+
+        //son d'upgrade
+        FindObjectOfType<AudioManager>().Play("Construction");
+
         //Destroy old level turret
         Destroy(gameObject);
         actualLevel = newLevel;
