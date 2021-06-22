@@ -10,5 +10,7 @@ public class SaveTurret
 {
     public float[] Position { get; set; }
     public Turret.Levels Level { get; set; }
+
+    public Turret.TypeTurret Type { get; set; }
 }
 
