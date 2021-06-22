@@ -21,11 +21,15 @@ public class SceneLoader : MonoBehaviour
 
     public IEnumerator LoadLevel(int level, Action toExecute = null)
     {
-        m_Animator.SetTrigger("Start");
+        if(level != SceneManager.GetActiveScene().buildIndex)
+        {
+            m_Animator.SetTrigger("Start");
 
-        while(!m_AnimationState.AnimationEnded) yield return null; //On attend que l'animation finisse
+            while (!m_AnimationState.AnimationEnded) yield return null; //On attend que l'animation finisse
 
-        SceneManager.LoadScene(level);
+            SceneManager.LoadScene(level);
+        }
+
         if (toExecute != null) toExecute();
     }
 
