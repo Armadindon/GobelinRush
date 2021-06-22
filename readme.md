@@ -1,12 +1,35 @@
-# ****GOBELIN RUSH****
+![img](.\Assets\Images\Logo.png)
 
-## Credit
+Développé par :
 
-TAILLANDIER M.
-LE PICHON C.
-PELAN M.
+- Baptiste PERRIN
+- Colin LE PICHON
+- Mathieu TAILLANDIER
+- Mathieu PELLAN
 
-## ASSET utilisé
+
+
+# Introduction
+
+
+
+## Cahier des charges
+
+
+
+## Management
+
+
+
+# Developper Guide
+
+## Fonctionnement et structure
+
+
+
+## ASSET utilisés
+
+### GFX
 
 [](https://assetstore.unity.com/packages/3d/environments/castle-pack-by-progru-185976)
 
@@ -27,4 +50,40 @@ PELAN M.
 [](https://assetstore.unity.com/packages/3d/props/low-poly-crates-80037)
 
 [](https://www.freepik.com/free-vector/wooden-gold-buttons-ui-game_12760665.htm#page=1&query=wood%20ui&position=1)
+
+### SFX
+
+[Freesound - Sword Swipe 2](https://freesound.org/people/LukeSharples/sounds/209122/)
+
+[Freesound - Sword Attack](https://freesound.org/people/Saviraz/sounds/547600/)
+
+[Freesound - Shield Bash Impact](https://freesound.org/people/Hybrid_V/sounds/319590/)
+
+[Freesound - Battle Start](https://freesound.org/people/Sound_Genius78/sounds/430772/)
+
+[Freesound - Cannon](https://freesound.org/people/Isaac200000/sounds/184650/)
+
+[Freesound - Bow](https://freesound.org/people/Erdie/sounds/65734/)
+
+[Freesound - Military March](https://freesound.org/people/zagi2/sounds/204196/)
+
+[Freesound - Victory Cheer](https://freesound.org/people/chripei/sounds/165491/)
+
+[Freesound - Pop](https://freesound.org/people/deraj/sounds/202230/)
+
+[Freesound - Hammer](https://freesound.org/people/sgrowe/sounds/342542/)
+
+[YouTube - Villager Sound](https://www.youtube.com/watch?v=561xYvjMbNk)
+
+[YouTube - Aww](https://www.youtube.com/watch?v=ltjT25GyXTM)
+
+### Divers
+
+# User Guide
+
+## Comment jouer
+
+# Conclusion
+
+
 
