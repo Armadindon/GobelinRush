@@ -58,7 +58,6 @@ public class TurretPlacementHUD : MonoBehaviour
     private void OnMouseExit()
     {
         ChangeHUDVisibility(false);
-        Debug.LogError("LEAVE");
     }
 
     public GameObject getCorrespTurret(SpriteRenderer sprite)
