@@ -90,6 +90,7 @@ class SaveManager : Singleton<SaveManager>
 
     public List<SaveData> AvailableSaves()
     {
+        ensureDirectoryExist();
         List<SaveData> saves = new List<SaveData>();
         String[] files = Directory.GetFiles(Application.persistentDataPath + "/saves/", "*gblr");
         foreach(string file in files)
