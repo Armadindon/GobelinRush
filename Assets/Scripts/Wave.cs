@@ -25,5 +25,16 @@ public class Wave
 
 public enum EnemyType
 {
-    BASIC,
+    commonGoblinLvl1,
+    commonGoblinLvl2,
+    commonGoblinLvl3,
+    speedGoblinLvl1,
+    speedGoblinLvl2,
+    speedGoblinLvl3,
+    strongGoblinLvl1,
+    strongGoblinLvl2,
+    strongGoblinLvl3,
+    healthyGoblinLvl1,
+    healthyGoblinLvl2,
+    healthyGoblinLvl3
 }

@@ -28,7 +28,7 @@ public class TurretProjectile : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //if collision with enemy
-        if (collision.gameObject.name.Contains("Enemy"))
+        if (collision.gameObject.GetComponentInParent(typeof(Enemy)))
         {
             // on récupère l'ennemi
             Enemy m_enemy = collision.gameObject.GetComponentInParent(typeof(Enemy)) as Enemy;
