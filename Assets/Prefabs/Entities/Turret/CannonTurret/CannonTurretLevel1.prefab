@@ -132,7 +132,7 @@ MonoBehaviour:
   projectileShootCooldown: 2
   m_ProjectileSpawns:
   - {fileID: 6985572606928079379}
-  projectileDamage: 15
+  projectileDamage: 20
   HUDVisibilityOnUpgrade: 0
   _actualLevel: 0
   m_TurretPrefab:

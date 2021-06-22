@@ -166,7 +166,7 @@ MonoBehaviour:
   - {fileID: 6985572606928079379}
   - {fileID: 3253620358084921141}
   - {fileID: 2831281859296168332}
-  projectileDamage: 20
+  projectileDamage: 10
   HUDVisibilityOnUpgrade: 0
   _actualLevel: 2
   m_TurretPrefab:
@@ -174,7 +174,7 @@ MonoBehaviour:
   - {fileID: 4607456947165824349, guid: 1e9b2353e48dc284a91a3959f41bd76a, type: 3}
   - {fileID: 4607456947165824349}
   m_ZoneRangeSphere: {fileID: 8123935952297405786}
-  turretMoneyCost: 100
+  turretMoneyCost: 200
 --- !u!54 &7473876684559807280
 Rigidbody:
   m_ObjectHideFlags: 0
