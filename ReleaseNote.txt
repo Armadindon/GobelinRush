@@ -8,9 +8,13 @@ Colin LE PICHON                Gameplay Developer / 3D Gfx Artist
 Mathieu TAILLANDIER            Gameplay Developer / 3D Gfx Artist
 Mathieu PELLAN                 Gameplay Developer/  Sound Designer
 
+
 			---Liens à disposition---
+
 Github : https://github.com/Armadindon/GobelinRush
 Trello : https://trello.com/b/fRGsUSr1/gobelin-rush
+DevNotes : https://docs.google.com/document/d/10_pX1pApnnx7rZwFggwXDcWyREvnJaX1iyJUZtJFnWc/edit?usp=sharing
+
 
 			---Instructions de jeu---
 
