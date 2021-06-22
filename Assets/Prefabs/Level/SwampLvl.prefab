@@ -1039,8 +1039,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 480546898294046258}
-  - {fileID: 526130070503165891}
   - {fileID: 6959000922780001367}
+  - {fileID: 526130070503165891}
   m_Father: {fileID: 3510113252748613436}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1579,7 +1579,7 @@ GameObject:
   - component: {fileID: 1017067715454378036}
   - component: {fileID: 4551780235923504982}
   - component: {fileID: 9036794906952631823}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1701,7 +1701,7 @@ Transform:
   - {fileID: 1017067715454378036}
   - {fileID: 1883662442494317381}
   m_Father: {fileID: 5904538401086344801}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6539397399387051580
 GameObject:
@@ -1972,7 +1972,7 @@ Transform:
   - {fileID: 7119661283914885511}
   - {fileID: 3285374591869226211}
   m_Father: {fileID: 5904538401086344801}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7811466718051328605
 GameObject:
