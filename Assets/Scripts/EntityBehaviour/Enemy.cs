@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         //son du spawn
-        FindObjectOfType<AudioManager>().Play("Enemy Spawn");
+        AudioManager.Instance.Play("Enemy Spawn");
 
         m_Rigidbody = gameObject.GetComponent<Rigidbody>();
         m_Target = GameManager.Instance.FirstWaypoint;
@@ -102,7 +102,7 @@ public class Enemy : MonoBehaviour
         if (Time.time > attackCooldown && isAtTarget)
         {
             //son d'attaque
-            FindObjectOfType<AudioManager>().Play(RandomAttackSound());
+            AudioManager.Instance.Play(RandomAttackSound());
 
             //on retire de la vie en fonction des dégâts infligés
             m_CastleHealth.TakeDamage(attackDamage);

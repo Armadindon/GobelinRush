@@ -63,9 +63,6 @@
                         //Remove money from Turret
                         currentMoney -= m_newTurret.GetComponent<Turret>().getTurretMoneyCost();
                         */
-
-                        //son de construction
-                        FindObjectOfType<AudioManager>().Play("Construction");
                     }
                     else if (hits.Where(hit => hit.collider.name == "Arrow" || hit.collider.name == "Explosion").Count() > 0)
                     {
@@ -86,6 +83,9 @@
                         //Remove money from Turret
                         currentMoney -= m_newTurret.GetComponent<Turret>().getTurretMoneyCost();
 
+                        //son de construction
+                        AudioManager.Instance.Play("Construction");
+                        
                         TurretScore += 1;
                     }
                     else if (hits.Where(hit => hit.collider.name.Contains("Hitbox") && hit.transform.name.Contains("Turret")).Count() > 0)
@@ -312,7 +312,7 @@
             EventManager.Instance.Raise(new GamePlayEvent());
 
             //son du thème
-            FindObjectOfType<AudioManager>().Play("Theme");
+            AudioManager.Instance.Play("Theme");
         }
 
         private void Pause()
@@ -323,7 +323,7 @@
             EventManager.Instance.Raise(new GamePauseEvent());
 
             //pause du thème
-            FindObjectOfType<AudioManager>().Pause("Theme");
+            AudioManager.Instance.Play("Theme");
         }
 
         private void Resume()
@@ -334,14 +334,14 @@
             EventManager.Instance.Raise(new GameResumeEvent());
 
             //son du thème
-            FindObjectOfType<AudioManager>().Play("Theme");
+            AudioManager.Instance.Play("Theme");
         }
 
         private void Over()
         {
-            //son de victoire
-            FindObjectOfType<AudioManager>().Play("Lose");
-            FindObjectOfType<AudioManager>().Stop("Theme");
+            AudioManager.Instance.Stop("Theme");
+            //son de défaite
+            AudioManager.Instance.Play("Lose");
 
             m_GameState = GameState.gameOver;
             EventManager.Instance.Raise(new GameOverEvent());
@@ -349,9 +349,9 @@
 
         private void Win()
         {
-            //son de victoire
-            FindObjectOfType<AudioManager>().Play("Victory");
-            FindObjectOfType<AudioManager>().Stop("Theme");
+            AudioManager.Instance.Stop("Theme");
+            //son de défaite
+            AudioManager.Instance.Play("Victory");
 
             m_GameState = GameState.gameVictory;
             EventManager.Instance.Raise(new GameVictoryEvent());

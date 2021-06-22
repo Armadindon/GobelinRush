@@ -39,7 +39,7 @@ public class TurretProjectile : MonoBehaviour
             if (health.currentHealth <= 0 && m_enemy != null)
             {
                 health.DeathAnimation();
-                FindObjectOfType<AudioManager>().Play("Enemy Death");
+                AudioManager.Instance.Play("Enemy Death");
 
                 GameManager.Instance.currentMoney += m_enemy.getMoneyReward();
                 m_Turret.m_Enemies.Remove(m_enemy);
