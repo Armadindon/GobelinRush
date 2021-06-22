@@ -31,13 +31,6 @@ public class TurretPlacementHUD : MonoBehaviour
         ChangeHUDVisibility(_HUDVisibility);
         m_CanvasTurretPlacementHUD.transform.LookAt(Camera.main.transform.position, Vector3.up);
     }
-   
-    private void OnValidate()
-    {
-        if (!Application.isPlaying) return;
-        //set visibility
-        ChangeHUDVisibility(_HUDVisibility);
-    }
 
     /// <summary>
     /// Change HUD turret visibility
@@ -65,6 +58,7 @@ public class TurretPlacementHUD : MonoBehaviour
     private void OnMouseExit()
     {
         ChangeHUDVisibility(false);
+        Debug.LogError("LEAVE");
     }
 
     public GameObject getCorrespTurret(SpriteRenderer sprite)
