@@ -63,6 +63,9 @@
                         //Remove money from Turret
                         currentMoney -= m_newTurret.GetComponent<Turret>().getTurretMoneyCost();
                         */
+
+                        //son de construction
+                        FindObjectOfType<AudioManager>().Play("Construction");
                     }
                     else if (hits.Where(hit => hit.collider.name == "Arrow" || hit.collider.name == "Explosion").Count() > 0)
                     {
@@ -298,7 +301,6 @@
         private void Menu()
         {
             m_GameState = GameState.gameMenu;
-            if (MusicLoopsManager.Instance) MusicLoopsManager.Instance.PlayMusic(Constants.MENU_MUSIC);
             EventManager.Instance.Raise(new GameMenuEvent());
         }
 
@@ -307,7 +309,6 @@
             InitNewGame();
             m_GameState = GameState.gamePlay;
 
-            if (MusicLoopsManager.Instance) MusicLoopsManager.Instance.PlayMusic(Constants.GAMEPLAY_MUSIC);
             EventManager.Instance.Raise(new GamePlayEvent());
 
             //son du thème
@@ -338,15 +339,19 @@
 
         private void Over()
         {
+            //son de victoire
+            FindObjectOfType<AudioManager>().Play("Lose");
+            FindObjectOfType<AudioManager>().Stop("Theme");
+
             m_GameState = GameState.gameOver;
             EventManager.Instance.Raise(new GameOverEvent());
-            if (SfxManager.Instance) SfxManager.Instance.PlaySfx2D(Constants.GAMEOVER_SFX);
         }
 
         private void Win()
         {
             //son de victoire
             FindObjectOfType<AudioManager>().Play("Victory");
+            FindObjectOfType<AudioManager>().Stop("Theme");
 
             m_GameState = GameState.gameVictory;
             EventManager.Instance.Raise(new GameVictoryEvent());
