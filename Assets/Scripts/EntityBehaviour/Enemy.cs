@@ -42,6 +42,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private Animator m_animator;
 
+    [Header("Score")]
+    [SerializeField] private int scoreReward;
+
     
     //Gestion de la pause
     private bool paused = false;
@@ -178,4 +181,8 @@ public class Enemy : MonoBehaviour
         m_Rigidbody.AddTorque(m_SavedAngularVelocity, ForceMode.VelocityChange);
     }
 
+    public int GetScoreReward()
+    {
+        return scoreReward;
+    }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using GoblinRush;
 
 public class Health : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class Health : MonoBehaviour
             OnHealthPctChanged(currentHealthPct);
         }
         if (currentHealth <= 0) {
+            if (gameObject.GetComponent<Enemy>() != null) GameManager.Instance.EnemyKilled += gameObject.GetComponent<Enemy>().GetScoreReward();
             GameObject m_newDeathParticle = Instantiate(m_DeathParticlePrefab, transform.position, Quaternion.identity);
         }
     }
