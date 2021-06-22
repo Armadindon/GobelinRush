@@ -1,31 +1,34 @@
+
+
 ![img](.\Assets\Images\Logo.png)
 
 
-
-# Introduction
-
-Bonjour,
-Si vous lisez ce texte c'est que nôtre projet Gobelin Rush vous intéresse ! Effectivement pour notre 1er année de cycle ingénieur à l'ESIEE Paris nous avons réaliser un jeux avec Unity. Pour cela nous étions une équipe de 4 développeurs :
 
 - Baptiste PERRIN	              Gameplay Developer / Producer
 - Colin LE PICHON                 Gameplay Developer / 3D Gfx Artist
 - Mathieu TAILLANDIER       Gameplay Developer / 3D Gfx Artist
 - Mathieu PELLAN                 Gameplay Developer/  Sound Designer
 
+# Introduction
+
+Dans le cadre du module d'Introduction à Unity3D, nous avions pour projet de créer un jeu-vidéo avec Unity. Nous sommes partis dans l'idée de faire un jeu-vidéo Tower Defense en 3D. Cela nous permettrait d'en apprendre plus sur la conception et le développement d'applications, et plus spécifiquement de jeux-vidéos.
+
+Notre jeu se base dans un univers médiéval fantastique, où l'on doit à partir de tourelles, venir à bout des gobelins envahisseurs voulant envahir notre château.
+
 ## Cahier des charges
 
 #### Aspect global
 
-​	Tower Defense en 3D avec thème LowPoly / Médiéval
-​	Victoire lorsque toutes les vagues sont terminé et que chaque levels ont été terminés
-​	Défaite quand le château n'a plus de point de vies	
+Tower Defense en 3D avec thème LowPoly / Médiéval
+Victoire lorsque toutes les vagues et niveaux sont terminés
+Défaite quand le château n'a plus de point de vie	
 
 #### Aspect technique et fonctionnalités
 
 - Déplacement des ennemis d'un point A à un point B
-- Tourelle alliés plaçable à des endroit prédéfini
+- Tourelles alliées plaçables à des endroit prédéfinis
 - Système d'économie
-- Système de vague d'apparition des ennemis
+- Système de vagues d'apparition des ennemis
 - Système de vie des bâtiments et des ennemis  
 - Système de caméra mobile
 
@@ -39,25 +42,28 @@ Si vous lisez ce texte c'est que nôtre projet Gobelin Rush vous intéresse ! Ef
     - Meilleurs scores
     - Quitter
     - Logo ESIEE
-    - Crédits des dèveloppeurs
+    - Crédits des développeurs
   - Pause
     - Reprendre
     - Menu
     - Quitter
   - Victoire / Défaite
-    - Niveau suivant si c'est une victoire
+    - Niveau suivant (victoire)
     - Menu principal
   - Interface Jeu
     - La monnaie
-    - La vie du chateau
-    - La vie des ennemies une fois qu'ils ont pris des dégâts
+    - HUD de vie pour les entités concernées
     - HUD de sélection des tours au clique sur les emplacements
 
 ## Management
 
-Pour ce projet nous avons mis en place un trello, disponible [ici](https://trello.com/b/fRGsUSr1/goblin-rush). Il nous a permis d'avoir un suivi continu des fonctionnalité à développer et des tâches à réaliser. Chaque tâches étais assigné à une ou plusieurs catégories (Technique, Gameplay, GFX, SFX, UI). Cela permettais au personnes de savoir ce qu'elles avaient a faire selon leur rôles.
+Pour ce projet nous avons mis en place un [Trello](https://trello.com/b/fRGsUSr1/goblin-rush). Il nous a permis d'avoir un suivi continu des fonctionnalité à développer et des tâches à réaliser. Chaque tâche était assigné à une ou plusieurs catégories (Technique, Gameplay, GFX, SFX, UI). Afin de permettre aux développeurs de savoir sur quels sujets travailler. L'organisation permet une meilleure cohésion d'équipe et donc une meilleure productivité.
 
-Ensuite nous avons travailler avec l'outil git afin de réaliser une branche pour chaque tâches défini au préalable sur le trello. A chaque fois qu'un développeur avais finis sa branche il soumettais une Pull Request qui devais être validé par deux autres développeur pour être mergé. Avoir un protocole si strict nous a permis d'éviter le plus de bug possible. Effectivement nous avons eu que 4 Issues à corriger lors de ce projet. 
+Nous avons collaboré à l'aide de Git pour versionner nos différents travaux de manière continue. Nous nous sommes mis d'accord pour travailler de sorte à ce que chaque tâche Trello corresponde à une branche Git. Dès lors qu'un collaborateur en avait fini avec sa tâche, il pouvait soumettre sa branche actuelle à Pull Request, outil disponible sur GitHub. Chaque Pull Request devait être validé par au moins deux personnes.
+
+Cette continuité de travail nous a permis d'avoir une qualité de rendu rapide et efficace, nous évitions les risques au plus possible.
+
+
 
 # Developper Guide
 
@@ -117,25 +123,31 @@ Ensuite nous avons travailler avec l'outil git afin de réaliser une branche pou
 
 [Freepik - Wooden and golden UI buttons — Gratuit — Freepik License](https://www.freepik.com/free-vector/wooden-gold-buttons-ui-game_12760665.htm#page=1&query=wood%20ui&position=1)
 
+
+
 # User Guide
 
 Dans le guide du jeu Gobelin Rush , vous trouverez des instructions détaillées sur les différentes aventures qui vous attend. De plus, chaque description comporte une carte où figurent les éléments clés. Pour cela vous cliquerez sur les caisse en bois pour choisir quelle tourelle positionné.
 
 ## Comment jouer
 
-Bonjour jeune aventurier ! 
+#### Touches
 
-Tu es ici pour défendre ton royaume et pour cela tu n'aura qu'a suivre une seul et unique règle TUE TOUT LES GOBELINS AVANT QU'ILS NE TE TUENT !!!
+![commands](.\Assets\Images\commands.png)
 
-Tout d'abord vous commencerez par repousser les envahisseurs dans le 1er niveau : La Vallée
+Goblin Rush se joue principalement à la souris, où se font les interactions comme voir la portée des tourelles ou interagir avec les HUD. 
 
-Vous aurez le choix entre 10 emplacement de tourelle différents et 5 vagues différentes vous attaquerons :
+La rotation de la caméra se fait avec les touches Q et D ou flèche gauche/droite. Le zoom/dézoom se font soit avec les touches Z et S ou les flèches haut/bas.
+
+#### Déroulement
+
+Vous pouvez poser des tourelles sur des emplacements prédéfinis (boîtes). Vous avez alors le choix de poser un canon ou une baliste (arbalète).
+
+Vous devez survivre aux vagues d'ennemis avant que celles-ci ne détruisent votre château. Vous ferez face à différents ennemis, les gobelins sont farouches.
+
+Il y a deux niveaux à dispositions actuellement : le premier niveau est une vallée avec un seul chemin distinct. Le deuxième niveau est un marécage, beaucoup plus sombre, avec plusieurs possibles chemins empruntables par les ennemis.
 
 ![MapLvl1.png](.\Assets\Images\MapLvl1.png)
-
-Ensuite vous devrez défendre votre avant-poste dans 2ème niveau, le Swamp
-
-Vous aurez le choix entre 10 emplacement de tourelle différents et 5 vagues différentes vous attaquerons :
 
 ![MapLvl2.png](.\Assets\Images\MapLvl2.png)
 
@@ -143,11 +155,27 @@ Vous aurez le choix entre 10 emplacement de tourelle différents et 5 vagues dif
 
 ### Limitations
 
-Le fait de n'être que trois et avec peut de notions graphique à été un facteurs très limitant. Nous avons du nous former en même temp que nous développions sur un temp très restreint.
+Ce projet était une première pour la majorité d'entre-nous. Les procédés sont toujours plus lents lorsque l'on doit passer par une phase d'auto-formation afin d'assimiler de nouveaux concepts, méthodes, principes ou technologies plus généralement.
+
+~~Dans un contexte scolaire, ce projet a été fait dans une période scolaire conséquente où l'on devait travailler différents modules, ce qui pouvait freiner l'avancement de l'application.~~
 
 ### Voies d'amélioration
 
-Pourquoi pas imaginer des animation plus pousser, plus de tourelles, des ennemis différents de races différentes. Implémenter une gestion du temp pour pouvoir l'accélérer, le mettre en pauses etc... Une interaction avec des sorts aussi pourrais être implémenter avec une gestion du Mana.
+#### GFX
+
+- Plus de particules
+- Plus d'animations
+
+#### SFX
+
+- Éventuellement des sons faits-maison pour avoir une base SFX originale
+
+#### Gameplay
+
+- Différents types d'ennemis (autre que des gobelins)
+- Plus de tourelles
+- Système de magie pour des pouvoirs tierces
+- Gestion du temps
 
 ### Bugs connus
 
