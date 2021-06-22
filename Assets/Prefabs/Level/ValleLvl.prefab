@@ -12888,7 +12888,7 @@ PrefabInstance:
     - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
         type: 3}
       propertyPath: m_prefabByEnemy.Array.size
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
         type: 3}
@@ -12922,6 +12922,24 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
         type: 3}
+      propertyPath: m_prefabByEnemy.Array.data[6]
+      value: 
+      objectReference: {fileID: 4607456947165824349, guid: 87e9b32057a5b7f4cab90fecde42877e,
+        type: 3}
+    - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
+        type: 3}
+      propertyPath: m_prefabByEnemy.Array.data[7]
+      value: 
+      objectReference: {fileID: 4607456947165824349, guid: 76224214da09f6149a17c44e2213b6d6,
+        type: 3}
+    - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
+        type: 3}
+      propertyPath: m_prefabByEnemy.Array.data[8]
+      value: 
+      objectReference: {fileID: 4607456947165824349, guid: 4befb4e7f8297e94194bb477910f3824,
+        type: 3}
+    - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
+        type: 3}
       propertyPath: m_Waves.Array.data[0].m_wave.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -12933,17 +12951,17 @@ PrefabInstance:
     - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
         type: 3}
       propertyPath: m_Waves.Array.data[0].m_wave.Array.data[0]
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
         type: 3}
       propertyPath: m_Waves.Array.data[0].m_wave.Array.data[1]
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
         type: 3}
       propertyPath: m_Waves.Array.data[0].m_wave.Array.data[2]
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3670260660120342879, guid: d845aadca64f8f94ca26aee85f5cd59e,
         type: 3}
