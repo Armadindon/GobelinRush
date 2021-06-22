@@ -1450,7 +1450,7 @@ GameObject:
   - component: {fileID: 4578764248187034282}
   - component: {fileID: 8191418867263205323}
   m_Layer: 0
-  m_Name: SwamTerrain
+  m_Name: SwampTerrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7205,7 +7205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4936507315396382, guid: 26f962d1c27c42f43a025a3678e3ba8a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 606.15
+      value: 604.9
       objectReference: {fileID: 0}
     - target: {fileID: 4936507315396382, guid: 26f962d1c27c42f43a025a3678e3ba8a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7213,7 +7213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4936507315396382, guid: 26f962d1c27c42f43a025a3678e3ba8a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 596.45
+      value: 597.7
       objectReference: {fileID: 0}
     - target: {fileID: 4936507315396382, guid: 26f962d1c27c42f43a025a3678e3ba8a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7242,6 +7242,26 @@ PrefabInstance:
     - target: {fileID: 4936507315396382, guid: 26f962d1c27c42f43a025a3678e3ba8a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198979054788908024, guid: 26f962d1c27c42f43a025a3678e3ba8a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.3137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 198979054788908024, guid: 26f962d1c27c42f43a025a3678e3ba8a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.4666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 198979054788908024, guid: 26f962d1c27c42f43a025a3678e3ba8a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.62352943
+      objectReference: {fileID: 0}
+    - target: {fileID: 198979054788908024, guid: 26f962d1c27c42f43a025a3678e3ba8a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.5176471
       objectReference: {fileID: 0}
     - target: {fileID: 199162334429091400, guid: 26f962d1c27c42f43a025a3678e3ba8a,
         type: 3}
