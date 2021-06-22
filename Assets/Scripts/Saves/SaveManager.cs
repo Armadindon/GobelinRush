@@ -8,6 +8,10 @@ using System.Collections.Generic;
 
 class SaveManager : Singleton<SaveManager>
 {
+    [Header("Turret Management")]
+    [SerializeField] private GameObject m_CrossbowPrefab;
+    [SerializeField] private GameObject m_CanonPrefab;
+
 
     public void SaveLevel(string SaveName)
     {
@@ -25,6 +29,7 @@ class SaveManager : Singleton<SaveManager>
             ts.Level = t.actualLevel;
             Vector3 pos = t.gameObject.transform.position;
             ts.Position = new float[3] { pos.x, pos.y, pos.z };
+            ts.Type = t.typeTurret;
             turretsToSave.Add(ts);
         }
         data.m_Turrets = turretsToSave.ToArray();
@@ -78,7 +83,18 @@ class SaveManager : Singleton<SaveManager>
             }
 
             //On instancie une tourelle à la même position
-            GameObject g = Instantiate(GameManager.Instance.M_CrossbowTurretPrefab, pos, Quaternion.identity);
+            GameObject g = null;
+            
+            switch(t.Type) {
+                case Turret.TypeTurret.Crossbow:
+                    g = Instantiate(m_CrossbowPrefab, pos, Quaternion.identity);
+                    break;
+
+                case Turret.TypeTurret.Cannon:
+                    g = Instantiate(m_CanonPrefab, pos, Quaternion.identity);
+                    break;
+            }
+
             g.GetComponent<Turret>().ChangeTurretLevel(t.Level);
         }
 
