@@ -45,7 +45,7 @@
                 {
                     if (hits.Where(hit => hit.transform.name == "PlacementZone").Count() > 0)
                     {
-                        
+
                         //get first placement zone
                         RaycastHit hitPlacementZone = hits.FirstOrDefault(hit => hit.transform.name == "PlacementZone");
 
@@ -82,6 +82,8 @@
                         Destroy(m_TurretPlacementHUD.transform.parent.gameObject);
                         //Remove money from Turret
                         currentMoney -= m_newTurret.GetComponent<Turret>().getTurretMoneyCost();
+
+                        TurretScore += 1;
                     }
                     else if (hits.Where(hit => hit.collider.name.Contains("Hitbox") && hit.transform.name.Contains("Turret")).Count() > 0)
                     {
@@ -95,12 +97,12 @@
                         //show visibility range
                         turret.m_TurretHUD.ChangeHUDVisibility(true);
                     }
-                    else if (hits.Where(hit => hit.collider.name == "RedCross" ).Count() > 0)
+                    else if (hits.Where(hit => hit.collider.name == "RedCross").Count() > 0)
                     {
                         RaycastHit redCorss = hits.FirstOrDefault(hit => hit.collider.name == "RedCross");
                         GameObject m_Turret = redCorss.transform.gameObject;
                         Turret turret = (Turret)m_Turret.GetComponent(typeof(Turret));
-                        currentMoney +=  (int)(turret.getTurretMoneyCost() / 1.5);
+                        currentMoney += (int)(turret.getTurretMoneyCost() / 1.5);
                         Instantiate(m_TurretPlacementManager, m_Turret.transform.position, Quaternion.identity);
                         Destroy(m_Turret);
                     }
@@ -111,6 +113,7 @@
                         Turret turret = (Turret)m_Turret.GetComponent(typeof(Turret));
                         turret.m_TurretHUD.ChangeHUDVisibility(turret.HUDVisibilityOnUpgrade);
                         turret.NextTurretLevel();
+                        TurretScore += 1;
                     }
 
                 }
@@ -134,6 +137,18 @@
             }
         }
 
+        #endregion
+
+        #region Score Management
+        public float ElapsedTime { get; set; }
+        public int EnemyKilled { get; set; }
+        public int TurretScore { get; set; }
+        public int Score
+        {
+            // Le score correspon au score des ennemis tués - Le nombre de tourelles utilisées - le temps pris
+            get { return EnemyKilled - TurretScore - (int)(ElapsedTime * 0.1); }
+            private set { }
+        }
         #endregion
 
         #region Game State
@@ -224,7 +239,10 @@
         //Game initialization
         void InitNewGame()
         {
-            if(currentMoney == -1) currentMoney = startMoney;
+            if (currentMoney == -1) currentMoney = startMoney;
+            EnemyKilled = 0;
+            TurretScore = 0;
+            ElapsedTime = 0;
         }
         #endregion
 
@@ -340,8 +358,10 @@
             if (!IsPlaying) return;
             updateTurretBehaviour();
 
+            ElapsedTime += Time.deltaTime;
+
             //On vérifie si on a gagne
-            if(m_House && m_House.finished())
+            if (m_House && m_House.finished())
             {
                 if (LevelManager.Instance.HaveNextLevel())
                 {
@@ -349,6 +369,8 @@
                 }
                 else
                 {
+                    int bestScore = PlayerPrefs.GetInt("BestScore", 0);
+                    if (bestScore < Score) PlayerPrefs.SetInt("BestScore", Score);
                     Win();
                 }
             }
