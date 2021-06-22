@@ -151,6 +151,10 @@ Il y a deux niveaux à dispositions actuellement : le premier niveau est une val
 
 ![MapLvl2.png](.\Assets\Images\MapLvl2.png)
 
+
+
+Le cas de victoire arrive quand toutes les vagues d'ennemis sont vaincus et les deux niveaux ont été complétés. Le cas de défaite se produit lorsque le château a perdu tous ses points de vie.
+
 # Conclusion
 
 ### Limitations
