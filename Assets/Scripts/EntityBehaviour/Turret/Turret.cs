@@ -252,4 +252,16 @@ public class Turret : MonoBehaviour
     {
         return turretMoneyCost;
     }
+
+    /// <summary>
+    /// Return money cost of next level turret
+    /// </summary>
+    /// <returns></returns>
+    public int getNextLevelTurretMoneyCost()
+    {
+        if((int)actualLevel + 1 >= Enum.GetValues(typeof(Levels)).Length) return int.MaxValue;
+        GameObject m_nextLevelTurretPrefab = m_TurretPrefab[(int)actualLevel + 1];
+        Turret m_nextLevelTurret = (Turret)m_nextLevelTurretPrefab.GetComponent(typeof(Turret));
+        return m_nextLevelTurret.getTurretMoneyCost();
+    }
 }
