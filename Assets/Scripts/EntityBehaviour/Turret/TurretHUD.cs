@@ -19,13 +19,6 @@ public class TurretHUD : MonoBehaviour
         //set visibility
         ChangeHUDVisibility(_HUDVisibility);
     }
-   
-    private void OnValidate()
-    {
-        if (!Application.isPlaying) return;
-        //set visibility
-        ChangeHUDVisibility(_HUDVisibility);
-    }
 
     /// <summary>
     /// Change HUD turret visibility

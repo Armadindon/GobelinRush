@@ -7,6 +7,11 @@ using GoblinRush;
 
 public class Turret : MonoBehaviour
 {
+    public enum TypeTurret
+    {
+        Crossbow,
+        Cannon
+    }
     public enum Levels
     {
         Level1, 
@@ -16,6 +21,7 @@ public class Turret : MonoBehaviour
 
     #region Turret SerializeField
     [Header("Turret settings :")]
+    [SerializeField] public TypeTurret typeTurret;
     [Tooltip("Projectile prefab")]
     [SerializeField] private GameObject m_ProjectilePrefab;
 

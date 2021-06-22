@@ -79,7 +79,7 @@
                         //Create newTurret
                         GameObject m_newTurret = Instantiate(m_TurretPrefab, m_TurretPlacementHUD.transform.position, Quaternion.identity);
                         //Destroy Turret placement manager
-                        Destroy(m_TurretPlacementHUD.gameObject);
+                        Destroy(m_TurretPlacementHUD.transform.parent.gameObject);
                         //Remove money from Turret
                         currentMoney -= m_newTurret.GetComponent<Turret>().getTurretMoneyCost();
                     }

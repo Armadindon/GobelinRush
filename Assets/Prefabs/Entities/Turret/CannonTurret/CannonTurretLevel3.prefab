@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c68b8a204c54c643991a0db3985b9d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeTurret: 1
   m_ProjectilePrefab: {fileID: 7020122567642651044, guid: fe1f8598d6735604fb89db79179f5ef3,
     type: 3}
   _rangeTurret: 40
