@@ -2,32 +2,17 @@ using UnityEngine;
 using UnityEngine.Audio;
 using System;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton<AudioManager>
 {
     /// <summary>
     /// Liste de sons
     /// </summary>
     public Sound[] sounds;
 
-    /// <summary>
-    /// Instance permettant de ne pas engendrer d'autres managers
-    /// </summary>
-    public static AudioManager instance;
-
     void Awake()
     {
-        //si l'instance n'a pas été appelée avant
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else {
-            Destroy(this);
-            return;
-        }
-            
-        //on détruit l'objet pour éviter des doublons
-        DontDestroyOnLoad(gameObject);
+        //awake de l'objet mère pas appelé
+        base.Awake();
 
         //on ajoute les fichiers audios aux fichiers sources
         foreach(Sound snd in sounds)

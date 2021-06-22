@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4627149022347582
 Transform:
   m_ObjectHideFlags: 0
@@ -273,7 +273,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4179950001461168}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114138460654926132
 MonoBehaviour:
@@ -366,7 +366,7 @@ Transform:
   m_Children:
   - {fileID: 4586049091779294}
   m_Father: {fileID: 4179950001461168}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114331011742233390
 MonoBehaviour:
@@ -475,10 +475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoNotDestroyGameObjectOnLoad: 0
   startMoney: 50
-  m_CrossbowTurretPrefab: {fileID: 4607456947165824349, guid: 38e020ee2e5d0e1479fcb716436b4fe0,
-    type: 3}
-  m_TurretPlacementPrefab: {fileID: 6558320916949709513, guid: c895197d825ac9b43996611d4eeefcfd,
-    type: 3}
+  m_TurretPlacementManager: {fileID: 0}
   m_GameState: 0
 --- !u!1 &1696920944652120
 GameObject:
@@ -529,6 +526,7 @@ MonoBehaviour:
   m_PanelGameOver: {fileID: 0}
   m_PanelWin: {fileID: 0}
   m_PanelBetweenLevels: {fileID: 0}
+  m_MainMenuLoadSave: {fileID: 0}
 --- !u!1 &1708910193215040
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,6 +686,7 @@ Transform:
   - {fileID: 4596773635593058}
   - {fileID: 4268361423016904}
   - {fileID: 4627149022347582}
+  - {fileID: 1201367481029744567}
   - {fileID: 4947221284882222}
   - {fileID: 4306328927789822}
   - {fileID: 1671436279960746713}
@@ -723,7 +722,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4179950001461168}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8667954190044936816
 MonoBehaviour:
@@ -738,3 +737,116 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyGameObjectOnLoad: 0
+  m_CrossbowPrefab: {fileID: 0}
+  m_CanonPrefab: {fileID: 0}
+--- !u!1 &8440083827127991061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201367481029744567}
+  - component: {fileID: 4178918135325148142}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1201367481029744567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8440083827127991061}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4179950001461168}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4178918135325148142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8440083827127991061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e692d69b769b748a346ed8cf152a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DoNotDestroyGameObjectOnLoad: 0
+  sounds:
+  - name: Sword Clash 1
+    m_Clip: {fileID: 8300000, guid: 07cf181d2fccb57439ee1cafc08550d4, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.25
+    pitch: 1.5
+    loop: 0
+  - name: Sword Clash 2
+    m_Clip: {fileID: 8300000, guid: 8f9878cd35e9eb345b0746e4876b0008, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.15
+    pitch: 1.5
+    loop: 0
+  - name: Enemy Death
+    m_Clip: {fileID: 8300000, guid: 49bd08647409792409ed95b0eab6d8ec, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.35
+    pitch: 1.5
+    loop: 0
+  - name: Enemy Spawn
+    m_Clip: {fileID: 8300000, guid: e82d815e36b4c42408dc27109e5cc4aa, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.1
+    pitch: 1.5
+    loop: 0
+  - name: Cannon Shoot
+    m_Clip: {fileID: 8300000, guid: e48ad5c425ef0f6478a83a6bfe0dcff0, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.25
+    pitch: 1.5
+    loop: 0
+  - name: Ballist Shoot
+    m_Clip: {fileID: 8300000, guid: 68762c0f7adaf0648ae521711b254d71, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.25
+    pitch: 1.5
+    loop: 0
+  - name: Victory
+    m_Clip: {fileID: 8300000, guid: 9d5863e97750c9a4ba7c86a1b718d05e, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.35
+    pitch: 1.5
+    loop: 0
+  - name: Lose
+    m_Clip: {fileID: 8300000, guid: 6ddb898ada9e6d54cb7eaaeee48a63c2, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.35
+    pitch: 1.5
+    loop: 0
+  - name: Theme
+    m_Clip: {fileID: 8300000, guid: b483f566aff00544da06ee710f173231, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+  - name: Wave Intro
+    m_Clip: {fileID: 8300000, guid: b6ad5bc9925481c429abb5f12a42bf28, type: 3}
+    m_Source: {fileID: 0}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+  - name: Construction
+    m_Clip: {fileID: 8300000, guid: 0e58734d11b4006449754706a58dad84, type: 3}
+    m_Source: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0

@@ -34,7 +34,7 @@ public class House : MonoBehaviour
         GameManager.Instance.m_House = this;
 
         //son d'intro de vague
-        FindObjectOfType<AudioManager>().Play("Wave Intro");
+        AudioManager.Instance.Play("Wave Intro");
     }
 
     private void Update()
@@ -73,7 +73,7 @@ public class House : MonoBehaviour
             if (!finished())
             {
                 //son d'intro de vague
-                FindObjectOfType<AudioManager>().Play("Wave Intro");
+                AudioManager.Instance.Play("Wave Intro");
             }
         }
     }
