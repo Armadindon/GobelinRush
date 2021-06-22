@@ -42,7 +42,7 @@ public class TurretHUD : MonoBehaviour
         //if HUD turret visible look at camera
         if (HUDVisibilty) m_CanvasTurretHUD.transform.LookAt(Camera.main.transform.position, Vector3.up);
 
-        if (GameManager.Instance.currentMoney < m_Turret.getTurretMoneyCost())
+        if (GameManager.Instance.currentMoney < m_Turret.getNextLevelTurretMoneyCost())
             m_UpgradeArrow.color = new Color(0, 0, 0);
         else
             m_UpgradeArrow.color = new Color(255, 255, 255);

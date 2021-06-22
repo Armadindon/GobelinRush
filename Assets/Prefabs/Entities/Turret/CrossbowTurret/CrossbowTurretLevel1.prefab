@@ -425,6 +425,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5070501729440833462, guid: d396dffb8d39f6343b491ea3838fee7f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070501729440833462, guid: d396dffb8d39f6343b491ea3838fee7f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070501729440833462, guid: d396dffb8d39f6343b491ea3838fee7f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5237692944067193351, guid: d396dffb8d39f6343b491ea3838fee7f,
         type: 3}
       propertyPath: m_Name
