@@ -129,10 +129,10 @@ MonoBehaviour:
     type: 3}
   _rangeTurret: 40
   projectileSpeed: 32
-  projectileShootCooldown: 2
+  projectileShootCooldown: 5
   m_ProjectileSpawns:
   - {fileID: 6985572606928079379}
-  projectileDamage: 20
+  projectileDamage: 50
   HUDVisibilityOnUpgrade: 0
   _actualLevel: 0
   m_TurretPrefab:

@@ -164,7 +164,7 @@ MonoBehaviour:
   m_ProjectileSpawns:
   - {fileID: 6985572606928079379}
   - {fileID: 5150361526172512232}
-  projectileDamage: 10
+  projectileDamage: 8
   HUDVisibilityOnUpgrade: 0
   _actualLevel: 1
   m_TurretPrefab:

@@ -166,7 +166,7 @@ MonoBehaviour:
   - {fileID: 6985572606928079379}
   - {fileID: 3253620358084921141}
   - {fileID: 2831281859296168332}
-  projectileDamage: 10
+  projectileDamage: 8
   HUDVisibilityOnUpgrade: 0
   _actualLevel: 2
   m_TurretPrefab:
