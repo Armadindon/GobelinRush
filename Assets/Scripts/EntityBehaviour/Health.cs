@@ -50,9 +50,12 @@ public class Health : MonoBehaviour
             float currentHealthPct = (float)currentHealth / (float)health;
             OnHealthPctChanged(currentHealthPct);
         }
-        if (currentHealth <= 0) {
-            if (gameObject.GetComponent<Enemy>() != null) GameManager.Instance.EnemyKilled += gameObject.GetComponent<Enemy>().GetScoreReward();
-            GameObject m_newDeathParticle = Instantiate(m_DeathParticlePrefab, transform.position, Quaternion.identity);
+        if (currentHealth <= 0 && gameObject.GetComponent<Enemy>() != null)
+        {
+
+            Debug.Log("On add du score");
+            GameManager.Instance.EnemyKilled += gameObject.GetComponent<Enemy>().GetScoreReward();
+
         }
     }
 
@@ -91,7 +94,10 @@ public class Health : MonoBehaviour
     /// </summary>
     public void DeathAnimation()
     {
-        GameObject m_NewHitParticle = Instantiate(m_DeathParticlePrefab, transform.position, Quaternion.identity);
-        Destroy(m_NewHitParticle, 1);
+        if (m_DeathParticlePrefab)
+        {
+            GameObject m_NewHitParticle = Instantiate(m_DeathParticlePrefab, transform.position, Quaternion.identity);
+            Destroy(m_NewHitParticle, 1);
+        }
     }
 }
