@@ -6063,6 +6063,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 526130070503165891}
     m_Modifications:
+    - target: {fileID: 1396815375206080921, guid: a35be9def8712c44b9a1a0f8e59c0c79,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 19.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2510814162510297302, guid: a35be9def8712c44b9a1a0f8e59c0c79,
         type: 3}
       propertyPath: m_Name
