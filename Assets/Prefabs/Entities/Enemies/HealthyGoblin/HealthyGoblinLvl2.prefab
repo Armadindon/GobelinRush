@@ -149,7 +149,7 @@ MonoBehaviour:
     m_Bits: 0
   attackDamage: 100
   attackCooldownDuration: 1
-  moneyReward: 45
+  moneyReward: 16
   m_animator: {fileID: 1463188606484256839}
 --- !u!114 &8654728988337617674
 MonoBehaviour:

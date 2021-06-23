@@ -158,7 +158,7 @@ MonoBehaviour:
   typeTurret: 0
   m_ProjectilePrefab: {fileID: 7020122567642651044, guid: 420784abfa190fe428db8d40b37f339e,
     type: 3}
-  _rangeTurret: 32
+  _rangeTurret: 35
   projectileSpeed: 20
   projectileShootCooldown: 0.6
   m_ProjectileSpawns:
@@ -217,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 8123935952297405786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 32, y: 32, z: 32}
+  m_LocalScale: {x: 35, y: 35, z: 35}
   m_Children: []
   m_Father: {fileID: 1193383369768571633}
   m_RootOrder: 1
