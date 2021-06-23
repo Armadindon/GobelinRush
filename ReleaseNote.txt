@@ -26,7 +26,7 @@ DevNotes : https://docs.google.com/document/d/10_pX1pApnnx7rZwFggwXDcWyREvnJaX1i
 	- Victoire : toutes les vagues d'ennemis vaincues sur les deux niveaux
 	- Défaite : le château a perdu tous ses points de vie
 • Capacités du joueur :
-	- Contrôle le jeu à l'aide des commandes évoquées
+	- Contrôle du jeu à l'aide des commandes évoquées
 	- Peut utiliser les emplacements de tourelles prédéfinies à l'aide de la souris
 			
 			---Répartition des tâches ---
@@ -67,6 +67,7 @@ Dans un contexte scolaire, ce projet a été fait dans une période scolaire con
 GFX :
 - Plus de particules
 - Plus d'animations
+- Afficher le coût des tourelles
 
 SFX :
 - Éventuellement des sons faits-maison pour avoir une base SFX originale
@@ -76,6 +77,10 @@ Gameplay :
 - Plus de tourelles
 - Système de magie pour des pouvoirs tierces
 - Gestion du temps
+- Paramètres
+- Niveau de difficulté
+- Amélioration du système de waypoints
+- Meilleure exploitation des events
 
 	Bugs connus
 Tous les bugs techniques bloquants ont été corrigés lors du développement. Nous avons eu quelques soucis notamment au niveau de la suppression des tourelles, des bugs d'affichage de la barre de vie des diverses entités, problème de gestion de projectile, etc.

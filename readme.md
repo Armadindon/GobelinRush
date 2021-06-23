@@ -67,16 +67,6 @@ Cette continuité de travail nous a permis d'avoir une qualité de rendu rapide 
 
 # Developper Guide
 
-## Fonctionnement et structure
-
-### Shared object between scenes
-
-### Singleton
-
-### Event
-
-### Manager
-
 ## ASSET utilisés
 
 ### GFX
@@ -153,19 +143,24 @@ Vous devez survivre aux vagues d'ennemis avant que celles-ci ne détruisent votr
 
 Il y a deux niveaux à dispositions actuellement : le premier niveau est une vallée avec un seul chemin distinct. Le deuxième niveau est un marécage, beaucoup plus sombre, avec plusieurs possibles chemins empruntables par les ennemis.
 
-
-
-
-
-
-
 Le cas de victoire arrive quand toutes les vagues d'ennemis sont vaincus et les deux niveaux ont été complétés. Le cas de défaite se produit lorsque le château a perdu tous ses points de vie.
 
 #### Tourelles
 
-Nous avons donc 
+| Niveau |                     Canon                     |                     Arbalète                      |
+| :----: | :-------------------------------------------: | :-----------------------------------------------: |
+|   1    | ![CannonLvl1](.\Assets\Images\CannonLvl1.PNG) | ![CrossbowLvl1](.\Assets\Images\CrossbowLvl1.PNG) |
+|   2    | ![CannonLvl2](.\Assets\Images\CannonLvl2.PNG) | ![CrossbowLvl2](.\Assets\Images\CrossbowLvl2.PNG) |
+|   3    | ![CannonLvl3](.\Assets\Images\CannonLvl3.PNG) | ![CrossbowLvl3](.\Assets\Images\CrossbowLvl3.PNG) |
 
 #### Gobelins
+
+| Nom            | Image                                               | Caractéristiques |
+| -------------- | --------------------------------------------------- | ---------------- |
+| Gobelin commun | ![CommonGoblin](.\Assets\Images\CommonGoblin.PNG)   | Gobelin basique  |
+| Gobelin de vie | ![HealthyGoblin](.\Assets\Images\HealthyGoblin.PNG) | Forte vie        |
+| Gobelin rapide | ![SpeedyGoblin](.\Assets\Images\SpeedyGoblin.PNG)   | Rapide vitesse   |
+| Gobelin fort   | ![StrongGobelin](.\Assets\Images\StrongGobelin.PNG) | Forte attaque    |
 
 #### Niveaux
 
@@ -176,6 +171,8 @@ Nous avons donc
 - Marécage
 
 ![MapLvl2.png](.\Assets\Images\MapLvl2.png)
+
+
 
 # Conclusion
 
