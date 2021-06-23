@@ -43,6 +43,8 @@ public class TurretProjectile : MonoBehaviour
 
                 GameManager.Instance.currentMoney += m_enemy.getMoneyReward();
                 m_Turret.m_Enemies.Remove(m_enemy);
+                Debug.Log("On ajoute du score");
+                GameManager.Instance.EnemyKilled += collision.gameObject.GetComponent<Enemy>().GetScoreReward();
                 Destroy(collision.gameObject);
             }
 

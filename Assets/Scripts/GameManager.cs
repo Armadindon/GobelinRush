@@ -148,7 +148,7 @@
         public int Score
         {
             // Le score correspon au score des ennemis tués - Le nombre de tourelles utilisées - le temps pris
-            get { return EnemyKilled - TurretScore * 2; }
+            get { return EnemyKilled - TurretScore * 5; }
             private set { }
         }
         #endregion
