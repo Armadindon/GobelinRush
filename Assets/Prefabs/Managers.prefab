@@ -475,7 +475,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoNotDestroyGameObjectOnLoad: 0
   startMoney: 50
-  m_TurretPlacementManager: {fileID: 0}
+  m_TurretPlacementManager: {fileID: 6558320916949709513, guid: c895197d825ac9b43996611d4eeefcfd,
+    type: 3}
   m_GameState: 0
 --- !u!1 &1696920944652120
 GameObject:
