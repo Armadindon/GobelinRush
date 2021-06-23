@@ -154,7 +154,7 @@ PrefabInstance:
     - target: {fileID: 4767053815309325599, guid: 3411a247e4e86d748a43af5c7b27baa8,
         type: 3}
       propertyPath: currentLevel
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4878056413853013012, guid: 3411a247e4e86d748a43af5c7b27baa8,
         type: 3}
@@ -215,6 +215,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShareBetweenScenes
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774249880542051658, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774249880542051658, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774249880542051658, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3411a247e4e86d748a43af5c7b27baa8, type: 3}
