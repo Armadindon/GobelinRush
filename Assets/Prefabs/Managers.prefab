@@ -738,8 +738,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyGameObjectOnLoad: 0
-  m_CrossbowPrefab: {fileID: 0}
-  m_CanonPrefab: {fileID: 0}
+  m_CrossbowPrefab: {fileID: 4607456947165824349, guid: 38e020ee2e5d0e1479fcb716436b4fe0,
+    type: 3}
+  m_CanonPrefab: {fileID: 4607456947165824349, guid: b8ae29ee162f7484d981b5404394221b,
+    type: 3}
 --- !u!1 &8440083827127991061
 GameObject:
   m_ObjectHideFlags: 0

@@ -244,7 +244,6 @@
             if (currentMoney == -1) currentMoney = startMoney;
             EnemyKilled = 0;
             TurretScore = 0;
-            ElapsedTime = 0;
         }
         #endregion
 
@@ -374,7 +373,6 @@
             if (!IsPlaying) return;
             updateTurretBehaviour();
 
-            ElapsedTime += Time.deltaTime;
 
             //On vérifie si on a gagne
             if (m_House && m_House.finished())
