@@ -6,7 +6,7 @@ using GoblinRush;
 public class TurretProjectile : MonoBehaviour
 {
     public float projectileSpeed { private get; set; }
-    public Transform m_Target { private get; set; }
+    public GameObject m_Target { private get; set; }
     public Turret m_Turret { private get; set; }
 
     public double attackDamage { get; set; }
@@ -18,7 +18,7 @@ public class TurretProjectile : MonoBehaviour
         //si détection d'un ennemi
         if (m_Target)
         {
-            transform.LookAt(m_Target);
+            transform.LookAt(m_Target.GetComponentInChildren<Renderer>().bounds.center);
             //move projectile to target
             transform.position += transform.forward * Time.deltaTime * projectileSpeed;
         }

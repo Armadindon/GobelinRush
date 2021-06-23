@@ -139,7 +139,7 @@ public class Turret : MonoBehaviour
             //if can shoot
             if (Time.time > projectileNextShootTime)
             {
-                ShootProjectile(m_Enemies[0].gameObject.transform);
+                ShootProjectile(m_Enemies[0].gameObject);
                 //wait before shoot again
                 projectileNextShootTime = Time.time + projectileShootCooldown;
             }
@@ -176,7 +176,7 @@ public class Turret : MonoBehaviour
     /// Shoot projectile to target
     /// </summary>
     /// <param name="target"></param>
-    private void ShootProjectile(Transform target)
+    private void ShootProjectile(GameObject target)
     {
         //shoot mulyiple projectile
         foreach (Transform m_ProjectileSpawn in m_ProjectileSpawns)
