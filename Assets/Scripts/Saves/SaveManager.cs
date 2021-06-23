@@ -37,7 +37,6 @@ class SaveManager : Singleton<SaveManager>
         data.Remaining_health = GameManager.Instance.CastleTarget.GetComponent<Health>().currentHealth;
         data.currentMoney = GameManager.Instance.currentMoney;
 
-        data.CurrentTime = GameManager.Instance.m_House.WaveStartedAt;
         data.EnemyScore = GameManager.Instance.EnemyKilled;
         data.TurretScore = GameManager.Instance.TurretScore;
 
@@ -106,7 +105,6 @@ class SaveManager : Singleton<SaveManager>
 
         GameManager.Instance.CastleTarget.GetComponent<Health>().currentHealth = save.Remaining_health;
         GameManager.Instance.currentMoney = save.currentMoney;
-        GameManager.Instance.ElapsedTime = save.CurrentTime;
         GameManager.Instance.EnemyKilled = save.EnemyScore;
         GameManager.Instance.TurretScore = save.TurretScore;
     }
