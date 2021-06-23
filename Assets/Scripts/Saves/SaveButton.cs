@@ -21,7 +21,7 @@ public class SaveButton : MonoBehaviour
         {
             m_SaveName.text = m_Save.FileName;
             m_DateSave.text = DateTime.ParseExact(m_Save.FileName.Replace("Save_",""), "yyyy_dd_MM_HH_mm_ss", null).ToString("g");
-            m_LevelName.text = "Niveau " + (m_Save.CurrentLevel + 1);
+            m_LevelName.text = "Level " + (m_Save.CurrentLevel + 1);
         }
     }
 
