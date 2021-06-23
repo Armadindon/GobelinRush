@@ -73,7 +73,7 @@ Cette continuité de travail nous a permis d'avoir une qualité de rendu rapide 
 
 ## ASSET utilisés
 
-### GFX
+### GFX (Gratuit)
 
 [Unity Asset Store - Castle Pack — Gratuit — Unity AS EULA](https://assetstore.unity.com/packages/3d/environments/castle-pack-by-progru-185976)
 
@@ -93,7 +93,7 @@ Cette continuité de travail nous a permis d'avoir une qualité de rendu rapide 
 
 [Unity Asset Store - Low Poly Crates — Gratuit — Unity AS EULA](https://assetstore.unity.com/packages/3d/props/low-poly-crates-80037)
 
-### SFX
+### SFX (Gratuit)
 
 [Freesound - Sword Swipe 2 — CC](https://freesound.org/people/LukeSharples/sounds/209122/) 
 
@@ -119,7 +119,7 @@ Cette continuité de travail nous a permis d'avoir une qualité de rendu rapide 
 
 [YouTube - Aww — Gratuit](https://www.youtube.com/watch?v=ltjT25GyXTM)
 
-### UI
+### UI (Gratuit)
 
 [Freepik - Wooden and golden UI buttons — Gratuit — Freepik License](https://www.freepik.com/free-vector/wooden-gold-buttons-ui-game_12760665.htm#page=1&query=wood%20ui&position=1)
 
@@ -160,8 +160,6 @@ Le cas de victoire arrive quand toutes les vagues d'ennemis sont vaincus et les 
 ### Limitations
 
 Ce projet était une première pour la majorité d'entre-nous. Les procédés sont toujours plus lents lorsque l'on doit passer par une phase d'auto-formation afin d'assimiler de nouveaux concepts, méthodes, principes ou technologies plus généralement.
-
-~~Dans un contexte scolaire, ce projet a été fait dans une période scolaire conséquente où l'on devait travailler différents modules, ce qui pouvait freiner l'avancement de l'application.~~
 
 ### Voies d'amélioration
 
