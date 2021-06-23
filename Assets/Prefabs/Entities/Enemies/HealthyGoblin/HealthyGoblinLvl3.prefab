@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8e0e1f5e963ba42b92aaadfbfa9779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 900
+  health: 1500
   side: 0
   m_HitParticlePrefab: {fileID: 1850033487435682, guid: 2c4b2397ab17cce4bae0e99c1004869d,
     type: 3}

@@ -141,13 +141,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 0}
-  speed: 1.5
+  speed: 2
   rotationSpeed: 10
   gravity: 25
   m_GroundLayer:
     serializedVersion: 2
     m_Bits: 0
-  attackDamage: 100
+  attackDamage: 50
   attackCooldownDuration: 1
   moneyReward: 15
   m_animator: {fileID: 1463188606484256839}
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8e0e1f5e963ba42b92aaadfbfa9779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 300
+  health: 400
   side: 0
   m_HitParticlePrefab: {fileID: 1850033487435682, guid: 2c4b2397ab17cce4bae0e99c1004869d,
     type: 3}
