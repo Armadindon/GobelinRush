@@ -143,7 +143,6 @@
         #endregion
 
         #region Score Management
-        public float ElapsedTime { get; set; }
         public int EnemyKilled { get; set; }
         public int TurretScore { get; set; }
         public int Score

@@ -26,5 +26,4 @@ public class SaveData
     // Score Management
     public int EnemyScore { get; set; }
     public int TurretScore { get; set; }
-    public float CurrentTime { get; set; }
 }
