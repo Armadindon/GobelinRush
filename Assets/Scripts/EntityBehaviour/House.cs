@@ -19,6 +19,7 @@ public class House : MonoBehaviour
 
     private List<GameObject> m_InstanciatedEnemies = new List<GameObject>();
 
+    public int NbWaves { get { return m_Waves.Length; } private set { } }
     public int CurrentWave { get; set; }
     private bool isWaveFinished = true;
 
