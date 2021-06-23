@@ -244,13 +244,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733886880816203139}
-  m_LocalRotation: {x: 0.3875176, y: -0, z: -0, w: 0.92186236}
-  m_LocalPosition: {x: 0, y: 20.33, z: -3.11}
+  m_LocalRotation: {x: 0.0049484465, y: -0.984033, z: 0.17765458, w: 0.009676654}
+  m_LocalPosition: {x: 0.51, y: 13.19, z: 12.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3064306992053589121}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45.6, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20.471, y: -178.943, z: -0.385}
 --- !u!20 &7035709311487751037
 Camera:
   m_ObjectHideFlags: 0
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 1078831135230781384}
-  speed: 70
+  speed: 80
   minZoom: 25
   maxZoom: 65
 --- !u!114 &5144130894038249117
@@ -15336,6 +15336,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShareBetweenScenes
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774249880542051658, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774249880542051658, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774249880542051658, guid: 3411a247e4e86d748a43af5c7b27baa8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3411a247e4e86d748a43af5c7b27baa8, type: 3}
