@@ -50,13 +50,6 @@ public class Health : MonoBehaviour
             float currentHealthPct = (float)currentHealth / (float)health;
             OnHealthPctChanged(currentHealthPct);
         }
-        if (currentHealth <= 0 && gameObject.GetComponent<Enemy>() != null)
-        {
-
-            Debug.Log("On add du score");
-            GameManager.Instance.EnemyKilled += gameObject.GetComponent<Enemy>().GetScoreReward();
-
-        }
     }
 
     /// <summary>
