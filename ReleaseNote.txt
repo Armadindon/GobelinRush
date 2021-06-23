@@ -12,7 +12,7 @@ Mathieu PELLAN                 Gameplay Developer/  Sound Designer
 			---Liens à disposition---
 
 Github : https://github.com/Armadindon/GobelinRush
-Trello : https://trello.com/b/fRGsUSr1/gobelin-rush
+Trello : https://trello.com/invite/b/fRGsUSr1/c8b90b27d24ffaa32be10dd151a4b295/goblin-rush
 DevNotes : https://docs.google.com/document/d/10_pX1pApnnx7rZwFggwXDcWyREvnJaX1iyJUZtJFnWc/edit?usp=sharing
 
 

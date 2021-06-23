@@ -57,7 +57,7 @@ Défaite quand le château n'a plus de point de vie
 
 ## Management
 
-Pour ce projet nous avons mis en place un [Trello](https://trello.com/b/fRGsUSr1/goblin-rush). Il nous a permis d'avoir un suivi continu des fonctionnalité à développer et des tâches à réaliser. Chaque tâche était assigné à une ou plusieurs catégories (Technique, Gameplay, GFX, SFX, UI). Afin de permettre aux développeurs de savoir sur quels sujets travailler. L'organisation permet une meilleure cohésion d'équipe et donc une meilleure productivité.
+Pour ce projet nous avons mis en place un [Trello](https://trello.com/invite/b/fRGsUSr1/c8b90b27d24ffaa32be10dd151a4b295/goblin-rush). Il nous a permis d'avoir un suivi continu des fonctionnalité à développer et des tâches à réaliser. Chaque tâche était assigné à une ou plusieurs catégories (Technique, Gameplay, GFX, SFX, UI). Afin de permettre aux développeurs de savoir sur quels sujets travailler. L'organisation permet une meilleure cohésion d'équipe et donc une meilleure productivité.
 
 Nous avons collaboré à l'aide de Git pour versionner nos différents travaux de manière continue. Nous nous sommes mis d'accord pour travailler de sorte à ce que chaque tâche Trello corresponde à une branche Git. Dès lors qu'un collaborateur en avait fini avec sa tâche, il pouvait soumettre sa branche actuelle à Pull Request, outil disponible sur GitHub. Chaque Pull Request devait être validé par au moins deux personnes.
 
