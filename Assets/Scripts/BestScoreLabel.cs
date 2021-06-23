@@ -7,6 +7,6 @@ public class BestScoreLabel : MonoBehaviour
 {
     void Start()
     {
-        GetComponent<Text>().text = "Meilleur Score : " + PlayerPrefs.GetInt("BestScore", 0);
+        GetComponent<Text>().text = "Highest Score : " + PlayerPrefs.GetInt("BestScore", 0);
     }
 }
