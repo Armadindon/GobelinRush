@@ -205,6 +205,6 @@ Ce projet était une première pour la majorité d'entre-nous. Les procédés so
 
 ### Bugs connus
 
-Tous les bugs techniques bloquants ont été corrigés lors du développement. Nous avons eu quelques soucis notamment au niveau de la suppression des tourelles, des bugs d'affichage de la barre de vie des diverses entités, problème de gestion de projectile ou de déplacement d'ennemis, etc.
+Tous les bugs techniques bloquants ont été corrigés lors du développement. Nous avons eu quelques soucis notamment au niveau de la suppression des tourelles, des bugs d'affichage de la barre de vie des diverses entités, problème de gestion de projectile, etc.
 
-Il nous reste actuellement un seul bug à corriger au niveau de l'affichage du ciel sur le niveau de la vallée.
+Il nous reste certaines bugs à corriger comme certains déplacements ennemis parfois non cohérents, problèmes mineurs de HUD ou encore le ciel non généré sur le niveau de la vallée.
