@@ -34,16 +34,18 @@
 
 		void Update()
 		{	
-			//lorsque l'on clique sur une des flèches, la caméra pourra tourner ou zoomer/dézoomer
-			//rotation
-			if (Input.GetKey(KeyCode.RightArrow))
+			//lorsque l'on appuie sur une des flèches, la caméra pourra tourner ou zoomer/dézoomer
+			//rotation gauche
+			if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.Q))
 				transform.RotateAround(m_Target.transform.position, Vector3.down, speed * Time.deltaTime);
-			if (Input.GetKey(KeyCode.LeftArrow))
+			//rotation droite
+			if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
 				transform.RotateAround(m_Target.transform.position, Vector3.up, speed * Time.deltaTime);
-			//zoom/dezoom
-			if (Input.GetKey(KeyCode.UpArrow) && m_mainCamera.fieldOfView >= minZoom)
+			//zoom
+			if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Z)) && m_mainCamera.fieldOfView >= minZoom)
 				m_mainCamera.fieldOfView -= speed * 0.01f;
-			if (Input.GetKey(KeyCode.DownArrow) && m_mainCamera.fieldOfView <= maxZoom)
+			//dezoom
+			if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && m_mainCamera.fieldOfView <= maxZoom)
 				m_mainCamera.fieldOfView += speed * 0.01f;
 		}
 
