@@ -37,6 +37,10 @@ class SaveManager : Singleton<SaveManager>
         data.Remaining_health = GameManager.Instance.CastleTarget.GetComponent<Health>().currentHealth;
         data.currentMoney = GameManager.Instance.currentMoney;
 
+        data.CurrentTime = GameManager.Instance.m_House.WaveStartedAt;
+        data.EnemyScore = GameManager.Instance.EnemyKilled;
+        data.TurretScore = GameManager.Instance.TurretScore;
+
         //On serialize l'objet
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         String path = Application.persistentDataPath + "/saves/" + SaveName + ".gblr";
@@ -66,6 +70,8 @@ class SaveManager : Singleton<SaveManager>
     public IEnumerator setDataAfterDelay(SaveData save)
     {
         yield return new WaitForFixedUpdate(); // Permet d'être sûr que la scene a bien load
+
+        GameManager.Instance.Play();
 
         GameManager.Instance.m_House.GetComponent<House>().CurrentWave = save.CurrentWave;
         
@@ -100,8 +106,9 @@ class SaveManager : Singleton<SaveManager>
 
         GameManager.Instance.CastleTarget.GetComponent<Health>().currentHealth = save.Remaining_health;
         GameManager.Instance.currentMoney = save.currentMoney;
-
-        GameManager.Instance.Play();
+        GameManager.Instance.ElapsedTime = save.CurrentTime;
+        GameManager.Instance.EnemyKilled = save.EnemyScore;
+        GameManager.Instance.TurretScore = save.TurretScore;
     }
 
     public List<SaveData> AvailableSaves()
