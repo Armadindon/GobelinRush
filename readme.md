@@ -1,6 +1,6 @@
 
 
-![img](.\Images rapport\Logo.png)
+![img](./Images rapport/Logo.png)
 
 
 
@@ -129,7 +129,7 @@ Dans le guide du jeu Gobelin Rush , vous trouverez des instructions détaillées
 
 #### Touches
 
-![commands](.\Assets\Images\commands.png)
+![commands](./Images rapport/commands.png)
 
 Goblin Rush se joue principalement à la souris, où se font les interactions comme voir la portée des tourelles ou interagir avec les HUD. 
 
@@ -147,30 +147,30 @@ Le cas de victoire arrive quand toutes les vagues d'ennemis sont vaincus et les 
 
 #### Tourelles
 
-| Niveau |                     Canon                     |                     Arbalète                      |
-| :----: | :-------------------------------------------: | :-----------------------------------------------: |
-|   1    | ![CannonLvl1](.\Assets\Images\CannonLvl1.PNG) | ![CrossbowLvl1](.\Assets\Images\CrossbowLvl1.PNG) |
-|   2    | ![CannonLvl2](.\Assets\Images\CannonLvl2.PNG) | ![CrossbowLvl2](.\Assets\Images\CrossbowLvl2.PNG) |
-|   3    | ![CannonLvl3](.\Assets\Images\CannonLvl3.PNG) | ![CrossbowLvl3](.\Assets\Images\CrossbowLvl3.PNG) |
+| Niveau |                     Canon                      |                      Arbalète                      |
+| :----: | :--------------------------------------------: | :------------------------------------------------: |
+|   1    | ![CannonLvl1](./Images rapport/CannonLvl1.PNG) | ![CrossbowLvl1](./Images rapport/CrossbowLvl1.PNG) |
+|   2    | ![CannonLvl2](./Images rapport/CannonLvl2.PNG) | ![CrossbowLvl2](./Images rapport/CrossbowLvl2.PNG) |
+|   3    | ![CannonLvl3](./Images rapport/CannonLvl3.PNG) | ![CrossbowLvl3](./Images rapport/CrossbowLvl3.PNG) |
 
 #### Gobelins
 
-| Nom            | Image                                               | Caractéristiques |
-| -------------- | --------------------------------------------------- | ---------------- |
-| Gobelin commun | ![CommonGoblin](.\Assets\Images\CommonGoblin.PNG)   | Gobelin basique  |
-| Gobelin de vie | ![HealthyGoblin](.\Assets\Images\HealthyGoblin.PNG) | Forte vie        |
-| Gobelin rapide | ![SpeedyGoblin](.\Assets\Images\SpeedyGoblin.PNG)   | Rapide vitesse   |
-| Gobelin fort   | ![StrongGobelin](.\Assets\Images\StrongGobelin.PNG) | Forte attaque    |
+| Nom            | Image                                                | Caractéristiques |
+| -------------- | ---------------------------------------------------- | ---------------- |
+| Gobelin commun | ![CommonGoblin](./Images rapport/CommonGoblin.PNG)   | Gobelin basique  |
+| Gobelin de vie | ![HealthyGoblin](./Images rapport/HealthyGoblin.PNG) | Forte vie        |
+| Gobelin rapide | ![SpeedyGoblin](./Images rapport/SpeedyGoblin.PNG)   | Rapide vitesse   |
+| Gobelin fort   | ![StrongGobelin](./Images rapport/StrongGobelin.PNG) | Forte attaque    |
 
 #### Niveaux
 
 - Vallée
 
-![MapLvl1.png](.\Assets\Images\MapLvl1.png)
+![MapLvl1.png](./Images rapport/MapLvl1.png)
 
 - Marécage
 
-![MapLvl2.png](.\Assets\Images\MapLvl2.png)
+![MapLvl2.png](./Images rapport/MapLvl2.png)
 
 
 
