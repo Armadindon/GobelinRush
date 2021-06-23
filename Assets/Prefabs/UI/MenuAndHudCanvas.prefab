@@ -1630,7 +1630,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Vous avez Gagn\xE9 !"
+  m_Text: You won the game !
 --- !u!1 &257924748107550109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,7 +1709,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Vous avez gagn\xE9 ce niveau !"
+  m_Text: You Won this level !
 --- !u!1 &349018899690950489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2933,7 +2933,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Param\xE8tres"
+  m_Text: Parameters
 --- !u!1 &3655887594903740270
 GameObject:
   m_ObjectHideFlags: 0
@@ -3105,7 +3105,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Retour au menu
+  m_Text: Main Menu
 --- !u!1 &4639246395998718746
 GameObject:
   m_ObjectHideFlags: 0
@@ -3389,7 +3389,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Niveau Suivant
+  m_Text: Next Level
 --- !u!1 &5371715004740251651
 GameObject:
   m_ObjectHideFlags: 0
