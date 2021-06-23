@@ -32,34 +32,34 @@ DevNotes : https://docs.google.com/document/d/10_pX1pApnnx7rZwFggwXDcWyREvnJaX1i
 			---Répartition des tâches ---
 
 • Baptiste PERRIN :
-		- Comportement des enemies
-		- Ajout du système de vague
-		- Gestion du système d'économie
-		- Gestion des scènes
-		- Gestion de sauvegarde
-		- Implémentation du score
+	- Comportement des enemies
+	- Ajout du système de vague
+	- Gestion du système d'économie
+	- Gestion des scènes
+	- Gestion de sauvegarde
+	- Implémentation du score
 
 • Colin LE PICHON :
-		- Comportement des tourelles
-		- Placement des tourelles
-		- Amélioration des tourelles
-		- Diversification des enemis
+	- Comportement des tourelles
+	- Placement des tourelles
+	- Amélioration des tourelles
+	- Diversification des enemis
 
 • Mathieu TAILLANDIER :
-		- Système de vie
-		- Gestion de la caméra
-		- Implémentation des effets sonors
+	- Système de vie
+	- Gestion de la caméra
+	- Implémentation des effets sonors
 
 • Mathieu PELLAN :
-		- Level Design
-		- Création des terrains
-		- Ajout des particules diverses (Enemis Hit, Enemis Death, décoration, ambiance, etc...)
-		- Animations des enemis
+	- Level Design
+	- Création des terrains
+	- Ajout des particules diverses (Enemis Hit, Enemis Death, décoration, ambiance, etc...)
+	- Animations des enemis
+
 
 			---Remarques particulières---
 
 	Limitations
-
 Ce projet était une première pour la majorité d'entre-nous. Les procédés sont toujours plus lents lorsque l'on doit passer par une phase d'auto-formation afin d'assimiler de nouveaux concepts, méthodes, principes ou technologies plus généralement.
 Dans un contexte scolaire, ce projet a été fait dans une période scolaire conséquente où l'on devait travailler différents modules, ce qui pouvait freiner l'avancement de l'application.~~
 
@@ -78,7 +78,8 @@ Gameplay :
 - Gestion du temps
 
 	Bugs connus
--
+Tous les bugs techniques bloquants ont été corrigés lors du développement. Nous avons eu quelques soucis notamment au niveau de la suppression des tourelles, des bugs d'affichage de la barre de vie des diverses entités, problème de gestion de projectile, etc.
+Il nous reste actuellement un seul bug à corriger au niveau de l'affichage du ciel sur le niveau de la vallée.
 
 
 			---Assets---
@@ -105,25 +106,25 @@ Unity Asset Store - Low Poly Crates — Gratuit — Unity AS EULA : https://asse
 
 	SFX
 
-Freesound - Sword Swipe 2 — CC : https://freesound.org/people/LukeSharples/sounds/209122/
+Freesound - Sword Swipe 2 — Gratuit — CC : https://freesound.org/people/LukeSharples/sounds/209122/
 
-Freesound - Sword Attack — CC : https://freesound.org/people/Saviraz/sounds/547600/
+Freesound - Sword Attack — Gratuit — CC : https://freesound.org/people/Saviraz/sounds/547600/
 
-Freesound - Shield Bash Impact — CC : https://freesound.org/people/Hybrid_V/sounds/319590/
+Freesound - Shield Bash Impact — Gratuit — CC : https://freesound.org/people/Hybrid_V/sounds/319590/
 
-Freesound - Battle Start — CC : https://freesound.org/people/Sound_Genius78/sounds/430772/
+Freesound - Battle Start — Gratuit — CC : https://freesound.org/people/Sound_Genius78/sounds/430772/
 
-Freesound - Cannon — CC : https://freesound.org/people/Isaac200000/sounds/184650/
+Freesound - Cannon — Gratuit — CC : https://freesound.org/people/Isaac200000/sounds/184650/
 
-Freesound - Bow — CC : https://freesound.org/people/Erdie/sounds/65734/
+Freesound - Bow — Gratuit — CC : https://freesound.org/people/Erdie/sounds/65734/
 
-Freesound - Military March — CC : https://freesound.org/people/zagi2/sounds/204196/
+Freesound - Military March — Gratuit — CC : https://freesound.org/people/zagi2/sounds/204196/
 
-Freesound - Victory Cheer — CC : https://freesound.org/people/chripei/sounds/165491/
+Freesound - Victory Cheer — Gratuit — CC : https://freesound.org/people/chripei/sounds/165491/
 
-Freesound - Pop — CC : https://freesound.org/people/deraj/sounds/202230/
+Freesound - Pop — Gratuit — CC : https://freesound.org/people/deraj/sounds/202230/
 
-Freesound - Hammer — CC : https://freesound.org/people/sgrowe/sounds/342542/
+Freesound - Hammer — Gratuit — CC : https://freesound.org/people/sgrowe/sounds/342542/
 
 YouTube - Villager Sound — Gratuit : https://www.youtube.com/watch?v=561xYvjMbNk
 

@@ -69,11 +69,17 @@ Cette continuité de travail nous a permis d'avoir une qualité de rendu rapide 
 
 ## Fonctionnement et structure
 
+### Shared object between scenes
 
+### Singleton
+
+### Event
+
+### Manager
 
 ## ASSET utilisés
 
-### GFX (Gratuit)
+### GFX
 
 [Unity Asset Store - Castle Pack — Gratuit — Unity AS EULA](https://assetstore.unity.com/packages/3d/environments/castle-pack-by-progru-185976)
 
@@ -93,33 +99,33 @@ Cette continuité de travail nous a permis d'avoir une qualité de rendu rapide 
 
 [Unity Asset Store - Low Poly Crates — Gratuit — Unity AS EULA](https://assetstore.unity.com/packages/3d/props/low-poly-crates-80037)
 
-### SFX (Gratuit)
+### SFX
 
-[Freesound - Sword Swipe 2 — CC](https://freesound.org/people/LukeSharples/sounds/209122/) 
+[Freesound - Sword Swipe 2 — Gratuit — CC](https://freesound.org/people/LukeSharples/sounds/209122/) 
 
-[Freesound - Sword Attack — CC](https://freesound.org/people/Saviraz/sounds/547600/)
+[Freesound - Sword Attack — Gratuit — CC](https://freesound.org/people/Saviraz/sounds/547600/)
 
-[Freesound - Shield Bash Impact — CC](https://freesound.org/people/Hybrid_V/sounds/319590/)
+[Freesound - Shield Bash Impact — Gratuit — CC](https://freesound.org/people/Hybrid_V/sounds/319590/)
 
-[Freesound - Battle Start — CC](https://freesound.org/people/Sound_Genius78/sounds/430772/)
+[Freesound - Battle Start — Gratuit — CC](https://freesound.org/people/Sound_Genius78/sounds/430772/)
 
-[Freesound - Cannon — CC](https://freesound.org/people/Isaac200000/sounds/184650/)
+[Freesound - Cannon — Gratuit — CC](https://freesound.org/people/Isaac200000/sounds/184650/)
 
-[Freesound - Bow — CC](https://freesound.org/people/Erdie/sounds/65734/)
+[Freesound - Bow — Gratuit — CC](https://freesound.org/people/Erdie/sounds/65734/)
 
-[Freesound - Military March — CC](https://freesound.org/people/zagi2/sounds/204196/)
+[Freesound - Military March — Gratuit — CC](https://freesound.org/people/zagi2/sounds/204196/)
 
-[Freesound - Victory Cheer — CC](https://freesound.org/people/chripei/sounds/165491/)
+[Freesound - Victory Cheer — Gratuit — CC](https://freesound.org/people/chripei/sounds/165491/)
 
-[Freesound - Pop — CC](https://freesound.org/people/deraj/sounds/202230/)
+[Freesound - Pop — Gratuit — CC](https://freesound.org/people/deraj/sounds/202230/)
 
-[Freesound - Hammer — CC](https://freesound.org/people/sgrowe/sounds/342542/)
+[Freesound - Hammer — Gratuit — CC](https://freesound.org/people/sgrowe/sounds/342542/)
 
 [YouTube - Villager Sound — Gratuit](https://www.youtube.com/watch?v=561xYvjMbNk)
 
 [YouTube - Aww — Gratuit](https://www.youtube.com/watch?v=ltjT25GyXTM)
 
-### UI (Gratuit)
+### UI
 
 [Freepik - Wooden and golden UI buttons — Gratuit — Freepik License](https://www.freepik.com/free-vector/wooden-gold-buttons-ui-game_12760665.htm#page=1&query=wood%20ui&position=1)
 
@@ -143,17 +149,33 @@ La rotation de la caméra se fait avec les touches Q et D ou flèche gauche/droi
 
 Vous pouvez poser des tourelles sur des emplacements prédéfinis (boîtes). Vous avez alors le choix de poser un canon ou une baliste (arbalète).
 
-Vous devez survivre aux vagues d'ennemis avant que celles-ci ne détruisent votre château. Vous ferez face à différents ennemis, les gobelins sont farouches.
+Vous devez survivre aux vagues d'ennemis avant que celles-ci ne détruisent votre château. Vous ferez face à des ennemis divers et variés, les gobelins sont farouches.
 
 Il y a deux niveaux à dispositions actuellement : le premier niveau est une vallée avec un seul chemin distinct. Le deuxième niveau est un marécage, beaucoup plus sombre, avec plusieurs possibles chemins empruntables par les ennemis.
 
-![MapLvl1.png](.\Assets\Images\MapLvl1.png)
 
-![MapLvl2.png](.\Assets\Images\MapLvl2.png)
+
+
 
 
 
 Le cas de victoire arrive quand toutes les vagues d'ennemis sont vaincus et les deux niveaux ont été complétés. Le cas de défaite se produit lorsque le château a perdu tous ses points de vie.
+
+#### Tourelles
+
+Nous avons donc 
+
+#### Gobelins
+
+#### Niveaux
+
+- Vallée
+
+![MapLvl1.png](.\Assets\Images\MapLvl1.png)
+
+- Marécage
+
+![MapLvl2.png](.\Assets\Images\MapLvl2.png)
 
 # Conclusion
 
@@ -167,6 +189,7 @@ Ce projet était une première pour la majorité d'entre-nous. Les procédés so
 
 - Plus de particules
 - Plus d'animations
+- Afficher le coût des tourelles
 
 #### SFX
 
@@ -178,6 +201,13 @@ Ce projet était une première pour la majorité d'entre-nous. Les procédés so
 - Plus de tourelles
 - Système de magie pour des pouvoirs tierces
 - Gestion du temps
+- Paramètres
+- Niveau de difficulté
+- Amélioration du système de waypoints
+- Meilleure exploitation des events
 
 ### Bugs connus
 
+Tous les bugs techniques bloquants ont été corrigés lors du développement. Nous avons eu quelques soucis notamment au niveau de la suppression des tourelles, des bugs d'affichage de la barre de vie des diverses entités, problème de gestion de projectile ou de déplacement d'ennemis, etc.
+
+Il nous reste actuellement un seul bug à corriger au niveau de l'affichage du ciel sur le niveau de la vallée.
