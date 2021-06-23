@@ -392,6 +392,8 @@
             //On verifie si on a perdu
             if (!CastleTarget)
             {
+                int bestScore = PlayerPrefs.GetInt("BestScore", 0);
+                if (bestScore < Score) PlayerPrefs.SetInt("BestScore", Score);
                 Over();
             }
 

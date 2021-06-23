@@ -7,7 +7,7 @@ using GoblinRush;
 public class ScoreLabel : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
         gameObject.GetComponent<Text>().text = "Score : " + GameManager.Instance.Score;
     }
