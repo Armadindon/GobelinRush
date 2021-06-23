@@ -28,7 +28,33 @@ DevNotes : https://docs.google.com/document/d/10_pX1pApnnx7rZwFggwXDcWyREvnJaX1i
 • Capacités du joueur :
 	- Contrôle le jeu à l'aide des commandes évoquées
 	- Peut utiliser les emplacements de tourelles prédéfinies à l'aide de la souris
+			
+			---Répartition des tâches ---
 
+• Baptiste PERRIN :
+		- Comportement des enemies
+		- Ajout du système de vague
+		- Gestion du système d'économie
+		- Gestion des scènes
+		- Gestion de sauvegarde
+		- Implémentation du score
+
+• Colin LE PICHON :
+		- Comportement des tourelles
+		- Placement des tourelles
+		- Amélioration des tourelles
+		- Diversification des enemis
+
+• Mathieu TAILLANDIER :
+		- Système de vie
+		- Gestion de la caméra
+		- Implémentation des effets sonors
+
+• Mathieu PELLAN :
+		- Level Design
+		- Création des terrains
+		- Ajout des particules diverses (Enemis Hit, Enemis Death, décoration, ambiance, etc...)
+		- Animations des enemis
 
 			---Remarques particulières---
 
