@@ -25,6 +25,8 @@ public class House : MonoBehaviour
     private float nextEnemy;
     private float nextWave;
 
+    public float WaveStartedAt {get; set;}
+
     private void Start()
     {
         //On set up la première wave
@@ -41,6 +43,7 @@ public class House : MonoBehaviour
         //Si on a dépassé le délai, et que il reste des waves
         if(isWaveFinished && Time.time > nextWave && m_Waves.Length != CurrentWave)
         {
+            WaveStartedAt = GameManager.Instance.ElapsedTime;
             isWaveFinished = false;
         }
 
